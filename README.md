@@ -11,6 +11,11 @@ v0.2 adds an exact-query foundation for Neo4j/Cypher and a dependency-free memor
 backend. It does not yet migrate the approximate controller into Neo4j. The tiny
 dataset tests correctness and teaches graph concepts; it is not a performance workload.
 
+**Live validation completed on 2026-10-03:** Neo4j 2026.09.0 Enterprise
+in Desktop 2.2.1. All nine tests passed, including repeated seeding and exact COUNT
+comparison against memory. See `results/neo4j/tiny-counts.json` and `docs/verification.md`.
+No plugins were required. No Neo4j performance benchmark was measured.
+
 ## Run immediately, without Neo4j
 
 From this repository's root, with Python 3.10 or later:
@@ -112,6 +117,14 @@ RETURN count(r) AS count;
 ```cypher
 MATCH (b:Person {dataset: 'graph-mf-tiny-v02', id: 'bowen'})-[:FRIEND]->(friend:Person)
 RETURN friend.name AS friend;
+```
+
+在 Desktop 的 **Query** 页面选择本地实例和 `neo4j` 数据库，运行下面这条，
+切到图形结果即可看到三个人和两条关系：
+
+```cypher
+MATCH (a:Person {dataset: 'graph-mf-tiny-v02'})-[r:FRIEND]->(b:Person {dataset: 'graph-mf-tiny-v02'})
+RETURN a, r, b;
 ```
 
 你现在可以先理解这三件事：节点保存人，关系保存连接，COUNT 返回完整数据的

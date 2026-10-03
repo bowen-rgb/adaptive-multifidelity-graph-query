@@ -1,0 +1,91 @@
+{
+  "verified_at": "2026-10-03T11:25:09.939941+02:00",
+  "backend": "neo4j",
+  "database": "neo4j",
+  "dataset": "graph-mf-tiny-v02",
+  "components": [
+    {
+      "name": "Neo4j Kernel",
+      "versions": [
+        "2026.09.0"
+      ],
+      "edition": "enterprise"
+    },
+    {
+      "name": "Cypher",
+      "versions": [
+        "5",
+        "25"
+      ],
+      "edition": ""
+    }
+  ],
+  "checks": [
+    {
+      "query": "node_count",
+      "parameters": {},
+      "observed": 3,
+      "expected": 3
+    },
+    {
+      "query": "edge_count",
+      "parameters": {},
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "query": "city_count",
+      "parameters": {
+        "city": "Paris"
+      },
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "query": "city_count",
+      "parameters": {
+        "city": "Missing"
+      },
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "query": "age_count",
+      "parameters": {
+        "min_age": 24
+      },
+      "observed": 2,
+      "expected": 2
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Alice",
+      "age": 22,
+      "city": "Lyon"
+    },
+    {
+      "name": "Bob",
+      "age": 27,
+      "city": "Lille"
+    },
+    {
+      "name": "Bowen",
+      "age": 24,
+      "city": "Paris"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Bowen",
+      "target": "Alice"
+    },
+    {
+      "source": "Bowen",
+      "target": "Bob"
+    }
+  ],
+  "passed": true,
+  "live_integration_test_passed": true,
+  "performance_benchmark_measured": false
+}
