@@ -1,0 +1,48 @@
+{
+  "source_archive": "graph_multifidelity_mvp_v0.1.zip",
+  "archive_sha256": "a333f23d3a0c0dfaab91d16b7837dc017a60c843a2fc6d0fa76aa36f1a9853be",
+  "preserved_under": "v0.1/",
+  "all_original_deliverable_bytes_verified": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "ed20b2cee0cf9a0f0c80ce74bec2a69eed66e35d8751caeb51ea0c646074873b"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "b63aea5d6238472ccdd07a5fa41c45a7f62b98df8900d8c05344035431186cbd"
+    },
+    {
+      "path": "run_experiment.py",
+      "sha256": "98e2f1635986f35fed47123e5554c15f1b3df34e8cf28f6394204661f044435f"
+    },
+    {
+      "path": "figures/error_vs_fidelity.png",
+      "sha256": "230b8b25f18180e73d457c36b03ef4ff5f68de281f74fc99aabf82eaab3fd4ea"
+    },
+    {
+      "path": "figures/latency_vs_fidelity.png",
+      "sha256": "5a7efca5dcd0fdac99942ac75e08913650813f9250ad38a5139c04a54179bd5c"
+    },
+    {
+      "path": "report/technical_note.md",
+      "sha256": "6d71d5da6ff54490b96bf578b7c3b27529cecef734c0bc989291caef33627907"
+    },
+    {
+      "path": "results/adaptive_results.csv",
+      "sha256": "86d75a1f7acf61a0130e4e6e1a26e2488fcd1e8d0b0a1e5132b20fbc32e55908"
+    },
+    {
+      "path": "results/raw_results.csv",
+      "sha256": "c05334ddfcbf4b57be3f4641b425c62d6b86592f128a1207a9525159859f561b"
+    },
+    {
+      "path": "results/summary.csv",
+      "sha256": "a382f59f14ae3be5678e1f8964d760a44cc13afef828e9238450daf30c3474ce"
+    },
+    {
+      "path": "src/multifidelity.py",
+      "sha256": "8e75fdeda82065f8a019a8e9923bd6333460fcbbb8562c2b388a329dd5ce4d77"
+    }
+  ]
+}
