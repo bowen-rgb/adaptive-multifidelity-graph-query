@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-multifidelity-graph-query"
+version = "0.2.0"
+description = "Learning and research scaffold for adaptive graph query fidelity"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+neo4j = ["neo4j>=5.26,<7"]
+
+[project.scripts]
+graph-mf = "graph_mf.__main__:main"
+
+[tool.setuptools.package-data]
+graph_mf = ["data/*.json", "cypher/*.cypher"]
+
+[tool.setuptools.packages.find]
+include = ["graph_mf*"]

@@ -1,0 +1,12 @@
+{
+  "dataset": "graph-mf-tiny-v02",
+  "people": [
+    {"id": "bowen", "name": "Bowen", "age": 24, "city": "Paris"},
+    {"id": "alice", "name": "Alice", "age": 22, "city": "Lyon"},
+    {"id": "bob", "name": "Bob", "age": 27, "city": "Lille"}
+  ],
+  "friends": [
+    {"source": "bowen", "target": "alice"},
+    {"source": "bowen", "target": "bob"}
+  ]
+}

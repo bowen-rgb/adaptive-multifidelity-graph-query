@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# Keep archive bytes stable, including line endings, on every platform.
+v0.1/** -text
