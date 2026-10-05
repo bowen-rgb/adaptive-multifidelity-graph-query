@@ -24,9 +24,39 @@ def main(argv=None):
     benchmark.add_argument("--repeats", type=int, default=20)
     benchmark.add_argument("--warmups", type=int, default=2)
     benchmark.add_argument("--output", default="results/local/benchmark")
+    reuse = commands.add_parser("reuse-benchmark", help="Repeated read-only queries over reusable samples")
+    reuse.add_argument("--epochs", type=int, default=20)
+    reuse.add_argument("--requests", type=int, default=100)
+    reuse.add_argument("--warmups", type=int, default=2)
+    reuse.add_argument("--output", default="results/local/reuse-benchmark")
+    build = commands.add_parser("sample-build", help="Build, attach or explicitly refresh a reusable sample")
+    build.add_argument("--refresh", action="store_true")
+    build.add_argument("--import-graph", action="store_true", help="Import once; invalidates any existing sample")
+    sample_count = commands.add_parser("sample-count", help="Read-only request over a persisted Neo4j sample")
+    sample_count.add_argument("--fidelity", type=float, default=0.1)
+    sample_count.add_argument("--country", default="FR")
+    for command in (reuse, build, sample_count):
+        command.add_argument("--nodes", type=int, default=50000)
+        command.add_argument("--avg-degree", type=int, default=6)
+        command.add_argument("--graph-seed", type=int, default=42)
+        command.add_argument("--sample-seed", type=int, default=1000)
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == "reuse-benchmark":
+            from .reuse_benchmark import run_reuse_benchmark
+            result = run_reuse_benchmark(args.backend, args.nodes, args.avg_degree, args.graph_seed,
+                args.epochs, args.requests, args.warmups, args.sample_seed, args.output)
+            print(json.dumps({"output": result["output"], "summary": result["summary"]}, indent=2))
+            return 0
+        if args.command in ("sample-build", "sample-count"):
+            from .reusable import sample_operation
+            result = sample_operation(args.backend, args.command, args.nodes, args.avg_degree,
+                args.graph_seed, args.sample_seed, getattr(args, 'fidelity', 0.1),
+                getattr(args, 'country', 'FR'), getattr(args, 'refresh', False),
+                getattr(args, 'import_graph', False))
+            print(json.dumps(result, indent=2))
+            return 0
         if args.command == "benchmark":
             from .benchmark import run_benchmark
             result = run_benchmark(args.backend, args.nodes, args.avg_degree, args.graph_seed,

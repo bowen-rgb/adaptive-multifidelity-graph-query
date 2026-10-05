@@ -61,9 +61,11 @@ class SyntheticMemory:
     def __init__(self, graph):
         self.graph = graph
         self.sample = numpy().zeros(len(graph.countries))
+        self.sample_generation = 0
 
     def prepare(self, seed):
         self.sample = numpy().random.default_rng(seed).random(len(self.graph.countries))
+        self.sample_generation += 1
 
     def counts(self, country='FR', fidelity=1.0):
         validate_fidelity(fidelity)
@@ -98,6 +100,9 @@ class SyntheticNeo4j:
                 database_=self.connection.database)
 
     def seed(self):
+        # A reimport resets sample ranks. Existing materialization must not stay ready.
+        self.connection.driver.execute_query(cypher('synthetic_invalidate'),
+            dataset=self.dataset, database_=self.connection.database)
         for suffix in ['schema', 'edge_schema', 'country_index', 'sample_index']:
             self.connection.driver.execute_query(cypher('synthetic_' + suffix),
                 database_=self.connection.database)
@@ -107,6 +112,9 @@ class SyntheticNeo4j:
             for i, (a, b) in enumerate(zip(self.graph.src, self.graph.dst))])
         self.connection.driver.execute_query('CALL db.awaitIndexes(120)',
                                             database_=self.connection.database)
+        self.validate_import()
+
+    def validate_import(self):
         records, _, _ = self.connection.driver.execute_query(
             'MATCH (n:MFNode {dataset:$dataset}) RETURN count(n) AS count',
             dataset=self.dataset, database_=self.connection.database)
@@ -117,6 +125,8 @@ class SyntheticNeo4j:
             raise RuntimeError('Imported graph size mismatch; benchmark cancelled')
 
     def prepare(self, seed):
+        self.connection.driver.execute_query(cypher('synthetic_invalidate'),
+            dataset=self.dataset, database_=self.connection.database)
         sample = numpy().random.default_rng(seed).random(len(self.graph.countries))
         self.write_batches('synthetic_prepare', [dict(id=i, sample=float(value))
                            for i, value in enumerate(sample)])

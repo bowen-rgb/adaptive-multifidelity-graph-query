@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 — 2026-10-05
+
+- Separate reusable sample construction from read-only COUNT requests.
+- Persist graph/sample identity, readiness and generation in Neo4j for later processes.
+- Invalidate samples on import/rank overwrite; reject interrupted or refreshed state.
+- Add explicit build/refresh/query commands and repeated-request amortization benchmark.
+- Record independent sample epochs separately from repeated accuracy answers.
+- Checkpoint raw measurements after each completed epoch.
+
 ## 0.3.0 — 2026-10-05
 
 - Migrate the matched v0.1 synthetic graph and fixed-fidelity COUNT workload into Neo4j.

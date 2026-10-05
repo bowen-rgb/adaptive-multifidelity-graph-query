@@ -1,0 +1,30 @@
+{
+  "separate_cli_processes": true,
+  "passed": true,
+  "build": {
+    "backend": "neo4j",
+    "dataset": "graph-mf-synthetic-b9f668062bf1dd23",
+    "reused": true,
+    "build_ms": 0.0,
+    "lookup_ms": 2.985999999964406,
+    "generation": "5d9e8ef1712946219dd3299b0b4efd04",
+    "sample_seed": 1019
+  },
+  "query": {
+    "backend": "neo4j",
+    "dataset": "graph-mf-synthetic-b9f668062bf1dd23",
+    "sample_seed": 1019,
+    "generation": "5d9e8ef1712946219dd3299b0b4efd04",
+    "fidelity": 0.1,
+    "country": "FR",
+    "node_estimate": 14850.0,
+    "edge_estimate": 13999.999999999998,
+    "node_query_ms": 1.1092999998254527,
+    "node_count": 1485,
+    "edge_query_ms": 3.4006000000772474,
+    "edge_count": 140,
+    "query_ms": 4.5098999999027,
+    "state_check_ms": 0.7857999999032472,
+    "request_ms": 5.305799999860028
+  }
+}

@@ -1,4 +1,4 @@
-# Adaptive Multi-Fidelity Graph Query — v0.3
+# Adaptive Multi-Fidelity Graph Query — v0.3.1
 
 Research question: can graph queries use a fraction of the data while keeping aggregate
 answers within an accuracy tolerance?
@@ -26,6 +26,70 @@ At 10% fidelity, the median combined COUNT query time was 13.05 ms versus 45.76 
 for exact COUNT. Charging fresh sample preparation raised the approximate request
 to 1,806.75 ms. Query-only savings therefore do not establish an online speedup.
 All sampled counts matched NumPy. See [the measured report](docs/v03-benchmark.md).
+
+## v0.3.1 reusable samples
+
+v0.3 rebuilt sample ranks between repetitions. v0.3.1 separates **sample construction**
+from **read-only query requests**. Neo4j stores a ready-state record identifying the graph,
+sample seed and generation. A later process can attach to the same sample without
+rewriting ranks. Query timing includes a database readiness/generation check.
+
+**v0.3.1 measured on 2026-10-05:** all 10,000 timed COUNT pairs matched NumPy.
+At 10% fidelity, mean request cost including sample construction amortized over
+100 requests was 35.94 ms versus 47.21 ms for exact COUNT (about 24% lower).
+Mean node/edge relative errors were 2.07% / 7.46%. This result requires repeated
+use of an unchanged sample on a static graph. See [the reuse report](docs/v031-reuse-benchmark.md).
+
+With the synthetic graph already imported by the v0.3 benchmark:
+
+```sh
+python -m graph_mf --backend neo4j sample-build --sample-seed 1000
+python -m graph_mf --backend neo4j sample-count --sample-seed 1000 --fidelity 0.1
+python -m graph_mf --backend neo4j sample-count --sample-seed 1000 --fidelity 0.5
+```
+
+On the first use of a new graph, add `--import-graph` to `sample-build`. Importing resets
+ranks and invalidates an old materialization; it is not part of a read-only query.
+Repeating `sample-build` for a matching ready seed returns `reused: true` and does not
+prepare ranks again. To create a fresh generation explicitly:
+
+```sh
+python -m graph_mf --backend neo4j sample-build --sample-seed 1001 --refresh
+```
+
+Changing the seed changes the sample. Refreshing with the same seed rebuilds the same
+sample membership. Approximate `sample-count` never silently rebuilds missing/stale
+samples. It fails if the published state is not ready or its generation changed.
+
+Run the reuse experiment:
+
+```sh
+python -m graph_mf --backend neo4j reuse-benchmark --nodes 50000 --epochs 20 --requests 100 --output results/local/new-reuse-run
+```
+
+This measures 20 independent sample epochs × 100 requests × 5 fidelities = 10,000
+COUNT pairs. Within each epoch, each sample is built once, then reused. Accuracy is
+averaged across 20 independent samples, not across 2,000 repeated answers per fidelity.
+Each fidelity stream is charged the full build cost divided by its 100 requests;
+the benchmark does not discount that cost for sharing a sample across different levels.
+Raw results and build costs are checkpointed after each epoch. Only metadata with
+`status: completed` represents a completed run; existing output folders are preserved.
+
+Offline reuse is available in one process:
+
+```sh
+python -m graph_mf --backend memory reuse-benchmark --nodes 200 --epochs 2 --requests 3 --warmups 1 --output results/local/reuse-smoke
+```
+
+Memory samples last only for that process. Standalone `sample-count` requires Neo4j
+because its materialization persists between processes.
+
+The supported workload is a static synthetic graph with one client and no concurrent
+refresh/data mutation. Graph imports and direct rank preparations invalidate ready
+state. Partial/failed sample builds do not become ready. Arbitrary manual edits outside
+these APIs are not detected by the state check. Repeated use saves preparation cost,
+but repeated answers retain the same sampling error; they are not new accuracy trials.
+No TTL policy or adaptive controller is added in this release.
 
 ## v0.3 synthetic benchmark
 
@@ -300,8 +364,9 @@ especially for rare predicates or repeated adaptive decisions.
 
 The v0.3 results provide a first measured Neo4j fixed-fidelity baseline. They establish
 neither a general latency improvement nor memory/energy savings. NSGA-II and a novel
-adaptive algorithm are not implemented. Next milestones: reduce online sampling cost,
-migrate and evaluate the adaptive controller, then broaden the workload and cache states.
+adaptive algorithm are not implemented. v0.3.1 measures sample reuse on a static graph.
+Next milestones: an exhaustive Pareto baseline, an NSGA-II comparison over a broader
+parameter space, then evaluation of the proposed adaptive scaling method.
 
 Official references: [Neo4j Python driver](https://neo4j.com/docs/python-manual/current/),
 [Cypher MERGE](https://neo4j.com/docs/cypher-manual/current/clauses/merge/).
