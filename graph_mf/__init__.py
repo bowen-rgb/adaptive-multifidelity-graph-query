@@ -1,2 +1,2 @@
-"""Exact-query foundation; approximate v0.1 experiments await artifact recovery."""
-__version__ = "0.2.0"
+"""Exact and fixed-fidelity graph-query research foundations."""
+__version__ = "0.3.0"

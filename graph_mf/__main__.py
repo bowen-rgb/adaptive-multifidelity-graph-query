@@ -8,7 +8,7 @@ from .dataset import load_tiny
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Graph exact COUNT learning milestone")
+    parser = argparse.ArgumentParser(description="Exact and fixed-fidelity graph COUNT experiments")
     parser.add_argument("--backend", choices=("memory", "neo4j"), default="memory")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("seed", help="Idempotently load the tiny dataset")
@@ -17,9 +17,22 @@ def main(argv=None):
     count.add_argument("query", choices=QUERIES)
     count.add_argument("--city")
     count.add_argument("--min-age", type=int)
+    benchmark = commands.add_parser("benchmark", help="Matched synthetic fixed-fidelity experiment")
+    benchmark.add_argument("--nodes", type=int, default=50000)
+    benchmark.add_argument("--avg-degree", type=int, default=6)
+    benchmark.add_argument("--graph-seed", type=int, default=42)
+    benchmark.add_argument("--repeats", type=int, default=20)
+    benchmark.add_argument("--warmups", type=int, default=2)
+    benchmark.add_argument("--output", default="results/local/benchmark")
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == "benchmark":
+            from .benchmark import run_benchmark
+            result = run_benchmark(args.backend, args.nodes, args.avg_degree, args.graph_seed,
+                                   args.repeats, args.warmups, args.output)
+            print(json.dumps({"output": result["output"], "summary": result["summary"]}, indent=2))
+            return 0
         backend = MemoryBackend() if args.backend == "memory" else Neo4jBackend()
         result = {"version": __version__, "backend": backend.name, "dataset": load_tiny()["dataset"], "neo4j_measured": False}
         # This flag indicates query execution, never benchmark or performance evidence.

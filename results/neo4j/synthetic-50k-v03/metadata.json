@@ -1,0 +1,369 @@
+{
+  "project_version": "0.3.0",
+  "started_at": "2026-10-05T15:33:59.425287+02:00",
+  "finished_at": "2026-10-05T15:34:59.907410+02:00",
+  "backend": "neo4j",
+  "database": "neo4j",
+  "dataset": "graph-mf-synthetic-b9f668062bf1dd23",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "n_nodes": 50000,
+  "n_edge_records": 149996,
+  "avg_degree": 6,
+  "graph_seed": 42,
+  "country": "FR",
+  "repeats": 20,
+  "warmups_per_fidelity": 2,
+  "sample_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "order_seeds": [
+    5000,
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015,
+    5016,
+    5017,
+    5018,
+    5019
+  ],
+  "exact_counts": {
+    "node_count": 14959,
+    "edge_count": 13428
+  },
+  "all_counts_match_numpy": true,
+  "import_and_connect_ms": 18398.713100000008,
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "os": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "logical_cpus": 32,
+  "cache_state": "warm; no cache flush; sample property updates between repeats",
+  "latency_scope": "client wall time for two sequential COUNT execute_query calls; includes transaction/driver overhead",
+  "preparation_scope": "uniform sample generation + property updates + index maintenance; full cost charged per approximate level",
+  "concurrency": "one client; serial; do not mutate this dataset during a run",
+  "sampling": "Bernoulli node inclusion, nested levels sharing one rank vector per repeat",
+  "edge_semantics": "one directed relationship per stored v0.1 edge record, including parallel duplicates; counted once",
+  "performance_benchmark_measured": true,
+  "limitations": [
+    "single host/run; no cold-cache experiment",
+    "timings do not include graph import",
+    "preparation cost is not an optimized online sampling method",
+    "no energy or memory measurement; no adaptive controller migration"
+  ],
+  "server_components": [
+    {
+      "name": "Neo4j Kernel",
+      "versions": [
+        "2026.09.0"
+      ],
+      "edition": "enterprise"
+    },
+    {
+      "name": "Cypher",
+      "versions": [
+        "5",
+        "25"
+      ],
+      "edition": ""
+    }
+  ],
+  "neo4j_driver": "6.3.1",
+  "server_memory_settings": {
+    "server.memory.heap.initial_size": "512.00MiB",
+    "server.memory.heap.max_size": "1.00GiB",
+    "server.memory.pagecache.size": "512.00MiB"
+  },
+  "explain_plans": {
+    "exact_nodes": {
+      "args": {
+        "planner-impl": "IDP",
+        "string-representation": "Cypher 25\r\n\r\nPlanner COST\r\n\r\nRuntime PIPELINED\r\n\r\nRuntime version 2026.09.0\r\n\r\nBatch size 1024\r\n\r\n+-------------------+----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n| Operator          | Id | Details                                                                                | Estimated Rows | Pipeline            |\r\n+-------------------+----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +ProduceResults   |  0 | count                                                                                  |              1 | In Pipeline 1       |\r\n| |                 +----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +EagerAggregation |  1 | count(n) AS count                                                                      |              1 |                     |\r\n| |                 +----+----------------------------------------------------------------------------------------+----------------+                     |\r\n| +NodeIndexSeek    |  2 | RANGE INDEX n:MFNode(dataset, country) WHERE dataset = $dataset AND country = $country |           7143 | Fused in Pipeline 0 |\r\n+-------------------+----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n\r\nTotal database accesses: ?\r\n",
+        "runtime": "PIPELINED",
+        "runtime-impl": "PIPELINED",
+        "version": "25",
+        "batch-size": 1024,
+        "Details": "count",
+        "planner-version": "2026.09.0",
+        "PipelineInfo": "In Pipeline 1",
+        "runtime-version": "2026.09.0",
+        "Id": 0,
+        "EstimatedRows": 1.0,
+        "planner": "COST"
+      },
+      "children": [
+        {
+          "args": {
+            "Details": "count(n) AS count",
+            "Id": 1,
+            "EstimatedRows": 1.0,
+            "PipelineInfo": "Fused in Pipeline 0"
+          },
+          "children": [
+            {
+              "args": {
+                "Details": "RANGE INDEX n:MFNode(dataset, country) WHERE dataset = $dataset AND country = $country",
+                "Id": 2,
+                "EstimatedRows": 7143.285714285713,
+                "PipelineInfo": "Fused in Pipeline 0"
+              },
+              "identifiers": [
+                "n"
+              ],
+              "operatorType": "NodeIndexSeek@neo4j"
+            }
+          ],
+          "identifiers": [
+            "count"
+          ],
+          "operatorType": "EagerAggregation@neo4j"
+        }
+      ],
+      "identifiers": [
+        "count"
+      ],
+      "operatorType": "ProduceResults@neo4j"
+    },
+    "exact_edges": {
+      "args": {
+        "planner-impl": "IDP",
+        "string-representation": "Cypher 25\r\n\r\nPlanner COST\r\n\r\nRuntime PIPELINED\r\n\r\nRuntime version 2026.09.0\r\n\r\nBatch size 1024\r\n\r\n+-------------------+----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n| Operator          | Id | Details                                                                                | Estimated Rows | Pipeline            |\r\n+-------------------+----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +ProduceResults   |  0 | count                                                                                  |              1 | In Pipeline 1       |\r\n| |                 +----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +EagerAggregation |  1 | count(r) AS count                                                                      |              1 |                     |\r\n| |                 +----+----------------------------------------------------------------------------------------+----------------+                     |\r\n| +Filter           |  2 | (a.country = $country AND a.dataset = $dataset AND r.dataset = $dataset) AND a:MFNode  |            153 |                     |\r\n| |                 +----+----------------------------------------------------------------------------------------+----------------+                     |\r\n| +Expand(All)      |  3 | (b)<-[r:MF_EDGE]-(a)                                                                   |          21428 |                     |\r\n| |                 +----+----------------------------------------------------------------------------------------+----------------+                     |\r\n| +NodeIndexSeek    |  4 | RANGE INDEX b:MFNode(dataset, country) WHERE dataset = $dataset AND country = $country |           7143 | Fused in Pipeline 0 |\r\n+-------------------+----+----------------------------------------------------------------------------------------+----------------+---------------------+\r\n\r\nTotal database accesses: ?\r\n",
+        "runtime": "PIPELINED",
+        "runtime-impl": "PIPELINED",
+        "version": "25",
+        "batch-size": 1024,
+        "Details": "count",
+        "planner-version": "2026.09.0",
+        "PipelineInfo": "In Pipeline 1",
+        "runtime-version": "2026.09.0",
+        "Id": 0,
+        "EstimatedRows": 1.0,
+        "planner": "COST"
+      },
+      "children": [
+        {
+          "args": {
+            "Details": "count(r) AS count",
+            "Id": 1,
+            "EstimatedRows": 1.0,
+            "PipelineInfo": "Fused in Pipeline 0"
+          },
+          "children": [
+            {
+              "args": {
+                "Details": "(a.country = $country AND a.dataset = $dataset AND r.dataset = $dataset) AND a:MFNode",
+                "Id": 2,
+                "EstimatedRows": 153.0602040816326,
+                "PipelineInfo": "Fused in Pipeline 0"
+              },
+              "children": [
+                {
+                  "args": {
+                    "Details": "(b)<-[r:MF_EDGE]-(a)",
+                    "Id": 3,
+                    "EstimatedRows": 21428.428571428565,
+                    "PipelineInfo": "Fused in Pipeline 0"
+                  },
+                  "children": [
+                    {
+                      "args": {
+                        "Details": "RANGE INDEX b:MFNode(dataset, country) WHERE dataset = $dataset AND country = $country",
+                        "Id": 4,
+                        "EstimatedRows": 7143.285714285713,
+                        "PipelineInfo": "Fused in Pipeline 0"
+                      },
+                      "identifiers": [
+                        "b"
+                      ],
+                      "operatorType": "NodeIndexSeek@neo4j"
+                    }
+                  ],
+                  "identifiers": [
+                    "b",
+                    "r",
+                    "a"
+                  ],
+                  "operatorType": "Expand(All)@neo4j"
+                }
+              ],
+              "identifiers": [
+                "b",
+                "r",
+                "a"
+              ],
+              "operatorType": "Filter@neo4j"
+            }
+          ],
+          "identifiers": [
+            "count"
+          ],
+          "operatorType": "EagerAggregation@neo4j"
+        }
+      ],
+      "identifiers": [
+        "count"
+      ],
+      "operatorType": "ProduceResults@neo4j"
+    },
+    "sampled_nodes": {
+      "args": {
+        "planner-impl": "IDP",
+        "string-representation": "Cypher 25\r\n\r\nPlanner COST\r\n\r\nRuntime PIPELINED\r\n\r\nRuntime version 2026.09.0\r\n\r\nBatch size 128\r\n\r\n+-------------------+----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n| Operator          | Id | Details                                                                                              | Estimated Rows | Pipeline            |\r\n+-------------------+----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +ProduceResults   |  0 | count                                                                                                |              1 | In Pipeline 1       |\r\n| |                 +----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +EagerAggregation |  1 | count(n) AS count                                                                                    |              1 |                     |\r\n| |                 +----+------------------------------------------------------------------------------------------------------+----------------+                     |\r\n| +NodeIndexSeek    |  2 | RANGE INDEX n:MFNode(dataset, country, sample) WHERE dataset = $dataset AND country = $country AND s |              1 | Fused in Pipeline 0 |\r\n|                   |    | ample < $fidelity                                                                                    |                |                     |\r\n+-------------------+----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n\r\nTotal database accesses: ?\r\n",
+        "runtime": "PIPELINED",
+        "runtime-impl": "PIPELINED",
+        "version": "25",
+        "batch-size": 128,
+        "Details": "count",
+        "planner-version": "2026.09.0",
+        "PipelineInfo": "In Pipeline 1",
+        "runtime-version": "2026.09.0",
+        "Id": 0,
+        "EstimatedRows": 1.0,
+        "planner": "COST"
+      },
+      "children": [
+        {
+          "args": {
+            "Details": "count(n) AS count",
+            "Id": 1,
+            "EstimatedRows": 1.0,
+            "PipelineInfo": "Fused in Pipeline 0"
+          },
+          "children": [
+            {
+              "args": {
+                "Details": "RANGE INDEX n:MFNode(dataset, country, sample) WHERE dataset = $dataset AND country = $country AND sample < $fidelity",
+                "Id": 2,
+                "EstimatedRows": 1.0752315533390393,
+                "PipelineInfo": "Fused in Pipeline 0"
+              },
+              "identifiers": [
+                "n"
+              ],
+              "operatorType": "NodeIndexSeek@neo4j"
+            }
+          ],
+          "identifiers": [
+            "count"
+          ],
+          "operatorType": "EagerAggregation@neo4j"
+        }
+      ],
+      "identifiers": [
+        "count"
+      ],
+      "operatorType": "ProduceResults@neo4j"
+    },
+    "sampled_edges": {
+      "args": {
+        "planner-impl": "IDP",
+        "string-representation": "Cypher 25\r\n\r\nPlanner COST\r\n\r\nRuntime PIPELINED\r\n\r\nRuntime version 2026.09.0\r\n\r\nBatch size 128\r\n\r\n+-------------------+----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n| Operator          | Id | Details                                                                                              | Estimated Rows | Pipeline            |\r\n+-------------------+----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +ProduceResults   |  0 | count                                                                                                |              1 | In Pipeline 1       |\r\n| |                 +----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n| +EagerAggregation |  1 | count(r) AS count                                                                                    |              1 |                     |\r\n| |                 +----+------------------------------------------------------------------------------------------------------+----------------+                     |\r\n| +Filter           |  2 | (b.country = $country AND r.dataset = $dataset AND b.dataset = $dataset) AND b.sample < $fidelity    |              0 |                     |\r\n| |                 +----+------------------------------------------------------------------------------------------------------+----------------+                     |\r\n| +Expand(All)      |  3 | (a)-[r:MF_EDGE]->(b)                                                                                 |              3 |                     |\r\n| |                 +----+------------------------------------------------------------------------------------------------------+----------------+                     |\r\n| +NodeIndexSeek    |  4 | RANGE INDEX a:MFNode(dataset, country, sample) WHERE dataset = $dataset AND country = $country AND s |              1 | Fused in Pipeline 0 |\r\n|                   |    | ample < $fidelity                                                                                    |                |                     |\r\n+-------------------+----+------------------------------------------------------------------------------------------------------+----------------+---------------------+\r\n\r\nTotal database accesses: ?\r\n",
+        "runtime": "PIPELINED",
+        "runtime-impl": "PIPELINED",
+        "version": "25",
+        "batch-size": 128,
+        "Details": "count",
+        "planner-version": "2026.09.0",
+        "PipelineInfo": "In Pipeline 1",
+        "runtime-version": "2026.09.0",
+        "Id": 0,
+        "EstimatedRows": 1.0,
+        "planner": "COST"
+      },
+      "children": [
+        {
+          "args": {
+            "Details": "count(r) AS count",
+            "Id": 1,
+            "EstimatedRows": 1.0,
+            "PipelineInfo": "Fused in Pipeline 0"
+          },
+          "children": [
+            {
+              "args": {
+                "Details": "(b.country = $country AND r.dataset = $dataset AND b.dataset = $dataset) AND b.sample < $fidelity",
+                "Id": 2,
+                "EstimatedRows": 0.00012095548599781709,
+                "PipelineInfo": "Fused in Pipeline 0"
+              },
+              "children": [
+                {
+                  "args": {
+                    "Details": "(a)-[r:MF_EDGE]->(b)",
+                    "Id": 3,
+                    "EstimatedRows": 3.2254796266084544,
+                    "PipelineInfo": "Fused in Pipeline 0"
+                  },
+                  "children": [
+                    {
+                      "args": {
+                        "Details": "RANGE INDEX a:MFNode(dataset, country, sample) WHERE dataset = $dataset AND country = $country AND sample < $fidelity",
+                        "Id": 4,
+                        "EstimatedRows": 1.0752315533390393,
+                        "PipelineInfo": "Fused in Pipeline 0"
+                      },
+                      "identifiers": [
+                        "a"
+                      ],
+                      "operatorType": "NodeIndexSeek@neo4j"
+                    }
+                  ],
+                  "identifiers": [
+                    "a",
+                    "r",
+                    "b"
+                  ],
+                  "operatorType": "Expand(All)@neo4j"
+                }
+              ],
+              "identifiers": [
+                "a",
+                "r",
+                "b"
+              ],
+              "operatorType": "Filter@neo4j"
+            }
+          ],
+          "identifiers": [
+            "count"
+          ],
+          "operatorType": "EagerAggregation@neo4j"
+        }
+      ],
+      "identifiers": [
+        "count"
+      ],
+      "operatorType": "ProduceResults@neo4j"
+    }
+  }
+}

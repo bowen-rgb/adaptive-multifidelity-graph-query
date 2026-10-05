@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-10-05
+
+- Migrate the matched v0.1 synthetic graph and fixed-fidelity COUNT workload into Neo4j.
+- Preserve duplicate edge records with edge identities and idempotent batched imports.
+- Add 10/25/50/75/100% Bernoulli node sampling and exact NumPy answer validation.
+- Measure repeated warm-cache queries separately from sample preparation and import.
+- Export raw/summary CSV, environment and query-plan metadata, and tradeoff figure.
+- Keep the tiny dependency-free fallback and all original v0.1 files.
+
 ## 0.2.0 — 2026-10-03
 
 - Follow-up: validate real Neo4j 2026.09.0 exact queries and idempotent seeding;
