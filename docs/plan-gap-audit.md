@@ -107,6 +107,12 @@ claims made on the CV. There are currently no robotics/embodied-intelligence exp
 
 ## Recommended work order
 
+**v0.6 update:** Public SNAP topology with custom degree-bucket COUNTs, synthetic
+50k/100k/200k cases, actual client/server RSS monitoring and a shared-path 64-pair
+NSGA-II/exhaustive/adaptive comparison have been added. See
+[the measured report](v06-deepening.md). This advances items 1–2 below; full LDBC,
+cold-cache replication, per-graph memory attribution and online feedback remain open.
+
 1. Complete the missed standard-workload/scaling and actual-memory milestone.
 2. Run a fair exact/fixed/exhaustive/NSGA-II/adaptive comparison with stronger independent evidence.
 3. Add online audit/drift/refresh feedback and measure its cost, including budget violations.

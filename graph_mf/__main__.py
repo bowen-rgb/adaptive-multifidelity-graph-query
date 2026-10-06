@@ -13,6 +13,14 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("seed", help="Idempotently load the tiny dataset")
     commands.add_parser("smoke", help="Check existing data against the tiny fixture; does not seed Neo4j")
+    deep = commands.add_parser('deep-benchmark', help='Public topology, scale/memory and same-path policy comparison')
+    deep.add_argument('--sizes', type=int, nargs='*', default=[50000, 100000, 200000])
+    deep.add_argument('--snap-path')
+    deep.add_argument('--server-pid', type=int)
+    deep.add_argument('--epochs', type=int, default=5)
+    deep.add_argument('--repeats', type=int, default=3)
+    deep.add_argument('--timing-epochs', type=int, default=3)
+    deep.add_argument('--output', default='results/local/deep-benchmark')
     optimize = commands.add_parser("optimize", help="Offline Pareto/NSGA-II analysis of completed reuse measurements")
     optimize.add_argument("--source", default="results/neo4j/reuse-50k-v031")
     optimize.add_argument("--output", default="results/local/optimization")
@@ -73,6 +81,12 @@ def main(argv=None):
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == 'deep-benchmark':
+            from .deep_benchmark import run_suite
+            result = run_suite(args.output, args.backend, args.sizes, args.snap_path,
+                               args.server_pid, args.epochs, args.repeats, args.timing_epochs)
+            print(json.dumps(result, indent=2))
+            return 0
         if args.command == "adaptive-benchmark":
             from .adaptive_benchmark import run_adaptive_benchmark
             result = run_adaptive_benchmark(args.backend, args.nodes, args.epochs,

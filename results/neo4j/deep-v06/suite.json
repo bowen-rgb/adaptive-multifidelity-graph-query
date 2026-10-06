@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "completed": [
+    {
+      "case": "snap-facebook",
+      "graph_sha256": "21ef6df5c9c0f384b9270fc032a08de28d949c3844570e88fb694f22d909fbde",
+      "timed_requests": 3000
+    },
+    {
+      "case": "synthetic-50000",
+      "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+      "timed_requests": 3000
+    },
+    {
+      "case": "synthetic-100000",
+      "graph_sha256": "f85561007ce14ed08f9a14da0a3a54a82170cbbf6442d418530a462e12abd9a6",
+      "timed_requests": 3000
+    },
+    {
+      "case": "synthetic-200000",
+      "graph_sha256": "90acec914698f30f1836b7e310efae11257b9a20cab2da8449cc757c8bb59fb6",
+      "timed_requests": 3000
+    }
+  ]
+}

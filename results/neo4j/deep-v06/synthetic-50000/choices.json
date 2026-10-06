@@ -1,0 +1,212 @@
+{
+  "DE": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        0.5
+      ],
+      "nsga2": [
+        1.0,
+        0.5
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        0.75
+      ],
+      "nsga2": [
+        1.0,
+        0.75
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "ES": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        0.75
+      ],
+      "nsga2": [
+        1.0,
+        0.75
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        0.75
+      ],
+      "nsga2": [
+        1.0,
+        0.75
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "FR": {
+    "performance": {
+      "exhaustive": [
+        0.35,
+        0.5
+      ],
+      "nsga2": [
+        1.0,
+        0.5
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        0.75
+      ],
+      "nsga2": [
+        1.0,
+        0.75
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "IT": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        0.5
+      ],
+      "nsga2": [
+        1.0,
+        0.5
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        0.75
+      ],
+      "nsga2": [
+        1.0,
+        0.75
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "NL": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        0.5
+      ],
+      "nsga2": [
+        1.0,
+        0.5
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        0.75
+      ],
+      "nsga2": [
+        1.0,
+        0.75
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

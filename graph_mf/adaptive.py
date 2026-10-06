@@ -11,7 +11,7 @@ TIERS = {'performance': (0.05, 0.15), 'balanced': (0.02, 0.05),
          'quality': (0.01, 0.02), 'exact': (0.0, 0.0)}
 
 
-def calibrate(graph, fit_epochs=20, calibration_epochs=40):
+def calibrate(graph, fit_epochs=20, calibration_epochs=40, countries=COUNTRIES):
     """Fit gains then calibrate joint max residuals over countries, levels and metrics.
 
     The seed epoch is the independent unit. This avoids treating five correlated
@@ -23,7 +23,7 @@ def calibrate(graph, fit_epochs=20, calibration_epochs=40):
         raise ValueError('Use >=2 fitting epochs and >=20 calibration epochs')
     np = numpy()
     backend = SyntheticMemory(graph)
-    truth = {c: backend.counts(c) for c in COUNTRIES}
+    truth = {c: backend.counts(c) for c in countries}
     fit_seeds = list(range(2000, 2000 + fit_epochs))
     calibration_seeds = list(range(3000, 3000 + calibration_epochs))
     if set(fit_seeds) & set(calibration_seeds):
@@ -32,7 +32,7 @@ def calibrate(graph, fit_epochs=20, calibration_epochs=40):
     start = perf_counter()
     for seed in fit_seeds:
         backend.prepare(seed)
-        for country in COUNTRIES:
+        for country in countries:
             for f in LEVELS:
                 counts = backend.counts(country, f)
                 for kind, power in (('node', 1), ('edge', 2)):
@@ -54,7 +54,7 @@ def calibrate(graph, fit_epochs=20, calibration_epochs=40):
     for seed in calibration_seeds:
         backend.prepare(seed)
         score = 0.0
-        for country in COUNTRIES:
+        for country in countries:
             for row in levels[:-1]:
                 f = row['fidelity']
                 counts = backend.counts(country, f)
@@ -71,7 +71,7 @@ def calibrate(graph, fit_epochs=20, calibration_epochs=40):
         for kind in ('node', 'edge'):
             row[kind + '_bound'] = q * row[kind + '_scale']
     return dict(algorithm='calibrated-aggregate-scaling-v1', graph_sha256=graph.fingerprint,
-        countries=list(COUNTRIES), levels=levels, tiers=TIERS,
+        countries=list(countries), levels=levels, tiers=TIERS,
         fitting_seeds=fit_seeds, calibration_seeds=calibration_seeds,
         calibration_scores=scores, joint_quantile=q, target_coverage=0.95,
         calibration_unit='one seed: max residual across all countries, levels and both metrics',

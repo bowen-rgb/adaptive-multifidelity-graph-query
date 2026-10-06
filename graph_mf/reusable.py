@@ -103,6 +103,21 @@ class ReusableSample:
         result.update(state_check_ms=lookup_ms, request_ms=1000 * (perf_counter() - start))
         return result
 
+    def count_component(self, country, fidelity, kind):
+        validate_fidelity(fidelity)
+        start = perf_counter()
+        if fidelity < 1:
+            if self.active_state is None:
+                raise RuntimeError('Attach or build a sample before an approximate request')
+            current = self.read_state()
+            if (not self.matching(current, self.active_state['sample_seed'])
+                    or current['generation'] != self.active_state['generation']):
+                raise RuntimeError('Sample was invalidated or refreshed')
+        lookup_ms = 1000*(perf_counter()-start)
+        result = self.backend.count_component(country, fidelity, kind)
+        result.update(state_check_ms=lookup_ms, request_ms=1000*(perf_counter()-start))
+        return result
+
 
 def sample_operation(backend_name, operation, n_nodes, avg_degree, graph_seed,
                      sample_seed, fidelity=0.1, country='FR', refresh=False, import_graph=False):

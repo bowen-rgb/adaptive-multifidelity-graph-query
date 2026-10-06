@@ -1,0 +1,212 @@
+{
+  "degree_0_9": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "degree_10_19": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "degree_20_39": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "degree_40_79": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "degree_80_plus": {
+    "performance": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "balanced": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "quality": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "exhaustive": [
+        1.0,
+        1.0
+      ],
+      "nsga2": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.0 — 2026-10-06
+
+- Import pinned public SNAP topology with derived degree-bucket COUNT predicates.
+- Add independent node/edge fidelity and a 64-pair policy domain.
+- Compare fixed, exhaustive, NSGA-II and adaptive policies through shared query paths.
+- Freeze calibration and timing before held-out evaluation; charge escalation calls.
+- Record sample preparation, separate startup costs and actual process RSS samples.
+- Add multi-scale experiments, seed-block bootstrap intervals and reproducible reports.
+- No LDBC compliance, energy, per-graph memory saving or search-efficiency claim.
+
 ## 0.5.0 — 2026-10-06
 
 - Add eight sampling levels and performance/balanced/quality/exact budget presets.

@@ -1,4 +1,53 @@
-# Adaptive Multi-Fidelity Graph Query — v0.5.0
+# Adaptive Multi-Fidelity Graph Query — v0.6.0
+
+## v0.6: public topology, scale, memory and coupled policies
+
+The new `deep-benchmark` compares exact COUNT, four fixed levels, exhaustive selection,
+NSGA-II selection and the adaptive controller through the same component query interface.
+Node and edge fidelity can differ: eight levels per component give 64 candidate pairs.
+All approximate policies share frozen correction gains and uncertainty bounds; timing,
+calibration and held-out sample seeds are disjoint. Runtime NSGA-II uses only the final
+population of predeclared seed zero. Exhaustive search is a comparison oracle.
+This comparison targets query latency with an already-built sample; the three search
+objectives are component latency, node uncertainty and edge uncertainty. Build costs
+are then charged explicitly in the standalone scenario. The v0.5 amortized planner
+remains available. NSGA-II fitness uses the frozen timing table, not new live queries.
+
+The public [SNAP Facebook graph](https://snap.stanford.edu/data/ego-Facebook.html) provides
+real topology. Our degree-bucket COUNT predicates are custom; this is not an official
+LDBC workload. Undirected input edges are stored once. The legacy `country` field holds
+degree-bucket labels for this dataset. Synthetic cases use 50k, 100k and 200k nodes.
+
+Process RSS is sampled separately for Python and an optional Neo4j server PID. These
+are whole-process working-set measurements on Windows; the server retains earlier
+datasets. Sampled maxima do not establish per-graph memory use or memory savings.
+
+```powershell
+python -m pip install -e ".[neo4j,experiments]"
+python scripts/download_snap.py --output results/local/facebook_combined.txt.gz
+python -m graph_mf --backend memory deep-benchmark --sizes 200 --epochs 2 --timing-epochs 2 --output results/local/deep-smoke
+# Set NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD locally; never commit credentials.
+python -m graph_mf --backend neo4j deep-benchmark --snap-path results/local/facebook_combined.txt.gz --sizes 50000 100000 200000 --server-pid YOUR_NEO4J_PROCESS_ID --output results/local/deep-live
+```
+
+Use a new output directory. Memory mode validates functionality, not Neo4j performance.
+The full live suite builds and refreshes benchmark samples and imports datasets into
+the configured database. Profiling/calibration/import/optimizer costs are recorded
+separately. Query latency includes drafts, escalation, state checks and correction;
+sample preparation is also allocated across the actual mixed stream when it uses a
+sampled call (including a discarded draft). Exact-only policy streams need no build. Five held-out
+seed epochs give preliminary within-run intervals, not broad performance guarantees.
+Energy measurement, full LDBC workloads and online calibration remain future work.
+
+See [the v0.6 measured report](docs/v06-deepening.md).
+The [Chinese methods note](docs/v06-methods.md) explains the estimator, seeds,
+64-pair search and accounting step by step.
+
+**Measured on 2026-10-06:** 12,000 live requests across four graphs passed raw-count
+validation. At 200k nodes, adaptive request latency was 107.44 ms versus 140.80 ms
+for exact, but charging preparation over this short stream raised it to 265.68 ms.
+No build-inclusive adaptive speedup was observed. All 40 tests passed including
+the four opt-in live cases. Original v0.1 files remain unchanged.
 
 Research question: can graph queries use a fraction of the data while keeping aggregate
 answers within an accuracy tolerance?

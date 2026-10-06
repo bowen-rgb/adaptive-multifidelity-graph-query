@@ -82,6 +82,17 @@ class SyntheticMemory:
         return dict(node_count=nodes, edge_count=edges, node_query_ms=node_ms,
                     edge_query_ms=edge_ms, query_ms=node_ms + edge_ms)
 
+    def count_component(self, country, fidelity, kind):
+        validate_fidelity(fidelity)
+        if kind not in ('node', 'edge'):
+            raise ValueError('Unknown COUNT component')
+        start = perf_counter()
+        target = self.graph.countries == country
+        if fidelity < 1:
+            target = target & (self.sample < fidelity)
+        count = int(target.sum()) if kind == 'node' else int((target[self.graph.src] & target[self.graph.dst]).sum())
+        return dict(count=count, query_ms=1000*(perf_counter()-start))
+
 
 class SyntheticNeo4j:
     name = 'neo4j'
@@ -148,3 +159,17 @@ class SyntheticNeo4j:
             observed[key + '_count'] = int(records[0]['count'])
         observed['query_ms'] = observed['node_query_ms'] + observed['edge_query_ms']
         return observed
+
+    def count_component(self, country, fidelity, kind):
+        validate_fidelity(fidelity)
+        if kind not in ('node', 'edge'):
+            raise ValueError('Unknown COUNT component')
+        suffix = 'exact' if fidelity == 1 else 'sampled'
+        parameters = dict(dataset=self.dataset, country=country)
+        if fidelity < 1:
+            parameters['fidelity'] = fidelity
+        start = perf_counter()
+        records, _, _ = self.connection.driver.execute_query(
+            cypher(f'synthetic_{suffix}_{kind}s'), parameters_=parameters,
+            database_=self.connection.database, routing_='r')
+        return dict(count=int(records[0]['count']), query_ms=1000*(perf_counter()-start))

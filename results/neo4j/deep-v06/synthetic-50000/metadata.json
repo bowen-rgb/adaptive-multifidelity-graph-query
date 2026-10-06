@@ -1,0 +1,193 @@
+{
+  "status": "completed",
+  "version": "0.6.0",
+  "started_at": "2026-10-06T11:06:35.073036+00:00",
+  "backend": "neo4j",
+  "provenance": {
+    "type": "synthetic",
+    "graph_seed": 42,
+    "avg_degree": 6
+  },
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "dataset": "graph-mf-synthetic-b9f668062bf1dd23",
+  "nodes": 50000,
+  "edge_records": 149996,
+  "predicates": [
+    "DE",
+    "ES",
+    "FR",
+    "IT",
+    "NL"
+  ],
+  "epochs": 5,
+  "timing_epochs": 3,
+  "repeats_per_tier": 3,
+  "stream_requests_per_sample": 75,
+  "tier_sequence": [
+    "performance",
+    "balanced",
+    "quality",
+    "performance",
+    "exact"
+  ],
+  "candidate_space": 64,
+  "objectives": [
+    "profiled component latency",
+    "node calibrated bound",
+    "edge calibrated bound"
+  ],
+  "evaluation_seeds": [
+    9000,
+    9001,
+    9002,
+    9003,
+    9004
+  ],
+  "timing_seeds": [
+    8000,
+    8001,
+    8002
+  ],
+  "all_estimators": "same frozen correction gains for all approximate policies",
+  "nsga_runtime_front": "predeclared search seed 0 final population, no oracle or union of searches",
+  "latency_scope": "complete request, all component state checks, controller and correction; monitor enabled",
+  "excluded_costs": "graph import, offline fitting/calibration, timing profile, optimizer setup; recorded separately",
+  "build_scope": "standalone mixed stream charged full build / actual requests only if any sampled call was used; exact-only streams need no sample",
+  "inference_scope": "bootstrap seed-epoch means within one graph/run; five epochs are preliminary",
+  "cache": "warmup each predicate/component/level, no flush; shared running server retains earlier datasets",
+  "performance_measured": true,
+  "energy_measured": false,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "completed_epochs": 5,
+  "correction_calibration_ms": 5368.5838999954285,
+  "fitting_seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "calibration_seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019,
+    3020,
+    3021,
+    3022,
+    3023,
+    3024,
+    3025,
+    3026,
+    3027,
+    3028,
+    3029,
+    3030,
+    3031,
+    3032,
+    3033,
+    3034,
+    3035,
+    3036,
+    3037,
+    3038,
+    3039
+  ],
+  "server_components": [
+    {
+      "name": "Neo4j Kernel",
+      "versions": [
+        "2026.09.0"
+      ],
+      "edition": "enterprise"
+    },
+    {
+      "name": "Cypher",
+      "versions": [
+        "5",
+        "25"
+      ],
+      "edition": ""
+    }
+  ],
+  "import_connect_ms": 21082.327999989502,
+  "timing_profile_ms": 24855.023700001766,
+  "optimization_setup_ms": 12916.68879998906,
+  "all_counts_match_numpy": true,
+  "timed_requests": 3000,
+  "finished_at": "2026-10-06T11:09:38.461101+00:00",
+  "memory": {
+    "identities": {
+      "client": {
+        "pid": 31584,
+        "name": "python.exe",
+        "create_time": 1791284663.9610536
+      },
+      "server": {
+        "pid": 12396,
+        "name": "java.exe",
+        "create_time": 1791281706.3671124
+      }
+    },
+    "interval_seconds": 0.1,
+    "errors": [],
+    "scope": "process RSS; Windows working set; sampled maximum, shared server with retained datasets",
+    "source": "https://psutil.io/"
+  },
+  "measurement_packages": {
+    "numpy": "2.5.3",
+    "neo4j": "6.3.1",
+    "psutil": "7.2.2",
+    "matplotlib": "3.11.2"
+  },
+  "nsga_configuration": {
+    "population_size": 32,
+    "generations": 30,
+    "mutation_rate": 0.2,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "runtime_seed": 0
+  }
+}

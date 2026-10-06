@@ -94,9 +94,13 @@ class LiveReusableTests(unittest.TestCase):
                     actual = second.counts(fidelity=0.5)
                     for key in ['node_count', 'edge_count']:
                         self.assertEqual(actual[key], expected[key])
+                    for kind in ('node', 'edge'):
+                        self.assertEqual(second.count_component('FR', .5, kind)['count'], expected[kind+'_count'])
             first.build(124, refresh=True)
             with self.assertRaises(RuntimeError):
                 second.counts(fidelity=0.5)
+            with self.assertRaises(RuntimeError):
+                second.count_component('FR', .5, 'edge')
         finally:
             if second_connection:
                 second_connection.close()
