@@ -1,4 +1,31 @@
-# Adaptive Multi-Fidelity Graph Query — v0.10.0
+# Adaptive Multi-Fidelity Graph Query — v0.11.0
+
+## v0.11: pinned SNB micro-fixture and query semantics
+
+The official SNB v1 test projection contains 222 Person nodes and 825 KNOWS edges.
+Two CSVs are hash-pinned to upstream commit `11db98cc2ba14c33492f6c0c34e68c8be7e22e5f`;
+raw inputs stay outside Git. Attribution and upstream notices are in `third_party/ldbc`.
+IS3 ordered friend tuples are checked for every Person against the Python reference.
+The Person/KNOWS projection uses isolated labels and a fingerprint namespace.
+
+```powershell
+python scripts/download_snb_micro.py --output results/local/snb-input
+python -m graph_mf --backend memory snb-benchmark --dataset-path results/local/snb-input --epochs 2 --roots 8 --output results/local/snb-smoke
+python -m graph_mf --backend neo4j snb-benchmark --dataset-path results/local/snb-input --epochs 3 --roots 32 --output results/local/snb-live
+```
+
+The additional one-hop and distinct 1–2-hop COUNTs are custom. One-hop sampling holds
+the root fixed and scales sampled neighbors by `1/f`; full IS3 stays exact. Multi-hop
+requests fall back to exact because target inclusion probabilities are not generally
+`f²`. Sample generation checks reject sequential replacement/reimport; concurrent
+writers and arbitrary external edits are unsupported. The existing country controller
+and NSGA-II are not yet calibrated/integrated for this parameterized COUNT workload.
+
+**Measured:** 894 live business queries passed tuple/raw-count validation. At 10%
+one-hop fidelity mean error was 65.24%, with 49 empty samples despite nonzero truth
+among 96 selected queries. This is a micro-fixture semantic experiment, not full SNB,
+SF1, an official driver run or representative performance evidence.
+See [the report and coverage matrix](docs/v011-snb-semantics.md).
 
 ## v0.10: energy instrumentation, hardware measurement still pending
 

@@ -1,0 +1,169 @@
+{
+  "status": "completed",
+  "version": "0.11.0",
+  "backend": "neo4j",
+  "provenance": {
+    "source": "https://github.com/ldbc/ldbc_snb_interactive_v1_impls",
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f",
+    "file_sha256": {
+      "person_0_0.csv": "131ce3c4fd1e0ccab3e204403f4cfdaca21e5351bc60b34d1673bbc2a6bfeb30",
+      "person_knows_person_0_0.csv": "703e6bed5869d90d1f8c49f0cc161640ec25e426840676a82ebed25bb13a58bf"
+    },
+    "official_micro_fixture": true,
+    "projection": "Person id/firstName/lastName and undirected KNOWS creationDate only",
+    "benchmark_scope": "IS3 read semantics plus custom counts; not full SNB, SF1, driver protocol or audited benchmark",
+    "date_semantics": "official LongDateFormatter integer UTC milliseconds preserved; ISO test inputs require explicit zone",
+    "raw_data_redistributed": false
+  },
+  "graph_sha256": "0372a6993db610a6393cafd1d41c123be5fb9f1f1cead028fc1e8d179931418a",
+  "nodes": 222,
+  "edges": 825,
+  "epochs": 3,
+  "roots": [
+    {
+      "id": 48,
+      "degree": 0
+    },
+    {
+      "id": 2199023255736,
+      "degree": 0
+    },
+    {
+      "id": 4398046511252,
+      "degree": 0
+    },
+    {
+      "id": 6597069766839,
+      "degree": 0
+    },
+    {
+      "id": 8796093022307,
+      "degree": 0
+    },
+    {
+      "id": 10995116277914,
+      "degree": 0
+    },
+    {
+      "id": 111,
+      "degree": 1
+    },
+    {
+      "id": 6597069766847,
+      "degree": 1
+    },
+    {
+      "id": 96,
+      "degree": 2
+    },
+    {
+      "id": 2199023255730,
+      "degree": 2
+    },
+    {
+      "id": 6597069766763,
+      "degree": 2
+    },
+    {
+      "id": 10995116277809,
+      "degree": 2
+    },
+    {
+      "id": 2199023255615,
+      "degree": 3
+    },
+    {
+      "id": 4398046511249,
+      "degree": 3
+    },
+    {
+      "id": 8796093022215,
+      "degree": 3
+    },
+    {
+      "id": 195,
+      "degree": 4
+    },
+    {
+      "id": 8796093022238,
+      "degree": 4
+    },
+    {
+      "id": 6597069766692,
+      "degree": 5
+    },
+    {
+      "id": 8796093022264,
+      "degree": 5
+    },
+    {
+      "id": 4398046511224,
+      "degree": 6
+    },
+    {
+      "id": 6597069766896,
+      "degree": 6
+    },
+    {
+      "id": 2199023255712,
+      "degree": 8
+    },
+    {
+      "id": 2199023255612,
+      "degree": 9
+    },
+    {
+      "id": 10995116278009,
+      "degree": 9
+    },
+    {
+      "id": 2199023255711,
+      "degree": 11
+    },
+    {
+      "id": 10995116277794,
+      "degree": 13
+    },
+    {
+      "id": 2199023255580,
+      "degree": 15
+    },
+    {
+      "id": 6597069766708,
+      "degree": 17
+    },
+    {
+      "id": 2199023255767,
+      "degree": 19
+    },
+    {
+      "id": 150,
+      "degree": 25
+    },
+    {
+      "id": 153,
+      "degree": 32
+    },
+    {
+      "id": 4398046511333,
+      "degree": 48
+    }
+  ],
+  "root_selection": "deterministic quantiles across full-snapshot degree then ID, includes degree extremes",
+  "official_scope": "IS3 ordered tuple semantics on all Person IDs in pinned projection; no official driver, updates or full benchmark",
+  "custom_queries": [
+    "anchored friends_count",
+    "distinct persons at distance 1..2 excluding root"
+  ],
+  "estimator_scope": "uniform neighbor inclusion, root held fixed, 1/f only for one-hop count; no calibrated budget guarantee",
+  "multi_hop_scope": "always exact; requested low fidelity is rejected by exact fallback",
+  "performance_scope": "micro-fixture semantic check, sequential requests, not representative scale/throughput evidence",
+  "energy_measured": false,
+  "nsga_adaptive_integrated": false,
+  "import_and_double_validation_ms": 1514.9103000003379,
+  "timed_requests": 894,
+  "is3_all_ordered_tuples_match": true,
+  "all_raw_counts_match": true,
+  "exact_zero_degree_persons": 38,
+  "max_degree": 48
+}

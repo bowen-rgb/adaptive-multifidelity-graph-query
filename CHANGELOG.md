@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.11.0 — 2026-10-07
+
+- Pin official SNB v1 micro-fixture Person/KNOWS inputs and preserve source notices.
+- Validate projected IS3 ordered tuple semantics against a Python reference.
+- Add custom anchored one-hop and distinct 1–2-hop COUNT experiments.
+- Scale one-hop neighbors by 1/f; keep unvalidated multi-hop estimators exact.
+- Add atomic rank publication and sequential stale-sample rejection.
+- Report sparse/empty-sample failures; no full LDBC, driver compliance or speedup claim.
+
 ## 0.10.0 — 2026-10-07
 
 - Add read-only energy capability probing and CPU-package counter instrumentation.

@@ -13,6 +13,11 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("seed", help="Idempotently load the tiny dataset")
     commands.add_parser("smoke", help="Check existing data against the tiny fixture; does not seed Neo4j")
+    snb = commands.add_parser('snb-benchmark', help='Pinned SNB micro-fixture IS3 semantics and custom COUNT coverage')
+    snb.add_argument('--dataset-path', required=True)
+    snb.add_argument('--epochs', type=int, default=3)
+    snb.add_argument('--roots', type=int, default=32)
+    snb.add_argument('--output', default='results/local/snb-benchmark')
     energy_probe = commands.add_parser('energy-probe', help='Detect read-only CPU counters and distinguish GPU-only telemetry')
     energy_probe.add_argument('--output')
     energy = commands.add_parser('energy-benchmark', help='Energy/CPU-time instrumentation of matched COUNT streams')
@@ -103,6 +108,10 @@ def main(argv=None):
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == 'snb-benchmark':
+            from .snb_benchmark import run_snb_benchmark
+            print(json.dumps(run_snb_benchmark(args.dataset_path,args.output,args.backend,args.epochs,args.roots),indent=2))
+            return 0
         if args.command == 'energy-probe':
             from .energy import probe_energy
             from pathlib import Path

@@ -107,6 +107,12 @@ claims made on the CV. There are currently no robotics/embodied-intelligence exp
 
 ## Recommended work order
 
+**v0.11 update:** Pinned official SNB v1 micro-fixture projection and all-Person IS3
+ordered tuple validation now establish selected read semantics. One-hop/1–2-hop COUNTs
+are explicitly custom; sparse one-hop failures are recorded and unvalidated multi-hop
+requests stay exact. Full SNB/driver compliance and parameterized COUNT calibration
+remain open. See [the coverage report](v011-snb-semantics.md).
+
 **v0.10 update:** Read-only CPU energy instrumentation, wrap/domain checks, idle baselines
 and missing-data gates now run on the COUNT stream. This Windows host has no configured
 readable CPU energy provider; GPU-only telemetry is excluded. Measured CPU joules and
