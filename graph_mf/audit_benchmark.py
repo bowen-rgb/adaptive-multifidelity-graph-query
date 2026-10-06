@@ -45,9 +45,15 @@ def prepare_recovery(backend, graph, countries, scenario, epoch):
         timing_seed=timing_seed, timing_build_ms=build['build_ms'])
 
 
-def run_audit_benchmark(source, output, backend_name='memory', epochs=3, requests=60):
+def run_audit_benchmark(source, output, backend_name='memory', epochs=3, requests=60,
+                        audit_every=10, recovery_strategy='full', scenarios=None):
     if epochs < 2 or requests < 40:
         raise ValueError('Use >=2 epochs and >=40 requests')
+    if type(audit_every) is not int or audit_every < 1 or recovery_strategy not in ('full', 'timing_only'):
+        raise ValueError('Positive audit interval and known recovery strategy required')
+    scenarios = list(scenarios or ('healthy', 'gain_fault', 'timing_fault'))
+    if len(set(scenarios)) != len(scenarios) or any(s not in ('healthy', 'gain_fault', 'timing_fault') for s in scenarios):
+        raise ValueError('Distinct known scenarios required')
     source, output = Path(source), Path(output)
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
         raise ValueError('New or empty output required')
@@ -71,14 +77,16 @@ def run_audit_benchmark(source, output, backend_name='memory', epochs=3, request
     output.mkdir(parents=True, exist_ok=True)
     metadata = dict(status='running', version=__version__, backend=backend_name, source=source.as_posix(),
         graph_sha256=graph.fingerprint, nodes=source_meta['nodes'], predicate=predicate,
-        epochs=epochs, requests_per_stream=requests, scenarios=['healthy', 'gain_fault', 'timing_fault'],
-        modes=['exact', 'unaudited', 'audited'], audit_every=10,
+        epochs=epochs, requests_per_stream=requests, scenarios=scenarios,
+        modes=['exact', 'unaudited', 'audited'], audit_every=audit_every, recovery_strategy=recovery_strategy,
         timing_factor=3. if backend_name == 'neo4j' else 1e6, timing_patience=3,
         injected_at_request=6, recovery_at_request=31, gain_multiplier=1.8,
         timing_multiplier=.01 if backend_name == 'neo4j' else 1e-12,
         fault_scope='controlled profile corruption only; no graph data mutation or actual server slowdown',
         controller_mode='cached to exercise approximate path; actual fresh sample construction charged',
-        recovery_scope='full local static graph snapshot, independent fit/calibration/timing seeds, new sample; all preparation charged',
+        recovery_scope=('full local static graph snapshot, independent fit/calibration/timing seeds, new sample; all preparation charged'
+                        if recovery_strategy == 'full' else
+                        'timing quarantine: retained sample, frozen gains/bounds, predicate-only profiling; other faults use full recovery; all preparation charged'),
         performance_measured=backend_name == 'neo4j', energy_measured=False)
     def checkpoint():
         (output/'metadata.json').write_text(json.dumps(metadata, indent=2)+'\n', encoding='utf-8')
@@ -94,7 +102,8 @@ def run_audit_benchmark(source, output, backend_name='memory', epochs=3, request
             backend = SyntheticMemory(graph)
         else:
             raise ValueError('Unknown backend')
-        for scenario_id, scenario in enumerate(metadata['scenarios']):
+        for scenario in metadata['scenarios']:
+            scenario_id = ('healthy', 'gain_fault', 'timing_fault').index(scenario)
             for epoch in range(epochs):
                 seed = 25000+scenario_id*100+epoch
                 reference.prepare(seed)
@@ -105,7 +114,8 @@ def run_audit_benchmark(source, output, backend_name='memory', epochs=3, request
                     expected = dict(initial_expected)
                     p = deepcopy(base_profile)
                     factor = 3. if backend_name == 'neo4j' else 1e6
-                    client = (AuditedSession(backend, p, forecast_build, requests, seed, mode='cached', timing_factor=factor)
+                    client = (AuditedSession(backend, p, forecast_build, requests, seed, mode='cached', timing_factor=factor,
+                                            audit_every=audit_every)
                               if mode == 'audited' else CostAwareSession(backend, p, forecast_build, requests, seed,
                                   mode='exact' if mode == 'exact' else 'cached'))
                     cache = client.session.cache if mode == 'audited' else client.cache
@@ -127,11 +137,20 @@ def run_audit_benchmark(source, output, backend_name='memory', epochs=3, request
                                         kind[f] *= scale
                         if index == 31 and mode == 'audited' and scenario != 'healthy' and client.state == 'quarantined':
                             recovery_start = perf_counter()
-                            new, forecast, detail = prepare_recovery(backend, graph, base_profile['countries'], scenario_id, epoch)
-                            next_seed = 26000+scenario_id*100+epoch
-                            client.refresh(new, forecast, next_seed)
+                            if recovery_strategy == 'timing_only' and client.reason == 'timing_drift':
+                                detail = client.refresh_timing(predicate)
+                                for step in detail.pop('steps'):
+                                    if step['count'] != expected[step['kind'], step['fidelity']]:
+                                        raise RuntimeError('Timing recovery COUNT mismatch')
+                                next_seed = seed
+                                new = client.session.profile
+                            else:
+                                new, forecast, detail = prepare_recovery(backend, graph, base_profile['countries'], scenario_id, epoch)
+                                next_seed = 26000+scenario_id*100+epoch
+                                client.refresh(new, forecast, next_seed)
                             elapsed = 1000*(perf_counter()-recovery_start)
                             recovery_ms += elapsed
+                            detail.pop('sample_seed', None)
                             recoveries.append(dict(scenario=scenario, epoch=epoch, sample_seed=next_seed,
                                                    total_recovery_ms=elapsed, **detail))
                             (output/f'recovered-{scenario}-{epoch}.json').write_text(json.dumps(new, indent=2)+'\n', encoding='utf-8')

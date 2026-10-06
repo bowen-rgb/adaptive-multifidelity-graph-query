@@ -1,0 +1,29 @@
+[
+  {
+    "scenario": "timing_fault",
+    "epoch": 0,
+    "sample_seed": 25200,
+    "total_recovery_ms": 272.3056999966502,
+    "preparation_ms": 272.2767999948701,
+    "sample_reused": true,
+    "timing_queries": 32
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 1,
+    "sample_seed": 25201,
+    "total_recovery_ms": 374.53020000248216,
+    "preparation_ms": 374.48110000696033,
+    "sample_reused": true,
+    "timing_queries": 32
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 2,
+    "sample_seed": 25202,
+    "total_recovery_ms": 499.65149999479763,
+    "preparation_ms": 499.59219999436755,
+    "sample_reused": true,
+    "timing_queries": 32
+  }
+]

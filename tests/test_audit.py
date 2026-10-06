@@ -1,6 +1,7 @@
 import unittest
 from types import SimpleNamespace
 from copy import deepcopy
+from unittest.mock import patch
 from graph_mf.audit import AuditedSession
 from test_deep import model
 
@@ -102,3 +103,52 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(result['edge_estimate'], 10000)
         self.assertTrue(result['failed_attempt'])
         self.assertFalse(result['query_count_complete'])
+
+    def test_timing_recovery_reuses_sample_and_preserves_accuracy_model(self):
+        s = self.session()
+        s.request('FR', 'performance')
+        s.state, s.reason = 'quarantined', 'timing_drift'
+        frozen = deepcopy(s.session.profile['levels'])
+        generation = s.session.cache.active_state['generation']
+        with patch.object(s.backend, 'prepare', side_effect=AssertionError('Unexpected rebuild')):
+            original = s.session.cache.count_component
+            def deterministic_timing(predicate, fidelity, kind):
+                result = original(predicate, fidelity, kind)
+                result['request_ms'] = fidelity
+                return result
+            with patch.object(s.session.cache, 'count_component', side_effect=deterministic_timing):
+                recovery = s.refresh_timing('FR')
+            self.assertEqual(recovery['timing_queries'], 32)
+            self.assertEqual(s.session.profile['levels'], frozen)
+            self.assertEqual(s.session.cache.active_state['generation'], generation)
+            self.assertEqual(s.state, 'probing')
+            result = s.request('FR', 'performance')
+            self.assertTrue(result['audited'])
+            self.assertEqual(result['build_ms'], 0)
+            self.assertEqual(s.state, 'active')
+
+    def test_timing_recovery_cannot_repair_accuracy_quarantine(self):
+        s = self.session()
+        s.state, s.reason = 'quarantined', 'error_budget'
+        with self.assertRaises(ValueError):
+            s.refresh_timing('FR')
+        self.assertEqual(s.state, 'quarantined')
+
+    def test_failed_timing_recovery_does_not_publish_partial_profile(self):
+        s = self.session()
+        s.request('FR', 'performance')
+        s.state, s.reason = 'quarantined', 'timing_drift'
+        before = deepcopy(s.session.profile)
+        original = s.session.cache.count_component
+        completed = []
+        def interrupted(predicate, fidelity, kind):
+            if len(completed) == 4:
+                raise RuntimeError('Interrupted profiling')
+            completed.append((kind, fidelity))
+            return original(predicate, fidelity, kind)
+        with patch.object(s.session.cache, 'count_component', side_effect=interrupted):
+            with self.assertRaises(RuntimeError):
+                s.refresh_timing('FR')
+        self.assertEqual(len(completed), 4)
+        self.assertEqual(s.session.profile, before)
+        self.assertEqual(s.state, 'quarantined')

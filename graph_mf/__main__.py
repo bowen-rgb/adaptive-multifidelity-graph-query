@@ -17,6 +17,8 @@ def main(argv=None):
     audit.add_argument('--source', default='results/neo4j/deep-v06/synthetic-50000')
     audit.add_argument('--epochs', type=int, default=3)
     audit.add_argument('--requests', type=int, default=60)
+    audit.add_argument('--audit-every', type=int, default=10)
+    audit.add_argument('--recovery-strategy', choices=('full', 'timing_only'), default='full')
     audit.add_argument('--output', default='results/local/audit-benchmark')
     cost = commands.add_parser('cost-benchmark', help='Lazy sample construction and cost-aware stream comparison')
     cost.add_argument('--source', default='results/neo4j/deep-v06/synthetic-50000')
@@ -93,7 +95,8 @@ def main(argv=None):
     try:
         if args.command == 'audit-benchmark':
             from .audit_benchmark import run_audit_benchmark
-            print(json.dumps(run_audit_benchmark(args.source, args.output, args.backend, args.epochs, args.requests), indent=2))
+            print(json.dumps(run_audit_benchmark(args.source, args.output, args.backend, args.epochs, args.requests,
+                                                args.audit_every, args.recovery_strategy), indent=2))
             return 0
         if args.command == 'cost-benchmark':
             from .cost_benchmark import run_cost_benchmark

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.9.0 — 2026-10-06
+
+- Reconstruct the roadmap and explicit acceptance gaps through v1.0.
+- Compare 5/10/20-request audit intervals on matched static-graph fault streams.
+- Add predicate-only timing recovery on the retained sample after timing quarantine.
+- Preserve accuracy calibration; require an exact recovery anchor and atomic publication.
+- Keep full independent recovery for accuracy faults; charge all recovery preparation.
+- Preserve prior measurements; one fault phase is not a universal interval recommendation.
+
 ## 0.8.0 — 2026-10-06
 
 - Add periodic exact anchors and timing-prediction drift detection to persistent sessions.

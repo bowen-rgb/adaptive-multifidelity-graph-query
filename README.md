@@ -1,4 +1,31 @@
-# Adaptive Multi-Fidelity Graph Query — v0.8.0
+# Adaptive Multi-Fidelity Graph Query — v0.9.0
+
+## v0.9: audit intervals and targeted timing recovery
+
+The [roadmap to v1.0](docs/roadmap-to-v1.md) reconstructs the original milestones,
+later gap-filling releases, and remaining energy/workload/report acceptance criteria.
+
+`AuditedSession.refresh_timing(predicate)` is restricted to timing-drift quarantine.
+It measures 32 component COUNTs on the retained sample, preserves gains/bounds and
+training seeds, and requires an exact anchor before resuming approximate answers.
+An accuracy fault still requires independent full recalibration; partial profiling
+failures leave the quarantine and active profile intact. Exact-only plans stay probing.
+
+```powershell
+python scripts/compare_audit_v09.py --backend memory --epochs 2 --requests 40 --output results/local/new-audit-comparison
+python scripts/compare_audit_v09.py --backend neo4j --epochs 3 --requests 60 --output results/local/new-live-comparison
+python -m graph_mf --backend memory audit-benchmark --recovery-strategy timing_only --audit-every 5 --epochs 2 --requests 40 --output results/local/targeted-smoke
+```
+
+The matched comparison covers audit intervals 5/10/20 and full versus targeted timing
+recovery. Block order is fixed; mode order within blocks is randomized. Only one fault
+onset, predicate and tier are tested. Timing feedback is collected on the runtime sample;
+it is not new independent accuracy calibration. See [v0.9 results](docs/v09-audit-optimization.md).
+
+**Measured:** 4,320 live requests passed raw COUNT validation. Timing-only recovery
+preparation averaged 382 ms versus 9,676 ms for full recovery (96.1% reduction).
+Its complete stream cost was 88.33 ms/request versus exact at 35.47 ms; this does
+not establish overall speedup. Interval comparisons test only a fault at request six.
 
 ## v0.8: audit, quarantine and independent recovery
 

@@ -1,0 +1,10 @@
+scenario,epoch,mode,online_ms_per_request,recovery_ms,audit_ms,build_ms,served_violations,candidate_violations,audits,first_detection,recovered
+timing_fault,0,exact,37.6623083332864,0.0,0.0,0.0,0,0,0,,False
+timing_fault,0,unaudited,85.6791099991824,0.0,0.0,3594.7394000104396,0,0,0,,False
+timing_fault,0,audited,74.71188833272511,272.3056999966502,199.70250000187661,2466.5624000044772,0,0,5,8,True
+timing_fault,1,unaudited,81.69192666561382,0.0,0.0,3437.01229999715,0,0,0,,False
+timing_fault,1,exact,35.12155999972796,0.0,0.0,0.0,0,0,0,,False
+timing_fault,1,audited,82.3139099983867,374.53020000248216,234.3329999857815,2237.370999995619,0,0,5,8,True
+timing_fault,2,audited,107.95823999991019,499.65149999479763,204.2747000232339,3558.075299995835,0,0,5,8,True
+timing_fault,2,unaudited,82.4782333324644,0.0,0.0,3208.961199998157,0,0,0,,False
+timing_fault,2,exact,33.61971166693062,0.0,0.0,0.0,0,0,0,,False

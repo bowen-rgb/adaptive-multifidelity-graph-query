@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "timed_requests": 4320,
+  "recovery_preparation_reduction": 0.9605022217169605,
+  "matched_stream_delta_ms": [
+    -188.51370833484305,
+    -203.27776166814147,
+    -238.4778266665914
+  ],
+  "bootstrap_interval_ms": [
+    -238.47782666659137,
+    -188.51370833484305
+  ],
+  "independent_unit": "paired sample-seed stream, only three seeds",
+  "limitations": "fixed block order, one predicate/tier/fault onset, static graph, no energy or universal speedup claim",
+  "source_profile_sha256": "a62bef92ebd9b840515a1a0d985206c6a68be5686d6aee29f1dcf5d5483d02f7"
+}

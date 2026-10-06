@@ -1,0 +1,4 @@
+scenario,mode,streams,online_ms_per_request,served_violations,audits,recovery_ms_mean,recovered_streams
+timing_fault,exact,3,35.467859999981656,0,0,0.0,0
+timing_fault,unaudited,3,83.28308999908687,0,0,0.0,0
+timing_fault,audited,3,88.32801277700733,0,15,382.1624666646433,3

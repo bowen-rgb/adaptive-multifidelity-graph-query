@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "backend": "neo4j",
+  "cases": [
+    {
+      "name": "interval-5",
+      "requests": 1080
+    },
+    {
+      "name": "interval-10",
+      "requests": 1080
+    },
+    {
+      "name": "interval-20",
+      "requests": 1080
+    },
+    {
+      "name": "timing-full",
+      "requests": 540
+    },
+    {
+      "name": "timing-targeted",
+      "requests": 540
+    }
+  ],
+  "design": "matched sample seeds; block order fixed, within-block mode order randomized; no general speedup claim"
+}

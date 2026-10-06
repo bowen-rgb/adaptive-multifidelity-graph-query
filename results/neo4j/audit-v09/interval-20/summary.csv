@@ -1,0 +1,7 @@
+scenario,mode,streams,online_ms_per_request,served_violations,audits,recovery_ms_mean,recovered_streams
+healthy,exact,3,37.035074445642145,0,0,0.0,0
+healthy,unaudited,3,77.18342055539122,0,0,0.0,0
+healthy,audited,3,88.07304222209495,0,12,0.0,0
+gain_fault,exact,3,32.06186888896304,0,0,0.0,0
+gain_fault,unaudited,3,85.69505444457819,165,0,0.0,0
+gain_fault,audited,3,305.8767083338656,42,12,10037.00133333526,3

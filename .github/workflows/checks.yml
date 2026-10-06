@@ -18,3 +18,4 @@ jobs:
       - run: python -m graph_mf --backend memory deep-benchmark --sizes 200 --epochs 2 --timing-epochs 2 --output results/local/ci-deep
       - run: python -m graph_mf --backend memory cost-benchmark --epochs 2 --horizons 15 30 --output results/local/ci-cost
       - run: python -m graph_mf --backend memory audit-benchmark --epochs 2 --requests 40 --output results/local/ci-audit
+      - run: python -m graph_mf --backend memory audit-benchmark --epochs 2 --requests 40 --recovery-strategy timing_only --output results/local/ci-targeted-audit

@@ -125,3 +125,37 @@ class AuditedSession:
         self.first_audit, self.timing_streak, self.approximate_requests = True, 0, 0
         self.checked_predicates = set()
         self.events.append(dict(event='profile_refreshed', profile_epoch=self.profile_epoch))
+
+    def refresh_timing(self, predicate, repeats=2):
+        """Reprofile one predicate on the retained sample, only after timing quarantine.
+
+        Gains/bounds/training seeds remain frozen. Measurements are runtime timing
+        feedback, not independent accuracy calibration. Publication is transactional.
+        """
+        if self.state != 'quarantined' or self.reason != 'timing_drift':
+            raise ValueError('Timing-only recovery requires timing-drift quarantine')
+        if type(repeats) is not int or repeats < 2:
+            raise ValueError('At least two timing repeats required')
+        if predicate not in self.session.profile['countries'] or not self.session.built:
+            raise ValueError('Known predicate and existing sample required')
+        start = perf_counter()
+        profile = deepcopy(self.session.profile)
+        observations = []
+        for kind in ('node', 'edge'):
+            for fidelity in LEVELS:
+                readings = []
+                for _ in range(repeats):
+                    observed = self.session.cache.count_component(predicate, fidelity, kind)
+                    readings.append(observed['request_ms'])
+                    observations.append(dict(kind=kind, fidelity=fidelity, **observed))
+                profile['component_timing'][predicate][kind][str(fidelity)] = sum(readings)/len(readings)
+        validate_profile(profile)
+        self.session.profile = profile
+        self.session.controllers.clear()
+        self.profile_epoch += 1
+        self.state, self.reason = 'probing', None
+        self.first_audit, self.timing_streak, self.approximate_requests = True, 0, 0
+        self.checked_predicates.clear()
+        self.events.append(dict(event='timing_refreshed', predicate=predicate, profile_epoch=self.profile_epoch))
+        return dict(preparation_ms=1000*(perf_counter()-start), sample_seed=self.session.sample_seed,
+                    sample_reused=True, steps=observations, timing_queries=len(observations))

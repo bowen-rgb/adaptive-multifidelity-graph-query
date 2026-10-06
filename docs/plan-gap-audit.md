@@ -107,6 +107,12 @@ claims made on the CV. There are currently no robotics/embodied-intelligence exp
 
 ## Recommended work order
 
+**v0.9 update:** Matched 5/10/20 interval comparisons and predicate-only timing recovery
+reduce unnecessary full preparation after timing-table faults. Accuracy failures still
+need independent full recovery. See [v0.9 results](v09-audit-optimization.md) and the
+[explicit roadmap/acceptance criteria to v1.0](roadmap-to-v1.md). Energy instrumentation,
+LDBC scope, broader fault phases and the unified research report remain pending.
+
 **v0.8 update:** Periodic exact anchors, heuristic timing-drift quarantine and explicit
 independent recalibration/reprofiling now run through a persistent session. The controlled
 live fault experiment records blind-window violations and charges recovery preparation.

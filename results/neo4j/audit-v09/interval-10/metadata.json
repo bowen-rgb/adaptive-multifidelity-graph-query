@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "version": "0.9.0",
+  "backend": "neo4j",
+  "source": "results/neo4j/deep-v06/synthetic-50000",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "nodes": 50000,
+  "predicate": "DE",
+  "epochs": 3,
+  "requests_per_stream": 60,
+  "scenarios": [
+    "healthy",
+    "gain_fault"
+  ],
+  "modes": [
+    "exact",
+    "unaudited",
+    "audited"
+  ],
+  "audit_every": 10,
+  "recovery_strategy": "full",
+  "timing_factor": 3.0,
+  "timing_patience": 3,
+  "injected_at_request": 6,
+  "recovery_at_request": 31,
+  "gain_multiplier": 1.8,
+  "timing_multiplier": 0.01,
+  "fault_scope": "controlled profile corruption only; no graph data mutation or actual server slowdown",
+  "controller_mode": "cached to exercise approximate path; actual fresh sample construction charged",
+  "recovery_scope": "full local static graph snapshot, independent fit/calibration/timing seeds, new sample; all preparation charged",
+  "performance_measured": true,
+  "energy_measured": false,
+  "timed_requests": 1080,
+  "all_counts_match_numpy": true
+}
