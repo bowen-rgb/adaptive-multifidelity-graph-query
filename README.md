@@ -1,4 +1,38 @@
-# Adaptive Multi-Fidelity Graph Query — v0.6.0
+# Adaptive Multi-Fidelity Graph Query — v0.7.0
+
+## v0.7: decide whether sample construction is worthwhile
+
+The split controller now supports explicit `amortized` planning: predicted query cost
+plus one shared sample build divided by a known reuse horizon. If exact is cheaper,
+it executes exact COUNT without a low draft or sample construction. Approximate
+streams materialize lazily and retain calibrated escalation and demotion hysteresis.
+`cached` remains the default for compatibility with the v0.6 experiment.
+
+NSGA-II adds optional duplicate elimination. A matched ablation compares unique
+32/48-individual populations and search parameters on frozen v0.6 objectives.
+No exhaustive oracle or unseen candidates are injected into the search population.
+The 64-candidate space remains small; exhaustive runtime selection is still appropriate.
+
+Python callers can use `CostAwareSession(backend, profile, build_ms=forecast,
+reuse_requests=75)` and `session.request("FR", "performance")`. The session owns one
+lazy sample and returns both COUNT steps, actual `build_ms` and complete `online_ms`.
+
+```powershell
+python scripts/compare_search_v07.py --output results/local/new-search
+python -m graph_mf --backend memory cost-benchmark --epochs 2 --horizons 15 30 --output results/local/cost-smoke
+# Uses the existing imported 50k synthetic dataset; set Neo4j credentials locally.
+python -m graph_mf --backend neo4j cost-benchmark --epochs 3 --horizons 75 500 --output results/local/new-live-cost
+```
+
+See [the v0.7 Chinese report](docs/v07-cost-aware.md). These are known-horizon,
+static-graph decisions; online drift auditing and energy measurement remain future work.
+
+**Measured:** 5,175 live requests passed raw COUNT validation. For 75-request streams,
+the cost-aware session skipped construction in all three runs (40.17 ms/request versus
+137.99 ms for the previous controller including construction). For 500-request streams,
+it measured 34.47 ms versus exact at 33.05 ms; stable speedup is not established.
+The improved search configuration matched exhaustive choices on all four frozen v0.6
+profiles; that is engineering validation on existing data, not independent generalization.
 
 ## v0.6: public topology, scale, memory and coupled policies
 

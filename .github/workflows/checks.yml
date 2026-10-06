@@ -16,3 +16,4 @@ jobs:
       - run: python -m graph_mf optimize --runs 2 --generations 3 --output results/local/ci-optimization
       - run: python -m graph_mf --backend memory adaptive-benchmark --nodes 200 --epochs 2 --timing-epochs 2 --repeats-per-tier 3 --output results/local/ci-adaptive
       - run: python -m graph_mf --backend memory deep-benchmark --sizes 200 --epochs 2 --timing-epochs 2 --output results/local/ci-deep
+      - run: python -m graph_mf --backend memory cost-benchmark --epochs 2 --horizons 15 30 --output results/local/ci-cost

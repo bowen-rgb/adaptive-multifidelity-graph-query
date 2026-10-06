@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "version": "0.7.0",
+  "backend": "neo4j",
+  "source": "results/neo4j/deep-v06/synthetic-50000",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "nodes": 50000,
+  "forecast_build_ms": 3485.9532333357492,
+  "forecast_scope": "v06 timing seeds only; no held-out build cost leakage",
+  "horizons": [
+    75,
+    500
+  ],
+  "epochs": 3,
+  "started_at": "2026-10-06T20:51:29.198526+00:00",
+  "modes": [
+    "exact",
+    "cached",
+    "amortized"
+  ],
+  "tiers": {
+    "performance": [
+      0.05,
+      0.15
+    ],
+    "balanced": [
+      0.02,
+      0.05
+    ],
+    "quality": [
+      0.01,
+      0.02
+    ],
+    "exact": [
+      0.0,
+      0.0
+    ]
+  },
+  "scope": "known stream horizon; graph import/calibration/profile startup excluded; actual sample build charged once",
+  "cache": "warm exact queries before each stream; sequential policy streams, order randomized by seed; shared desktop server",
+  "performance_measured": true,
+  "energy_measured": false,
+  "timed_requests": 5175,
+  "all_counts_match_numpy": true,
+  "finished_at": "2026-10-06T20:55:06.517104+00:00",
+  "source_profile_sha256": "a62bef92ebd9b840515a1a0d985206c6a68be5686d6aee29f1dcf5d5483d02f7",
+  "source_timing_builds_sha256": "e17628de889a2a06f4d83f03d85f30a4aa40a10421124584e968243e0327a2f2",
+  "server_components": [
+    {
+      "name": "Neo4j Kernel",
+      "versions": [
+        "2026.09.0"
+      ],
+      "edition": "enterprise"
+    },
+    {
+      "name": "Cypher",
+      "versions": [
+        "5",
+        "25"
+      ],
+      "edition": ""
+    }
+  ],
+  "server_pid_observed_before_run": 14340,
+  "server_context_captured_after_run": true,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.3",
+    "neo4j": "6.3.1"
+  }
+}

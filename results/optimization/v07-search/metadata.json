@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "source_profiles_sha256": {
+    "snap-facebook": "15ca11c7cb4f6f23517763ecff5d1f7cdbe2c817860223a450e47917f790462b",
+    "synthetic-50000": "a62bef92ebd9b840515a1a0d985206c6a68be5686d6aee29f1dcf5d5483d02f7",
+    "synthetic-100000": "0669ab8dde99b67f964e6bc6a3026e79e0ce091ac0aa519be8f6f583d5f9e755",
+    "synthetic-200000": "be9aaec539d5155cdd965d78d5215687819a5a7205d167e7cb31d331300882fd"
+  },
+  "configurations": [
+    [
+      "dedup32",
+      32,
+      30,
+      0.2
+    ],
+    [
+      "capacity48",
+      48,
+      30,
+      0.2
+    ],
+    [
+      "improved48",
+      48,
+      40,
+      0.35
+    ]
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "runtime_seed": 0,
+  "new_neo4j_measurements": false,
+  "scope": "post-v06 engineering ablation on same frozen profiles; no independent generalization or search-efficiency claim",
+  "oracle": "diagnostic only; never used by search or runtime front"
+}

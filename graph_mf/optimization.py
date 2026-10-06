@@ -69,17 +69,22 @@ def crowding_distance(values, front):
     return distances
 
 
-def nsga2(domain, evaluate, population_size=8, generations=20, seed=0, mutation_rate=0.2):
+def nsga2(domain, evaluate, population_size=8, generations=20, seed=0, mutation_rate=0.2,
+          eliminate_duplicates=False):
     """Rank/crowding tournament, categorical variation, elitist parent+offspring selection.
 
     One categorical fidelity gene: uniform crossover inherits either parent's category;
     mutation chooses another category. Sampling is with replacement; duplicate individuals
     are retained, as in a basic NSGA-II. Memoization counts unique objective evaluations.
     The diagnostic visited set never participates in selection.
+    Optional duplicate elimination samples a unique initial population and deduplicates
+    the parent/offspring union. It does not add unseen candidates or use an oracle.
     """
     if (not domain or len(set(domain)) != len(domain) or population_size < 2
             or generations < 0 or not 0 <= mutation_rate <= 1):
         raise ValueError('Use a unique nonempty domain, population >=2, generations >=0, mutation in [0,1]')
+    if eliminate_duplicates and population_size > len(domain):
+        raise ValueError('Unique population cannot exceed candidate domain')
     rng = random.Random(seed)
     cache = {}
 
@@ -100,9 +105,12 @@ def nsga2(domain, evaluate, population_size=8, generations=20, seed=0, mutation_
             distances.update(crowding_distance(values, front))
         return fronts, ranks, distances
 
-    population = [rng.choice(domain) for _ in range(population_size)]
+    population = (rng.sample(domain, population_size) if eliminate_duplicates else
+                  [rng.choice(domain) for _ in range(population_size)])
+    objective_requests = 0
     trace = []
     for generation in range(generations + 1):
+        objective_requests += len(population)
         fronts, ranks, distances = ranked(population)
         trace.append(dict(generation=generation, unique_evaluations=len(cache),
                           population=list(population),
@@ -123,6 +131,10 @@ def nsga2(domain, evaluate, population_size=8, generations=20, seed=0, mutation_
                 child = rng.choice([c for c in domain if c != child])
             children.append(child)
         combined = population + children
+        if eliminate_duplicates:
+            # Deduplicate actual parent/offspring candidates; never inject the oracle
+            # or enumerate unseen candidates to fill a population.
+            combined = list(dict.fromkeys(combined))
         fronts, _, distances = ranked(combined)
         selected = []
         for front in fronts:
@@ -138,7 +150,7 @@ def nsga2(domain, evaluate, population_size=8, generations=20, seed=0, mutation_
     visited = list(cache)
     discovered = nondominated_sort([cache[c] for c in visited])[0]
     return dict(front=trace[-1]['front'], discovered_front=sorted(visited[i] for i in discovered),
-                unique_evaluations=len(cache), objective_requests=population_size * (generations + 1),
+                unique_evaluations=len(cache), objective_requests=objective_requests,
                 trace=trace)
 
 

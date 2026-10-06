@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.0 — 2026-10-06
+
+- Add shared-build amortized planning to independent node/edge fidelity selection.
+- Skip low drafts and sample construction when exact COUNT is predicted cheaper.
+- Add lazy materialization with actual complete-stream cost accounting.
+- Add optional unique NSGA-II populations without oracle injection or unseen refills.
+- Compare duplicate elimination, population capacity and search parameters on frozen data.
+- Preserve v0.6 defaults/results; add focused short/long live stream evaluation.
+
 ## 0.6.0 — 2026-10-06
 
 - Import pinned public SNAP topology with derived degree-bucket COUNT predicates.
