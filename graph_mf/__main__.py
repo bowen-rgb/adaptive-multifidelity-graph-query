@@ -13,6 +13,19 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("seed", help="Idempotently load the tiny dataset")
     commands.add_parser("smoke", help="Check existing data against the tiny fixture; does not seed Neo4j")
+    optimize = commands.add_parser("optimize", help="Offline Pareto/NSGA-II analysis of completed reuse measurements")
+    optimize.add_argument("--source", default="results/neo4j/reuse-50k-v031")
+    optimize.add_argument("--output", default="results/local/optimization")
+    optimize.add_argument("--reuse-requests", type=int, nargs='+', default=[1, 10, 100, 1000])
+    optimize.add_argument("--runs", type=int, default=30)
+    optimize.add_argument("--population", type=int, default=8)
+    optimize.add_argument("--generations", type=int, default=20)
+    optimize.add_argument("--mutation-rate", type=float, default=0.2)
+    selection = commands.add_parser("select-fidelity", help="Choose cheapest level satisfying recorded mean-error tolerances")
+    selection.add_argument("--source", default="results/neo4j/reuse-50k-v031")
+    selection.add_argument("--reuse-requests", type=int, default=100)
+    selection.add_argument("--node-tolerance", type=float, default=0.02)
+    selection.add_argument("--edge-tolerance", type=float, default=0.05)
     count = commands.add_parser("count")
     count.add_argument("query", choices=QUERIES)
     count.add_argument("--city")
@@ -43,6 +56,22 @@ def main(argv=None):
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command in ("optimize", "select-fidelity"):
+            if args.backend != "memory":
+                raise ValueError('Optimization analyzes recorded files offline; use --backend memory')
+            if args.command == "select-fidelity":
+                from .optimization import load_measurements, candidates_for_reuse, choose_candidate
+                records, _ = load_measurements(args.source)
+                selected = choose_candidate(candidates_for_reuse(records, args.reuse_requests),
+                                            args.node_tolerance, args.edge_tolerance)
+                print(json.dumps(dict(selected=selected, new_neo4j_measurements=False,
+                    basis='recorded mean errors and modeled amortized cost; no per-query error guarantee'), indent=2))
+                return 0 if selected else 1
+            from .optimization import run_optimization
+            result = run_optimization(args.source, args.output, args.reuse_requests,
+                                      args.runs, args.population, args.generations, args.mutation_rate)
+            print(json.dumps(result, indent=2))
+            return 0
         if args.command == "reuse-benchmark":
             from .reuse_benchmark import run_reuse_benchmark
             result = run_reuse_benchmark(args.backend, args.nodes, args.avg_degree, args.graph_seed,

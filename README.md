@@ -1,4 +1,4 @@
-# Adaptive Multi-Fidelity Graph Query — v0.3.1
+# Adaptive Multi-Fidelity Graph Query — v0.4.0
 
 Research question: can graph queries use a fraction of the data while keeping aggregate
 answers within an accuracy tolerance?
@@ -26,6 +26,47 @@ At 10% fidelity, the median combined COUNT query time was 13.05 ms versus 45.76 
 for exact COUNT. Charging fresh sample preparation raised the approximate request
 to 1,806.75 ms. Query-only savings therefore do not establish an online speedup.
 All sampled counts matched NumPy. See [the measured report](docs/v03-benchmark.md).
+
+## v0.4 Pareto and NSGA-II baseline
+
+This release analyzes the existing v0.3.1 measurements offline. It minimizes three
+objectives: modeled request cost, mean node error, and mean edge error. For each
+fixed reuse scenario (1 / 10 / 100 / 1000 requests), exhaustive enumeration provides
+the reference front; categorical NSGA-II searches the five recorded fidelity levels.
+All 120 seeded final populations recovered the complete reference front in this run.
+This small search space does not demonstrate an evolutionary search advantage.
+
+```sh
+python -m graph_mf optimize --output results/local/my-pareto-run
+python -m graph_mf select-fidelity --reuse-requests 100 --node-tolerance 0.02 --edge-tolerance 0.05
+```
+
+Both commands use only the Python standard library, require no running Neo4j server,
+and read `results/neo4j/reuse-50k-v031` by default. Use `--source` to analyze another
+completed reuse run. Output folders must be new or empty. Error tolerances are fractions,
+so `0.02` means 2%. Selection uses exhaustive candidates, rather than a possibly
+incomplete evolutionary front. It does not issue a database query or build a sample.
+
+**学习：什么是 Pareto 前沿？** 假设 A 比 B 更快，而且节点和边的误差都不更大，
+至少一项严格更好，我们说 A「支配」B。没有被其他方案支配的方案组成 Pareto 前沿。
+前沿通常包含多个取舍，并没有一个同时在所有方面最好的档位。
+
+**NSGA-II 做什么？** 它把候选档位当作种群，按支配关系分层，再用拥挤距离保留
+不同取舍；通过父代选择、交叉和变异产生新候选，并从父代和子代中择优保留。
+这里仅有一个离散档位参数，交叉继承父母之一的档位，变异切换到另一个档位。
+穷举结果只用于事后核对，没有传给算法作为答案。
+
+**本次结果怎么读？** 复用 100 次时前沿为 10%、25%、100%；50% 和 75% 的模型成本
+比完整查询更高，误差也更大，因此被支配。若节点平均误差允许 2%、边允许 5%，
+选择 25%。要求节点 1%、边 2% 时，在这一复用情景下选择完整查询。
+这些是同一批历史样本上的平均误差，不是未来每次查询的误差保证。
+
+Cost uses recorded mean request time plus recorded mean build time divided by the
+assumed reuse count. Only the 100-request scenario matches the measured reuse length;
+other lengths are modeled extrapolations. No new Neo4j performance run was performed.
+The proposed DLSS-style adaptive method and larger parameter-space evaluation remain
+future work. See [the v0.4 report](docs/v04-optimization.md) and
+[the NSGA-II paper](https://doi.org/10.1109/4235.996017).
 
 ## v0.3.1 reusable samples
 
@@ -363,10 +404,10 @@ controller estimates uncertainty, which is not a guarantee of actual relative er
 especially for rare predicates or repeated adaptive decisions.
 
 The v0.3 results provide a first measured Neo4j fixed-fidelity baseline. They establish
-neither a general latency improvement nor memory/energy savings. NSGA-II and a novel
-adaptive algorithm are not implemented. v0.3.1 measures sample reuse on a static graph.
-Next milestones: an exhaustive Pareto baseline, an NSGA-II comparison over a broader
-parameter space, then evaluation of the proposed adaptive scaling method.
+neither a general latency improvement nor memory/energy savings. v0.4 implements an
+NSGA-II baseline over recorded levels; a novel adaptive algorithm is not implemented.
+Next milestones: a broader measured parameter space, out-of-sample evaluation, then
+evaluation of the proposed adaptive scaling method.
 
 Official references: [Neo4j Python driver](https://neo4j.com/docs/python-manual/current/),
 [Cypher MERGE](https://neo4j.com/docs/cypher-manual/current/clauses/merge/).

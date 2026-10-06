@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 — 2026-10-06
+
+- Add exhaustive three-objective Pareto baselines over recorded fidelity levels.
+- Add categorical NSGA-II with rank/crowding tournaments and elitist selection.
+- Compare final populations and diagnostic discovery against exhaustive fronts across seeds.
+- Model sample reuse as fixed scenarios; keep original Neo4j measurements unchanged.
+- Add offline empirical mean-error budget selection, provenance and reproducible reports.
+- No new database timing, expanded-space search advantage or adaptive scaling claim.
+
 ## 0.3.1 — 2026-10-05
 
 - Separate reusable sample construction from read-only COUNT requests.

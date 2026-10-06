@@ -1,0 +1,35 @@
+{
+  "project_version": "0.4.0",
+  "status": "completed",
+  "created_at": "2026-10-06T10:18:56.555446+00:00",
+  "source_backend": "neo4j",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "source_sha256": {
+    "summary.csv": "a63c76639a5d32c5ab5147dfdf91e8f6dd621f3121b9551a634273ca3c698449",
+    "metadata.json": "05703fd60f0d006ebf3902a9fe91e2b65c5b73b8be2c4956ab0691f91c58fdd8"
+  },
+  "source": "results/neo4j/reuse-50k-v031",
+  "source_hash_encoding": "UTF-8 text with normalized LF newlines",
+  "new_neo4j_measurements": false,
+  "model": "mean recorded request_ms + mean build_ms / fixed reuse_requests",
+  "objectives": [
+    "modeled_cost_ms",
+    "node_error_mean",
+    "edge_error_mean"
+  ],
+  "scenarios": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "runs": 30,
+  "population_size": 8,
+  "generations": 20,
+  "mutation_rate": 0.2,
+  "search_space": "recorded fidelity categories only; reuse is a fixed scenario, not an optimized gene",
+  "algorithm_reference": "https://doi.org/10.1109/4235.996017",
+  "final_front_recall_mean": 1.0,
+  "complete_final_front_runs": 120,
+  "total_runs": 120
+}
