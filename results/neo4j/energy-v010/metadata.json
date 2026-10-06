@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "version": "0.10.0",
+  "timed_requests": 270,
+  "all_counts_match_numpy": true,
+  "backend": "neo4j",
+  "energy_status": "unavailable_or_invalid",
+  "energy_measured": false,
+  "energy_objective_enabled": false,
+  "cpu_energy_reason": "No supported read-only CPU energy provider detected; Linux powercap is not present on this OS",
+  "interval_seconds": 0.1,
+  "idle_seconds": 1.0,
+  "max_package_watts": 500.0,
+  "scope": "CPU package aggregate includes Python, local database, background processes and sampler; not per-process or whole-machine energy",
+  "window_scope": "whole stream including actual sample build, dispatch, query calls, Python reference validation and sampler; CSV/report writes and warmup excluded",
+  "cpu_time_scope": "Python process user+system CPU time, all threads; not database CPU or energy",
+  "baseline_scope": "mean before/after idle watts, descriptive subtraction, negative values retained; not causal attribution",
+  "energy_objective_reason": "instrumentation-only release; no calibrated multi-policy energy table or energy policy comparison implemented"
+}

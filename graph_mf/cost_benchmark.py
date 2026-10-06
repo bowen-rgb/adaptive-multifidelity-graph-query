@@ -28,7 +28,7 @@ def stream(predicates, horizon, seed):
     return result
 
 
-def run_cost_benchmark(source, output, backend_name='memory', epochs=3, horizons=(75, 500)):
+def run_cost_benchmark(source, output, backend_name='memory', epochs=3, horizons=(75, 500), energy_factory=None):
     source, output = Path(source), Path(output)
     if epochs < 2 or not horizons or len(set(horizons)) != len(horizons) or any(type(h) is not int or h < 5 for h in horizons):
         raise ValueError('Use >=2 epochs and horizons >=5')
@@ -61,6 +61,7 @@ def run_cost_benchmark(source, output, backend_name='memory', epochs=3, horizons
         (output/'metadata.json').write_text(json.dumps(metadata, indent=2)+'\n', encoding='utf-8')
     checkpoint()
     connection = None
+    meter = None
     rows, streams = [], []
     try:
         if backend_name == 'neo4j':
@@ -90,6 +91,10 @@ def run_cost_benchmark(source, output, backend_name='memory', epochs=3, horizons
                                 raise RuntimeError('Warmup exact COUNT mismatch')
                     build_ms, built, online_ms = 0., False, 0.
                     selected_rows = []
+                    if energy_factory:
+                        candidate_meter = energy_factory(horizon=horizon, epoch=epoch, seed=seed, mode=mode)
+                        candidate_meter.__enter__()
+                        meter = candidate_meter
                     for index, (predicate, tier) in enumerate(requests):
                         result = session.request(predicate, tier)
                         this_build_ms = result['build_ms']
@@ -111,6 +116,9 @@ def run_cost_benchmark(source, output, backend_name='memory', epochs=3, horizons
                             violation=ne>TIERS[tier][0] or ee>TIERS[tier][1])
                         rows.append(row)
                         selected_rows.append(row)
+                    if meter is not None:
+                        meter.__exit__(None, None, None)
+                        meter = None
                     streams.append(dict(horizon=horizon, epoch=epoch, seed=seed, mode=mode,
                         built=built, build_ms=build_ms, online_ms=online_ms, online_ms_per_request=online_ms/horizon,
                         query_dispatch_ms_per_request=(online_ms-build_ms)/horizon,
@@ -133,6 +141,8 @@ def run_cost_benchmark(source, output, backend_name='memory', epochs=3, horizons
         checkpoint()
         return metadata
     except BaseException:
+        if meter is not None:
+            meter.__exit__(True, None, None)
         metadata['status'] = 'interrupted_or_failed'
         checkpoint()
         raise

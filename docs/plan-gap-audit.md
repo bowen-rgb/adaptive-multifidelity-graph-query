@@ -107,6 +107,11 @@ claims made on the CV. There are currently no robotics/embodied-intelligence exp
 
 ## Recommended work order
 
+**v0.10 update:** Read-only CPU energy instrumentation, wrap/domain checks, idle baselines
+and missing-data gates now run on the COUNT stream. This Windows host has no configured
+readable CPU energy provider; GPU-only telemetry is excluded. Measured CPU joules and
+the NSGA-II energy objective remain incomplete. See [the report](v010-energy-instrumentation.md).
+
 **v0.9 update:** Matched 5/10/20 interval comparisons and predicate-only timing recovery
 reduce unnecessary full preparation after timing-table faults. Accuracy failures still
 need independent full recovery. See [v0.9 results](v09-audit-optimization.md) and the

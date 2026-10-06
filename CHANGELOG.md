@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.10.0 — 2026-10-07
+
+- Add read-only energy capability probing and CPU-package counter instrumentation.
+- Keep GPU-only snapshots, Python CPU time and query energy as separate quantities.
+- Add unit/range/wrap/gap checks and before/after idle baseline accounting.
+- Attach optional stream instrumentation without changing default cost benchmark behavior.
+- Preserve unavailable energy as null and keep the energy objective disabled.
+- Validate live COUNT streams; no CPU joules or energy improvement is claimed on this host.
+
 ## 0.9.0 — 2026-10-06
 
 - Reconstruct the roadmap and explicit acceptance gaps through v1.0.

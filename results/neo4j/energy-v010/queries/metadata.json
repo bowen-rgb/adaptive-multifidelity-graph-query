@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "version": "0.10.0",
+  "backend": "neo4j",
+  "source": "results/neo4j/deep-v06/synthetic-50000",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "nodes": 50000,
+  "forecast_build_ms": 3485.9532333357492,
+  "forecast_scope": "v06 timing seeds only; no held-out build cost leakage",
+  "horizons": [
+    30
+  ],
+  "epochs": 3,
+  "started_at": "2026-10-06T21:58:44.119173+00:00",
+  "modes": [
+    "exact",
+    "cached",
+    "amortized"
+  ],
+  "tiers": {
+    "performance": [
+      0.05,
+      0.15
+    ],
+    "balanced": [
+      0.02,
+      0.05
+    ],
+    "quality": [
+      0.01,
+      0.02
+    ],
+    "exact": [
+      0.0,
+      0.0
+    ]
+  },
+  "scope": "known stream horizon; graph import/calibration/profile startup excluded; actual sample build charged once",
+  "cache": "warm exact queries before each stream; sequential policy streams, order randomized by seed; shared desktop server",
+  "performance_measured": true,
+  "energy_measured": false,
+  "timed_requests": 270,
+  "all_counts_match_numpy": true,
+  "finished_at": "2026-10-06T21:59:09.390851+00:00"
+}

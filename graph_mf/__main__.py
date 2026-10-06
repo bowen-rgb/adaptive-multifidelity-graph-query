@@ -13,6 +13,16 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("seed", help="Idempotently load the tiny dataset")
     commands.add_parser("smoke", help="Check existing data against the tiny fixture; does not seed Neo4j")
+    energy_probe = commands.add_parser('energy-probe', help='Detect read-only CPU counters and distinguish GPU-only telemetry')
+    energy_probe.add_argument('--output')
+    energy = commands.add_parser('energy-benchmark', help='Energy/CPU-time instrumentation of matched COUNT streams')
+    energy.add_argument('--source', default='results/neo4j/deep-v06/synthetic-50000')
+    energy.add_argument('--epochs', type=int, default=3)
+    energy.add_argument('--requests', type=int, default=30)
+    energy.add_argument('--interval', type=float, default=.1)
+    energy.add_argument('--idle-seconds', type=float, default=1.)
+    energy.add_argument('--max-package-watts', type=float, default=500.)
+    energy.add_argument('--output', default='results/local/energy-benchmark')
     audit = commands.add_parser('audit-benchmark', help='Periodic exact audit, fault containment and independent recovery')
     audit.add_argument('--source', default='results/neo4j/deep-v06/synthetic-50000')
     audit.add_argument('--epochs', type=int, default=3)
@@ -93,6 +103,24 @@ def main(argv=None):
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == 'energy-probe':
+            from .energy import probe_energy
+            from pathlib import Path
+            result, _ = probe_energy()
+            payload = json.dumps(result, indent=2)+'\n'
+            if args.output:
+                path = Path(args.output)
+                if path.exists():
+                    raise ValueError('New probe output required')
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(payload, encoding='utf-8')
+            print(payload)
+            return 0
+        if args.command == 'energy-benchmark':
+            from .energy_benchmark import run_energy_benchmark
+            print(json.dumps(run_energy_benchmark(args.source, args.output, args.backend, args.epochs,
+                args.requests, args.interval, args.idle_seconds, args.max_package_watts), indent=2))
+            return 0
         if args.command == 'audit-benchmark':
             from .audit_benchmark import run_audit_benchmark
             print(json.dumps(run_audit_benchmark(args.source, args.output, args.backend, args.epochs, args.requests,

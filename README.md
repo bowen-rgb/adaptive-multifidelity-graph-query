@@ -1,4 +1,28 @@
-# Adaptive Multi-Fidelity Graph Query — v0.9.0
+# Adaptive Multi-Fidelity Graph Query — v0.10.0
+
+## v0.10: energy instrumentation, hardware measurement still pending
+
+`energy-probe` distinguishes CPU-package counters from GPU-only power snapshots.
+`energy-benchmark` instruments the existing exact/cached/amortized COUNT streams.
+Linux powercap support reads top-level package counters, samples wrap intervals,
+rejects ambiguous gaps/jumps, and records before/after idle baselines. No overlapping
+core/uncore domains are added. `--max-package-watts` (default 500) is a user-confirmed
+per-package ceiling for ambiguity checks, never a power estimate for computing joules.
+No concurrent counter resets are allowed. The Linux adapter has fixture tests;
+physical RAPL validation has not been performed on this Windows host.
+
+```powershell
+python -m graph_mf energy-probe --output results/local/new-probe.json
+python -m graph_mf --backend memory energy-benchmark --epochs 2 --requests 5 --output results/local/new-energy-smoke
+python -m graph_mf --backend neo4j energy-benchmark --epochs 3 --requests 30 --output results/local/new-energy-live
+```
+
+**This host:** CPU joules are unavailable, the GPU snapshot is excluded, and the
+energy objective stays disabled. Missing energy is null, not zero. Python process
+CPU time is recorded separately and is never converted to energy. All 270 live COUNT
+requests passed raw validation. See [the report](docs/v010-energy-instrumentation.md).
+The v1.0 measured-energy acceptance item remains open; instrumentation alone does not
+complete it. Existing experiment files and default query behavior are preserved.
 
 ## v0.9: audit intervals and targeted timing recovery
 

@@ -1,0 +1,15 @@
+{
+  "platform": "Windows",
+  "cpu_energy_status": "unavailable",
+  "cpu_energy_reason": "No supported read-only CPU energy provider detected; Linux powercap is not present on this OS",
+  "eligible_for_query_energy": false,
+  "gpu_telemetry": {
+    "provider": "nvidia-smi",
+    "raw_snapshot": "NVIDIA GeForce RTX 4090 Laptop GPU, 31.23",
+    "eligible_for_query_energy": false,
+    "reason": "GPU-only board power snapshot; current Neo4j queries run on CPU",
+    "query_field": "power.draw",
+    "unit": "watts",
+    "source": "https://docs.nvidia.com/deploy/nvidia-smi/index.html"
+  }
+}

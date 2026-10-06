@@ -1,0 +1,28 @@
+{
+  "horizon": 30,
+  "epoch": 2,
+  "seed": 10002,
+  "mode": "amortized",
+  "workload": {
+    "status": "unavailable",
+    "joules": null,
+    "average_watts": null,
+    "duration_seconds": 1.1036361000005854,
+    "samples": 0,
+    "errors": [],
+    "max_package_watts": 500.0,
+    "assumptions": "power ceiling valid per package; no external resets; no overlapping domain aggregation",
+    "reason": "CPU counter source unavailable"
+  },
+  "idle_before": {
+    "status": "unavailable",
+    "joules": null,
+    "average_watts": null
+  },
+  "idle_after": {
+    "status": "unavailable",
+    "joules": null,
+    "average_watts": null
+  },
+  "raw_samples": []
+}

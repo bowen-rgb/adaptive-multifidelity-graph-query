@@ -1,0 +1,4 @@
+horizon,mode,independent_streams,online_ms_per_request,query_dispatch_ms_per_request,build_ms_mean,streams_built,violation_rate
+30,exact,3,40.712921110712664,40.712921110712664,0.0,0,0
+30,cached,3,163.282618889611,37.320840000757016,3778.85336666562,3,0
+30,amortized,3,37.374548889056314,37.374548889056314,0.0,0,0
