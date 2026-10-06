@@ -11,7 +11,8 @@ TIERS = {'performance': (0.05, 0.15), 'balanced': (0.02, 0.05),
          'quality': (0.01, 0.02), 'exact': (0.0, 0.0)}
 
 
-def calibrate(graph, fit_epochs=20, calibration_epochs=40, countries=COUNTRIES):
+def calibrate(graph, fit_epochs=20, calibration_epochs=40, countries=COUNTRIES,
+              fit_seed_start=2000, calibration_seed_start=3000):
     """Fit gains then calibrate joint max residuals over countries, levels and metrics.
 
     The seed epoch is the independent unit. This avoids treating five correlated
@@ -21,11 +22,13 @@ def calibrate(graph, fit_epochs=20, calibration_epochs=40, countries=COUNTRIES):
     """
     if fit_epochs < 2 or calibration_epochs < 20:
         raise ValueError('Use >=2 fitting epochs and >=20 calibration epochs')
+    if any(type(s) is not int or s < 0 for s in (fit_seed_start, calibration_seed_start)):
+        raise ValueError('Nonnegative integer seed starts required')
     np = numpy()
     backend = SyntheticMemory(graph)
     truth = {c: backend.counts(c) for c in countries}
-    fit_seeds = list(range(2000, 2000 + fit_epochs))
-    calibration_seeds = list(range(3000, 3000 + calibration_epochs))
+    fit_seeds = list(range(fit_seed_start, fit_seed_start + fit_epochs))
+    calibration_seeds = list(range(calibration_seed_start, calibration_seed_start + calibration_epochs))
     if set(fit_seeds) & set(calibration_seeds):
         raise ValueError('Fitting/calibration seeds must be disjoint')
     examples = {f: {kind: [] for kind in ('node', 'edge')} for f in LEVELS}

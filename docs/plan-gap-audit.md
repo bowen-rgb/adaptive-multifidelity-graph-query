@@ -107,11 +107,17 @@ claims made on the CV. There are currently no robotics/embodied-intelligence exp
 
 ## Recommended work order
 
+**v0.8 update:** Periodic exact anchors, heuristic timing-drift quarantine and explicit
+independent recalibration/reprofiling now run through a persistent session. The controlled
+live fault experiment records blind-window violations and charges recovery preparation.
+See [v0.8 results](v08-online-audit.md). This covers a static-graph profile-fault loop;
+arbitrary graph updates, autonomous refresh scheduling and energy measurement remain open.
+
 **v0.7 update:** Shared-build amortized planning, lazy sample sessions and NSGA-II
 duplicate/capacity/search ablations now address the main v0.6 findings. Focused live
 short/long streams include actual materialization cost. Short streams avoid construction;
 long-stream superiority over exact remains unproven. See [v0.7 results](v07-cost-aware.md).
-Online audit/drift/refresh remains the next priority.
+Online audit/drift/refresh was the next priority, addressed in the v0.8 update above.
 
 **v0.6 update:** Public SNAP topology with custom degree-bucket COUNTs, synthetic
 50k/100k/200k cases, actual client/server RSS monitoring and a shared-path 64-pair

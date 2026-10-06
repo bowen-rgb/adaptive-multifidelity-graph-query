@@ -1,4 +1,29 @@
-# Adaptive Multi-Fidelity Graph Query — v0.7.0
+# Adaptive Multi-Fidelity Graph Query — v0.8.0
+
+## v0.8: audit, quarantine and independent recovery
+
+`AuditedSession` wraps the cost-aware controller with an exact anchor on the first
+approximate answer, the first approximate answer for each predicate, and every ten
+approximate requests. An error-budget failure or three consecutive timing deviations
+beyond a factor of three switches the detected request and later requests to exact.
+Explicit `refresh` requires disjoint training/calibration/evaluation seeds on the same
+static graph; the first new approximate answer must pass another exact anchor.
+An exact-only refreshed plan remains in the probing state.
+
+```powershell
+python -m graph_mf --backend memory audit-benchmark --epochs 2 --requests 40 --output results/local/audit-smoke
+python -m graph_mf --backend neo4j audit-benchmark --epochs 3 --requests 60 --output results/local/audit-live
+```
+
+The default experiment uses the retained v0.6 50k graph and profile, one predicate and
+the performance tier. It corrupts correction coefficients or timing predictions;
+it does not mutate graph data or create real server slowdowns. Sample builds, exact
+anchors and independent recovery preparation are charged. Original startup/import
+cost is excluded. The memory fallback is a functional check, not Neo4j timing evidence.
+
+**Periodic checks have a blind window:** unaudited responses can violate the budget
+before detection. This is not a per-response error guarantee or automatic graph-update
+support. See [the v0.8 measured report](docs/v08-online-audit.md).
 
 ## v0.7: decide whether sample construction is worthwhile
 
@@ -25,7 +50,7 @@ python -m graph_mf --backend neo4j cost-benchmark --epochs 3 --horizons 75 500 -
 ```
 
 See [the v0.7 Chinese report](docs/v07-cost-aware.md). These are known-horizon,
-static-graph decisions; online drift auditing and energy measurement remain future work.
+static-graph decisions; v0.8 adds profile-drift auditing. Energy measurement remains future work.
 
 **Measured:** 5,175 live requests passed raw COUNT validation. For 75-request streams,
 the cost-aware session skipped construction in all three runs (40.17 ms/request versus

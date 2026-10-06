@@ -13,6 +13,11 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("seed", help="Idempotently load the tiny dataset")
     commands.add_parser("smoke", help="Check existing data against the tiny fixture; does not seed Neo4j")
+    audit = commands.add_parser('audit-benchmark', help='Periodic exact audit, fault containment and independent recovery')
+    audit.add_argument('--source', default='results/neo4j/deep-v06/synthetic-50000')
+    audit.add_argument('--epochs', type=int, default=3)
+    audit.add_argument('--requests', type=int, default=60)
+    audit.add_argument('--output', default='results/local/audit-benchmark')
     cost = commands.add_parser('cost-benchmark', help='Lazy sample construction and cost-aware stream comparison')
     cost.add_argument('--source', default='results/neo4j/deep-v06/synthetic-50000')
     cost.add_argument('--epochs', type=int, default=3)
@@ -86,6 +91,10 @@ def main(argv=None):
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == 'audit-benchmark':
+            from .audit_benchmark import run_audit_benchmark
+            print(json.dumps(run_audit_benchmark(args.source, args.output, args.backend, args.epochs, args.requests), indent=2))
+            return 0
         if args.command == 'cost-benchmark':
             from .cost_benchmark import run_cost_benchmark
             print(json.dumps(run_cost_benchmark(args.source, args.output, args.backend, args.epochs, args.horizons), indent=2))

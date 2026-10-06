@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.0 — 2026-10-06
+
+- Add periodic exact anchors and timing-prediction drift detection to persistent sessions.
+- Return exact answers on detected faults and quarantine later approximate requests.
+- Add explicit independent profile refresh with seed guards and mandatory recovery anchor.
+- Measure controlled coefficient/timing faults on live Neo4j, including blind-window errors.
+- Charge actual sample builds, anchors and full independent recovery preparation.
+- Preserve previous experiments; no dynamic-graph or per-request guarantee is claimed.
+
 ## 0.7.0 — 2026-10-06
 
 - Add shared-build amortized planning to independent node/edge fidelity selection.

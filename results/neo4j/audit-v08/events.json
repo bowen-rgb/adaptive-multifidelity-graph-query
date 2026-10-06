@@ -1,0 +1,122 @@
+[
+  {
+    "scenario": "gain_fault",
+    "epoch": 0,
+    "event": "quarantined",
+    "reason": "error_budget",
+    "approximate_request": 10,
+    "profile_epoch": 0
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 0,
+    "event": "profile_refreshed",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 0,
+    "event": "recovered",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 1,
+    "event": "quarantined",
+    "reason": "error_budget",
+    "approximate_request": 10,
+    "profile_epoch": 0
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 1,
+    "event": "profile_refreshed",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 1,
+    "event": "recovered",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 2,
+    "event": "quarantined",
+    "reason": "error_budget",
+    "approximate_request": 10,
+    "profile_epoch": 0
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 2,
+    "event": "profile_refreshed",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "gain_fault",
+    "epoch": 2,
+    "event": "recovered",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 0,
+    "event": "quarantined",
+    "reason": "timing_drift",
+    "approximate_request": 8,
+    "profile_epoch": 0
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 0,
+    "event": "profile_refreshed",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 0,
+    "event": "recovered",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 1,
+    "event": "quarantined",
+    "reason": "timing_drift",
+    "approximate_request": 8,
+    "profile_epoch": 0
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 1,
+    "event": "profile_refreshed",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 1,
+    "event": "recovered",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 2,
+    "event": "quarantined",
+    "reason": "timing_drift",
+    "approximate_request": 8,
+    "profile_epoch": 0
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 2,
+    "event": "profile_refreshed",
+    "profile_epoch": 1
+  },
+  {
+    "scenario": "timing_fault",
+    "epoch": 2,
+    "event": "recovered",
+    "profile_epoch": 1
+  }
+]
