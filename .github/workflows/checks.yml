@@ -14,3 +14,4 @@ jobs:
       - run: python -m graph_mf --backend memory benchmark --nodes 200 --repeats 2 --warmups 1 --output results/local/ci-smoke
       - run: python -m graph_mf --backend memory reuse-benchmark --nodes 200 --epochs 2 --requests 3 --warmups 1 --output results/local/ci-reuse-smoke
       - run: python -m graph_mf optimize --runs 2 --generations 3 --output results/local/ci-optimization
+      - run: python -m graph_mf --backend memory adaptive-benchmark --nodes 200 --epochs 2 --timing-epochs 2 --repeats-per-tier 3 --output results/local/ci-adaptive

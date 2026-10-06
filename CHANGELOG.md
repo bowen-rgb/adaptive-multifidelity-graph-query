@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — 2026-10-06
+
+- Add eight sampling levels and performance/balanced/quality/exact budget presets.
+- Implement calibrated aggregate correction, uncertainty gating, escalation and hysteresis.
+- Separate correction fitting, joint uncertainty calibration, timing profiling and held-out seeds.
+- Measure live Neo4j adaptive, fixed-level and exact requests across five country predicates.
+- Count initial drafts and escalation calls; report sample construction and calibration costs.
+- Compare explicit amortized-cost planning with already-built-sample planning.
+- This DLSS-inspired prototype is neither NVIDIA DLSS nor a demonstrated novel algorithm.
+
 ## 0.4.0 — 2026-10-06
 
 - Add exhaustive three-objective Pareto baselines over recorded fidelity levels.

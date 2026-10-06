@@ -26,6 +26,23 @@ def main(argv=None):
     selection.add_argument("--reuse-requests", type=int, default=100)
     selection.add_argument("--node-tolerance", type=float, default=0.02)
     selection.add_argument("--edge-tolerance", type=float, default=0.05)
+    adaptive = commands.add_parser("adaptive-benchmark", help="Calibrate and measure held-out adaptive/fixed/exact requests")
+    adaptive.add_argument("--nodes", type=int, default=50000)
+    adaptive.add_argument("--epochs", type=int, default=15)
+    adaptive.add_argument("--repeats-per-tier", type=int, default=4)
+    adaptive.add_argument("--timing-epochs", type=int, default=5)
+    adaptive.add_argument("--output", default="results/local/adaptive")
+    adaptive.add_argument("--cost-policy", choices=("amortized", "cached"), default="amortized")
+    adaptive.add_argument("--evaluation-seed", type=int, default=5000)
+    adaptive.add_argument("--baseline-fidelities", type=float, nargs='*', default=[0.1, 0.25, 0.5, 0.75])
+    adaptive_query = commands.add_parser("adaptive-query", help="Run a tier-controlled query using a saved profile")
+    adaptive_query.add_argument("--profile", required=True)
+    adaptive_query.add_argument("--tier", choices=("performance", "balanced", "quality", "exact"), default="balanced")
+    adaptive_query.add_argument("--country", default="FR")
+    adaptive_query.add_argument("--nodes", type=int, default=50000)
+    adaptive_query.add_argument("--sample-seed", type=int, default=5014)
+    adaptive_query.add_argument("--reuse-requests", type=int, default=100)
+    adaptive_query.add_argument("--cost-policy", choices=("amortized", "cached"), default="amortized")
     count = commands.add_parser("count")
     count.add_argument("query", choices=QUERIES)
     count.add_argument("--city")
@@ -56,6 +73,35 @@ def main(argv=None):
     args = parser.parse_args(argv)
     backend = None
     try:
+        if args.command == "adaptive-benchmark":
+            from .adaptive_benchmark import run_adaptive_benchmark
+            result = run_adaptive_benchmark(args.backend, args.nodes, args.epochs,
+                args.repeats_per_tier, args.timing_epochs, args.output, cost_policy=args.cost_policy,
+                evaluation_seed=args.evaluation_seed, baseline_fidelities=args.baseline_fidelities)
+            print(json.dumps({"output": result['output'], "summary": result['summary']}, indent=2))
+            return 0
+        if args.command == "adaptive-query":
+            from pathlib import Path
+            from .adaptive import AdaptiveController
+            from .reusable import ReusableSample
+            from .synthetic import generate_graph, SyntheticMemory, SyntheticNeo4j
+            profile = json.loads(Path(args.profile).read_text(encoding='utf-8'))
+            graph = generate_graph(args.nodes)
+            if args.backend == 'neo4j':
+                backend = Neo4jBackend()
+                cache = ReusableSample(SyntheticNeo4j(graph, backend))
+                if args.tier != 'exact':
+                    cache.attach(args.sample_seed)
+            else:
+                cache = ReusableSample(SyntheticMemory(graph))
+                if args.tier != 'exact':
+                    cache.build(args.sample_seed)
+            result = AdaptiveController(profile, cost_policy=args.cost_policy).request(cache, args.country, args.tier,
+                                                         reuse_requests=args.reuse_requests)
+            result.update(backend=args.backend, graph_sha256=cache.fingerprint,
+                          sample_generation=cache.active_state['generation'] if cache.active_state else None)
+            print(json.dumps(result, indent=2))
+            return 0
         if args.command in ("optimize", "select-fidelity"):
             if args.backend != "memory":
                 raise ValueError('Optimization analyzes recorded files offline; use --backend memory')

@@ -1,4 +1,4 @@
-# Adaptive Multi-Fidelity Graph Query — v0.4.0
+# Adaptive Multi-Fidelity Graph Query — v0.5.0
 
 Research question: can graph queries use a fraction of the data while keeping aggregate
 answers within an accuracy tolerance?
@@ -26,6 +26,68 @@ At 10% fidelity, the median combined COUNT query time was 13.05 ms versus 45.76 
 for exact COUNT. Charging fresh sample preparation raised the approximate request
 to 1,806.75 ms. Query-only savings therefore do not establish an online speedup.
 All sampled counts matched NumPy. See [the measured report](docs/v03-benchmark.md).
+
+## v0.5 DLSS-inspired adaptive aggregate scaling
+
+This implements the mechanism agreed with the project owner: a low-fidelity draft,
+calibrated correction, uncertainty-based escalation and delayed demotion. It is a
+graph COUNT research prototype inspired by the scaling analogy, not NVIDIA DLSS,
+a neural reconstruction model, or a demonstrated novel algorithm.
+
+| Tier | Node relative-error budget | Edge relative-error budget |
+|---|---:|---:|
+| performance / 性能 | 5% | 15% |
+| balanced / 均衡 | 2% | 5% |
+| quality / 质量 | 1% | 2% |
+| exact / 精确 | 0% | 0% |
+
+These are controller decision budgets on calibrated uncertainty, not guaranteed
+per-query error limits. The controller chooses among **5/10/15/25/35/50/75/100%**
+fidelity levels. A tier sets the error budget; it is not permanently tied to one level.
+
+For each sampled COUNT: raw node estimate = count / f; raw edge estimate = count / f².
+Fitting seeds learn multiplicative corrections. Separate calibration seeds set joint
+residual bounds across all five countries, seven approximate levels and both metrics.
+Each entire sample seed is one calibration unit, avoiding correlated-query pseudoreplication.
+Held-out evaluation seeds never fit corrections, bounds or the latency profile.
+
+The first approximate request executes and charges a low draft. Unsafe bounds or
+too few sampled nodes/edges trigger higher-level queries; **every escalation call is
+included in request latency**. Tighter budgets promote immediately; a cheaper/lower
+level requires three consecutive relaxed requests. Country/sample-generation changes
+reset history. Unknown countries or mismatched graph fingerprints use exact COUNT.
+The persisted profile never stores exact answers for runtime reconstruction.
+
+Two explicit planning policies:
+
+- `amortized` (default): compare profiled request latency + mean build cost / expected
+  reuse count. This can prefer exact COUNT even if an approximate query alone is faster.
+- `cached`: compare request latency after the sample has already been built. This is a
+  sunk-cost planning scenario; the benchmark still reports construction amortization.
+
+Run new measurements (optional experiment dependencies required):
+
+```sh
+python -m graph_mf --backend neo4j adaptive-benchmark --output results/local/new-adaptive
+python -m graph_mf --backend memory adaptive-benchmark --nodes 200 --epochs 2 --timing-epochs 2 --repeats-per-tier 3 --output results/local/adaptive-smoke
+```
+
+Run an actual query using the measured cached-sample profile and last measured sample:
+
+```sh
+python -m graph_mf --backend neo4j adaptive-query --profile results/neo4j/adaptive-long-reuse-50k-v05/profile.json --sample-seed 7001 --tier performance --cost-policy cached
+python -m graph_mf --backend neo4j adaptive-query --profile results/neo4j/adaptive-long-reuse-50k-v05/profile.json --tier exact
+```
+
+If the sample has been refreshed, use its current seed or explicitly run `sample-build`
+with the desired seed. Approximate queries do not implicitly rebuild samples. The exact
+tier needs no sample. CLI processes start fresh controller history; use the Python
+`AdaptiveController` instance for a stream that retains hysteresis.
+
+Live results, scope and costs are in [the v0.5 measured report](docs/v05-adaptive.md).
+The supported workload remains static synthetic graphs and five fixed country predicates;
+calibration is not transferred to arbitrary predicates, graph sizes or changing graphs.
+NSGA-II remains the separate v0.4 baseline; this controller is not implemented as NSGA-II.
 
 ## v0.4 Pareto and NSGA-II baseline
 
@@ -64,8 +126,8 @@ incomplete evolutionary front. It does not issue a database query or build a sam
 Cost uses recorded mean request time plus recorded mean build time divided by the
 assumed reuse count. Only the 100-request scenario matches the measured reuse length;
 other lengths are modeled extrapolations. No new Neo4j performance run was performed.
-The proposed DLSS-style adaptive method and larger parameter-space evaluation remain
-future work. See [the v0.4 report](docs/v04-optimization.md) and
+At v0.4 the adaptive method remained future work; v0.5 adds the agreed prototype.
+Larger parameter-space evaluation remains future work. See [the v0.4 report](docs/v04-optimization.md) and
 [the NSGA-II paper](https://doi.org/10.1109/4235.996017).
 
 ## v0.3.1 reusable samples
@@ -405,9 +467,10 @@ especially for rare predicates or repeated adaptive decisions.
 
 The v0.3 results provide a first measured Neo4j fixed-fidelity baseline. They establish
 neither a general latency improvement nor memory/energy savings. v0.4 implements an
-NSGA-II baseline over recorded levels; a novel adaptive algorithm is not implemented.
-Next milestones: a broader measured parameter space, out-of-sample evaluation, then
-evaluation of the proposed adaptive scaling method.
+NSGA-II baseline over recorded levels. v0.5 implements calibrated adaptive scaling
+and evaluates new sample seeds, without claiming algorithmic novelty. Next milestones:
+new graph/workload distributions, a broader NSGA-II parameter space, and mutation-aware
+sample freshness with separately measured recalibration costs.
 
 Official references: [Neo4j Python driver](https://neo4j.com/docs/python-manual/current/),
 [Cypher MERGE](https://neo4j.com/docs/cypher-manual/current/clauses/merge/).

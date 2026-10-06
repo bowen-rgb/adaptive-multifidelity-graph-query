@@ -1,0 +1,44 @@
+{
+  "tier": "performance",
+  "country": "FR",
+  "fidelity": 0.5,
+  "cost_policy": "cached",
+  "desired_fidelity": 0.5,
+  "node_budget": 0.05,
+  "edge_budget": 0.15,
+  "compatible_profile": true,
+  "changed": false,
+  "steps": [
+    {
+      "fidelity": 0.05,
+      "request_ms": 20.209399997838773,
+      "node_count": 753,
+      "edge_count": 32
+    },
+    {
+      "fidelity": 0.5,
+      "request_ms": 43.89000000082888,
+      "node_count": 7577,
+      "edge_count": 3512
+    }
+  ],
+  "queries": 2,
+  "raw_node_estimate": 15154.0,
+  "raw_edge_estimate": 14048.0,
+  "node_estimate": 15157.222093024773,
+  "edge_estimate": 14084.229816552788,
+  "node_bound": 0.033636005917472685,
+  "edge_bound": 0.11178092771735146,
+  "node_interval": [
+    14663.984232603205,
+    15684.795983541528
+  ],
+  "edge_interval": [
+    12668.17001931286,
+    15856.707265199226
+  ],
+  "request_ms": 64.15310000011232,
+  "backend": "neo4j",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "sample_generation": "c862dcc438c64be09c876a8bfdecbd0b"
+}

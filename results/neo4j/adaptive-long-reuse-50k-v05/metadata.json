@@ -1,0 +1,149 @@
+{
+  "status": "completed",
+  "project_version": "0.5.0",
+  "backend": "neo4j",
+  "started_at": "2026-10-06T10:42:48.682713+00:00",
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "dataset": "graph-mf-synthetic-b9f668062bf1dd23",
+  "nodes": 50000,
+  "edge_records": 149996,
+  "countries": [
+    "FR",
+    "DE",
+    "ES",
+    "IT",
+    "NL"
+  ],
+  "levels": [
+    0.05,
+    0.1,
+    0.15,
+    0.25,
+    0.35,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "timing_seeds": [
+    4000,
+    4001
+  ],
+  "evaluation_seeds": [
+    7000,
+    7001
+  ],
+  "stream_requests_per_sample": 1000,
+  "repeats_per_tier": 40,
+  "tier_sequence": [
+    "performance",
+    "balanced",
+    "quality",
+    "performance",
+    "exact"
+  ],
+  "completed_evaluation_epochs": 2,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "performance_benchmark_measured": true,
+  "latency_scope": "complete controller request including all escalation queries, state checks and correction",
+  "amortization": "full measured build charged to each standalone stream / requests in that stream",
+  "excluded_costs": "graph import, connection, offline correction calibration and timing profiling; reported separately",
+  "workload": "static graph; warm cache; serial client; five country predicates; one sample per epoch",
+  "validation": "counts checked against NumPy, truth used only after returned estimates; disjoint sample seeds",
+  "cost_policy": "cached",
+  "baseline_fidelities": [],
+  "generalization": "new sample seeds on same graph/predicates; no graph/workload distribution shift claim",
+  "server_components": [
+    {
+      "name": "Neo4j Kernel",
+      "versions": [
+        "2026.09.0"
+      ],
+      "edition": "enterprise"
+    },
+    {
+      "name": "Cypher",
+      "versions": [
+        "5",
+        "25"
+      ],
+      "edition": ""
+    }
+  ],
+  "server_memory_settings": {
+    "server.memory.heap.initial_size": "512.00MiB",
+    "server.memory.heap.max_size": "1.00GiB",
+    "server.memory.pagecache.size": "512.00MiB"
+  },
+  "import_connect_ms": 15216.59450000152,
+  "timing_profiling_ms": 11554.333400010364,
+  "calibration_cpu_ms": 1968.5192000033567,
+  "fitting_seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "calibration_seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019,
+    3020,
+    3021,
+    3022,
+    3023,
+    3024,
+    3025,
+    3026,
+    3027,
+    3028,
+    3029,
+    3030,
+    3031,
+    3032,
+    3033,
+    3034,
+    3035,
+    3036,
+    3037,
+    3038,
+    3039
+  ],
+  "finished_at": "2026-10-06T10:45:39.142899+00:00",
+  "all_counts_match_numpy": true,
+  "measured_requests": 4000,
+  "sample_build_ms_mean": 2604.7847499939962
+}
