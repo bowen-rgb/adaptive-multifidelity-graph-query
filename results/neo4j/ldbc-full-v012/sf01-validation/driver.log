@@ -1,0 +1,20 @@
+ValidateDatabaseMode  Loaded Workload: org.ldbcouncil.snb.driver.workloads.interactive.LdbcSnbInteractiveWorkload
+Client  Client terminated unexpectedly
+org.ldbcouncil.snb.driver.ClientException: Error loading DB class: ldbcmfsf01v2
+	at org.ldbcouncil.snb.driver.client.ValidateDatabaseMode.init(ValidateDatabaseMode.java:70)
+	at org.ldbcouncil.snb.driver.Client.main(Client.java:64)
+Caused by: org.ldbcouncil.snb.driver.DbException: Error creating DB [ldbcmfsf01v2]
+	at org.ldbcouncil.snb.driver.util.ClassLoaderHelper.loadDb(ClassLoaderHelper.java:25)
+	at org.ldbcouncil.snb.driver.client.ValidateDatabaseMode.init(ValidateDatabaseMode.java:60)
+	... 1 more
+Caused by: org.ldbcouncil.snb.driver.util.ClassLoadingException: Error loading class [ldbcmfsf01v2]
+	at org.ldbcouncil.snb.driver.util.ClassLoaderHelper.loadClass(ClassLoaderHelper.java:98)
+	at org.ldbcouncil.snb.driver.util.ClassLoaderHelper.loadDb(ClassLoaderHelper.java:21)
+	... 2 more
+Caused by: java.lang.ClassNotFoundException: ldbcmfsf01v2
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.ldbcouncil.snb.driver.util.ClassLoaderHelper.loadClass(ClassLoaderHelper.java:92)
+	... 3 more
+

@@ -107,6 +107,14 @@ claims made on the CV. There are currently no robotics/embodied-intelligence exp
 
 ## Recommended work order
 
+**v0.12 priority change:** The user explicitly prioritizes demonstrated end-to-end
+performance and the complete SNB Interactive v1 workload. Full SF0.1 schema/import,
+the pinned official Java driver, all 29 operation handlers, published-reference
+validation and exact IC14 weight maintenance now replace further micro-COUNT tuning
+as the immediate work. Energy/fault extensions are deferred. Query-only gains are
+not evidence of DLSS-adaptive or complete mixed-workload acceleration.
+See [the full runbook](ldbc-full-runbook.md) and retained raw experiments.
+
 **v0.11 update:** Pinned official SNB v1 micro-fixture projection and all-Person IS3
 ordered tuple validation now establish selected read semantics. One-hop/1–2-hop COUNTs
 are explicitly custom; sparse one-hop failures are recorded and unvalidated multi-hop

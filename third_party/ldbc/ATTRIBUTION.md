@@ -13,3 +13,11 @@ labels, namespace filter and integer identifier storage are adapted for isolatio
 The Python oracle, loader, benchmark and derived COUNTs are project implementations.
 Only exact IS3 is a selected official read semantic check. Derived COUNTs are custom,
 not replacements for official SNB queries or an audited benchmark result.
+
+v0.12 also builds the pinned upstream Java/Cypher implementation and stores query
+snapshots with experiment outputs. These upstream query files remain Apache-2.0.
+Modified files: Java connection routing accepts `neo4j.database`; IC1/SQ7 use
+explicit null checks; update1 uses consistent `speaks` and `WORK_AT`; optional IC14
+materialization rewrites IC14 and maintains exact weights in updates7/8. The rejected
+bound-endpoint rewrite is retained as a measured unfavorable experiment.
+Full-data download/streaming import and exact weight maintenance are project code.

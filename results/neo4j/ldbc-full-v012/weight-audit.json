@@ -1,0 +1,11 @@
+{
+  "all_pair_weights_match": true,
+  "reply_pairs": 51589,
+  "cached_pairs": 51589,
+  "friendships": 14177,
+  "incorrect_friendship_weights": 0,
+  "recomputed_sha256": "06b9ac661e57aa61abac51369131ddf3f7d3a94dc8dc55165598d566136b3626",
+  "cached_sha256": "06b9ac661e57aa61abac51369131ddf3f7d3a94dc8dc55165598d566136b3626",
+  "audit_ms": 3116.808699996909,
+  "boundary": "quiescent database; no concurrent writers"
+}

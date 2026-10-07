@@ -1,3 +1,5 @@
 * text=auto eol=lf
 # Keep archive bytes stable, including line endings, on every platform.
 v0.1/** -text
+# Preserve the exact bytes hashed for executed third-party query snapshots.
+results/neo4j/ldbc-full-v012/**/queries/*.cypher -text

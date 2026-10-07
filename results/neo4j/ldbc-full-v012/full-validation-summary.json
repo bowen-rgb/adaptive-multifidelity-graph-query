@@ -1,0 +1,139 @@
+{
+  "status": "completed",
+  "total_operations": 138474,
+  "operation_types": 29,
+  "counts": {
+    "LdbcQuery1": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery10": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery11": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery12": {
+      "correct": 6050,
+      "total": 6050
+    },
+    "LdbcQuery13": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery14": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery2": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery3": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery4": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery5": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcQuery6": {
+      "correct": 6050,
+      "total": 6050
+    },
+    "LdbcQuery7": {
+      "correct": 6050,
+      "total": 6050
+    },
+    "LdbcQuery8": {
+      "correct": 6050,
+      "total": 6050
+    },
+    "LdbcQuery9": {
+      "correct": 6051,
+      "total": 6051
+    },
+    "LdbcShortQuery1PersonProfile": {
+      "correct": 8100,
+      "total": 8100
+    },
+    "LdbcShortQuery2PersonPosts": {
+      "correct": 8100,
+      "total": 8100
+    },
+    "LdbcShortQuery3PersonFriends": {
+      "correct": 8100,
+      "total": 8100
+    },
+    "LdbcShortQuery4MessageContent": {
+      "correct": 5367,
+      "total": 5367
+    },
+    "LdbcShortQuery5MessageCreator": {
+      "correct": 5367,
+      "total": 5367
+    },
+    "LdbcShortQuery6MessageForum": {
+      "correct": 5367,
+      "total": 5367
+    },
+    "LdbcShortQuery7MessageReplies": {
+      "correct": 5367,
+      "total": 5367
+    },
+    "LdbcUpdate1AddPerson": {
+      "correct": 6,
+      "total": 6
+    },
+    "LdbcUpdate2AddPostLike": {
+      "correct": 985,
+      "total": 985
+    },
+    "LdbcUpdate3AddCommentLike": {
+      "correct": 639,
+      "total": 639
+    },
+    "LdbcUpdate4AddForum": {
+      "correct": 94,
+      "total": 94
+    },
+    "LdbcUpdate5AddForumMembership": {
+      "correct": 2425,
+      "total": 2425
+    },
+    "LdbcUpdate6AddPost": {
+      "correct": 1195,
+      "total": 1195
+    },
+    "LdbcUpdate7AddComment": {
+      "correct": 2548,
+      "total": 2548
+    },
+    "LdbcUpdate8AddFriendship": {
+      "correct": 104,
+      "total": 104
+    }
+  },
+  "source_sha256": "887dff7c7b52cfb080fdbfaf6050fd2552a7a7ae972cf13952242d5ee07d0c81",
+  "contiguous_parts": true,
+  "validation_ms": 1995627.1560000023,
+  "preparation_ms": 2331.6889999987325,
+  "global_weight_audit": {
+    "all_pair_weights_match": true,
+    "reply_pairs": 51589,
+    "cached_pairs": 51589,
+    "friendships": 14177,
+    "incorrect_friendship_weights": 0,
+    "recomputed_sha256": "06b9ac661e57aa61abac51369131ddf3f7d3a94dc8dc55165598d566136b3626",
+    "cached_sha256": "06b9ac661e57aa61abac51369131ddf3f7d3a94dc8dc55165598d566136b3626",
+    "audit_ms": 3116.808699996909,
+    "boundary": "quiescent database; no concurrent writers"
+  },
+  "certified_audit": false
+}

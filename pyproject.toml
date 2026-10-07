@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "adaptive-multifidelity-graph-query"
-version = "0.11.0"
+version = "0.12.0"
 description = "Learning and research scaffold for adaptive graph query fidelity"
 requires-python = ">=3.10"
 dependencies = []
@@ -12,6 +12,7 @@ dependencies = []
 [project.optional-dependencies]
 neo4j = ["neo4j>=5.26,<7"]
 experiments = ["numpy>=1.24", "matplotlib>=3.7", "tzdata>=2024.1", "psutil>=5.9,<8"]
+ldbc = ["neo4j>=5.26,<7", "zstandard>=0.25,<1"]
 
 [project.scripts]
 graph-mf = "graph_mf.__main__:main"

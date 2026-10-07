@@ -1,0 +1,86 @@
+{
+  "status": "processes_completed",
+  "database": "ldbcmfbench01",
+  "blocks": 3,
+  "operations": 10000,
+  "warmup": 1000,
+  "tcr": 0.1,
+  "order": "AB, BA, AB alternating; serial no other benchmark/validation processes",
+  "runs": [
+    {
+      "block": 0,
+      "variant": "reference",
+      "import_ms": 145545.36129999906,
+      "driver_elapsed_ms": 417099.82980000495,
+      "preparation": null,
+      "import_preparation_driver_ms": 562645.191100004,
+      "actual_wall_ms": 417906.31069999654,
+      "exit_code": 0
+    },
+    {
+      "block": 0,
+      "variant": "materialized",
+      "import_ms": 138218.5135000036,
+      "driver_elapsed_ms": 416949.81419999385,
+      "preparation": {
+        "build_ms": 2719.4782000005944,
+        "algorithm": "exact-replies-v1",
+        "maintenance": "update7 comment and update8 friendship in the same operation transaction",
+        "external_mutations_supported": false
+      },
+      "import_preparation_driver_ms": 557887.805899998,
+      "actual_wall_ms": 560163.3485999919,
+      "exit_code": 0
+    },
+    {
+      "block": 1,
+      "variant": "materialized",
+      "import_ms": 144368.84799999825,
+      "driver_elapsed_ms": 417029.45659999386,
+      "preparation": {
+        "build_ms": 1716.924000007566,
+        "algorithm": "exact-replies-v1",
+        "maintenance": "update7 comment and update8 friendship in the same operation transaction",
+        "external_mutations_supported": false
+      },
+      "import_preparation_driver_ms": 563115.2285999997,
+      "actual_wall_ms": 565809.4771000033,
+      "exit_code": 0
+    },
+    {
+      "block": 1,
+      "variant": "reference",
+      "import_ms": 148145.16020000156,
+      "driver_elapsed_ms": 417287.6806000131,
+      "preparation": null,
+      "import_preparation_driver_ms": 565432.8408000147,
+      "actual_wall_ms": 567516.5979000012,
+      "exit_code": 0
+    },
+    {
+      "block": 2,
+      "variant": "reference",
+      "import_ms": 134174.26700000942,
+      "driver_elapsed_ms": 417112.5495000015,
+      "preparation": null,
+      "import_preparation_driver_ms": 551286.8165000109,
+      "actual_wall_ms": 553009.1567000054,
+      "exit_code": 0
+    },
+    {
+      "block": 2,
+      "variant": "materialized",
+      "import_ms": 181579.42750000802,
+      "driver_elapsed_ms": 417773.7002999929,
+      "preparation": {
+        "build_ms": 3564.986299999873,
+        "algorithm": "exact-replies-v1",
+        "maintenance": "update7 comment and update8 friendship in the same operation transaction",
+        "external_mutations_supported": false
+      },
+      "import_preparation_driver_ms": 602918.1141000008,
+      "actual_wall_ms": 606111.3633000059,
+      "exit_code": 0
+    }
+  ]
+}

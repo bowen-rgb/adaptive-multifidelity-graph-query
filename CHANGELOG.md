@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.12.0 — 2026-10-07
+
+- Prioritize measured end-to-end performance and full SNB Interactive v1 workload.
+- Import the full official SF0.1 snapshot with typed streaming CSVs, endpoint/table
+  validation, empty-property semantics and strict fresh dedicated-database guards.
+- Build the pinned official Java implementation, route to a selected database, retain
+  reference fixes, validate against published expected results, and launch all operations.
+- Compare exact IC14 variants and retain the unfavorable bound-endpoint rewrite.
+- Add exact reply-weight materialization with transactional update7/update8 maintenance;
+  charge preparation separately and keep query-only claims distinct from mixed throughput.
+
 ## 0.11.0 — 2026-10-07
 
 - Pin official SNB v1 micro-fixture Person/KNOWS inputs and preserve source notices.

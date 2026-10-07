@@ -1,0 +1,7 @@
+block,variant,actual_operations,duration_s,throughput_ops_s,ic14_mean_ms,schedule_audit_pass
+0,reference,9895,355.095,27.87,25.92,True
+0,materialized,9895,355.073,27.87,2.53,True
+1,materialized,9895,355.1,27.87,1.86,True
+1,reference,9895,355.035,27.87,31.45,True
+2,reference,9895,355.081,27.87,38.93,True
+2,materialized,9895,355.125,27.86,3.97,True

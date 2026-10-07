@@ -1,0 +1,21 @@
+{
+  "status": "failed_or_interrupted",
+  "database": "ldbcmfbench01",
+  "blocks": 3,
+  "operations": 10000,
+  "warmup": 1000,
+  "tcr": 0.01,
+  "order": "AB, BA, AB alternating; serial no other benchmark/validation processes",
+  "runs": [
+    {
+      "block": 0,
+      "variant": "reference",
+      "import_ms": 148197.49049999518,
+      "driver_elapsed_ms": 89058.49909999233,
+      "preparation": null,
+      "import_preparation_driver_ms": 237255.98959998752,
+      "actual_wall_ms": 89754.69630000589,
+      "exit_code": 1
+    }
+  ]
+}

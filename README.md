@@ -1,4 +1,27 @@
-# Adaptive Multi-Fidelity Graph Query — v0.11.0
+# Adaptive Multi-Fidelity Graph Query — v0.12.0
+
+## Main objective: measured performance and complete SNB Interactive v1
+
+The priority is a fair end-to-end improvement and the complete official Interactive
+v1 workload: 14 complex reads, 7 short reads and 8 updates. Full exact validation
+and approximate research experiments are reported separately. Energy extensions
+and further micro-fixture tuning are deferred until the main comparison is established.
+
+v0.12 adds a full CsvComposite/LongDateFormatter streaming loader, a pinned official
+Java-driver build/routing workflow, validation and mixed-workload launchers, and
+exact IC14 reply-weight materialization maintained by comment/friendship updates.
+The official SF0.1 snapshot has **327,588 nodes and 1,477,965 relationships**.
+Original experiments and the dependency-free memory fallback remain available.
+
+On one updated SF0.1 graph, exact IC14 averaged 26.10 ms versus 3.01 ms with weights
+(8.68× query-only speedup), but construction took 3.00 s: approximately 131 requests
+to amortize. A bound-endpoint rewrite instead slowed the query by 13.5× and is retained.
+These are fixed-parameter warm-cache experiments; they do not prove mixed-workload
+throughput improvement or a DLSS-adaptive benefit. The official driver must verify
+actual operation coverage and scheduling separately.
+
+See [the full runbook](docs/ldbc-full-runbook.md) for separate databases, restore/reload,
+all-operation validation, mixed workloads, exact maintenance and measurement boundaries.
 
 ## v0.11: pinned SNB micro-fixture and query semantics
 

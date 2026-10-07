@@ -1,0 +1,15 @@
+{
+  "status": "failed_or_interrupted",
+  "reference_commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f",
+  "database": "ldbcmfsf01",
+  "format": "CsvComposite LongDateFormatter",
+  "files": [
+    {
+      "name": "static\\organisation_0_0.csv",
+      "rows": 7955,
+      "sha256": "37415355e0d524be6f2f8321e4dd9290da7f94b955284bf8be443478fcbfe366"
+    }
+  ],
+  "nodes": 7955,
+  "relationships": 0
+}

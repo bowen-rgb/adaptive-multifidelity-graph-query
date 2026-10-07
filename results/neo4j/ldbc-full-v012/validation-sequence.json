@@ -1,0 +1,9 @@
+{
+  "source_sha256": "887dff7c7b52cfb080fdbfaf6050fd2552a7a7ae972cf13952242d5ee07d0c81",
+  "prefix_sha256": "ea1069ca93295b0fe439c5dc1f62a92656bd09c04665aa6276ee6787d4352a30",
+  "suffix_sha256": "73e50d0ba18a53f1996076b37e697d30d905b70991f8da1c0710c54956177be0",
+  "prefix_operations": 37332,
+  "suffix_operations": 101142,
+  "total_operations": 138474,
+  "contiguous": true
+}

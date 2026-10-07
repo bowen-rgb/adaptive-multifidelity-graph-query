@@ -1,0 +1,90 @@
+{
+  "status": "completed",
+  "database": "ldbcmfsf01v3",
+  "scope": "exact IC14 paired query experiment, not mixed SNB throughput",
+  "parameters": [
+    {
+      "person1Id": 2199023256586,
+      "person2Id": 17592186045370
+    },
+    {
+      "person1Id": 17592186045370,
+      "person2Id": 26388279066869
+    },
+    {
+      "person1Id": 26388279066795,
+      "person2Id": 17592186045370
+    },
+    {
+      "person1Id": 30786325579399,
+      "person2Id": 4398046511592
+    },
+    {
+      "person1Id": 6597069767300,
+      "person2Id": 32985348834605
+    },
+    {
+      "person1Id": 32985348834605,
+      "person2Id": 4398046511592
+    },
+    {
+      "person1Id": 15393162790207,
+      "person2Id": 28587302322817
+    },
+    {
+      "person1Id": 4398046512362,
+      "person2Id": 2199023256586
+    },
+    {
+      "person1Id": 6597069768287,
+      "person2Id": 32985348833679
+    },
+    {
+      "person1Id": 28587302322817,
+      "person2Id": 4398046511592
+    },
+    {
+      "person1Id": 26388279066869,
+      "person2Id": 2199023256862
+    },
+    {
+      "person1Id": 32985348833679,
+      "person2Id": 2199023256862
+    },
+    {
+      "person1Id": 4398046511592,
+      "person2Id": 32985348833679
+    },
+    {
+      "person1Id": 26388279067108,
+      "person2Id": 32985348833679
+    },
+    {
+      "person1Id": 2199023256862,
+      "person2Id": 4398046511592
+    }
+  ],
+  "blocks": 5,
+  "parameter_seed": 12012,
+  "order_seed": 14014,
+  "warm_cache": true,
+  "query_sha256": {
+    "reference": "081ea034b25c7abf6f462a857ab7babe150902eb414a837f9fd3695edaa6cb5b",
+    "bound": "b1d78f0c9204a2469caa656ecd3194592c8f771a967b64b08f1573e10c860a9e"
+  },
+  "parameter_sha256": "2d43aef9773c018dc882cc42da4836d267776d3b6273b785b2e8a087537b0843",
+  "construction_ms": 0,
+  "calibration_ms": 0,
+  "approximation": false,
+  "includes_client_and_transaction": true,
+  "all_path_weights_match": true,
+  "timed_queries": 150,
+  "reference_mean_ms": 25.315599999157712,
+  "bound_mean_ms": 341.8949119996978,
+  "speedup": 0.07404497437850169,
+  "conditional_block_bootstrap_95": [
+    0.07116303103516036,
+    0.07875585500958149
+  ],
+  "interpretation": "single graph, fixed parameter set, warm cache, no concurrent writes; not a general or mixed-workload speedup"
+}
