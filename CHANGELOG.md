@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.16.0 — 2026-10-08
+
+- Publish the repository after a reachable-history credential signature audit.
+- Isolate forecast, history and incremental COUNT mechanisms in paired changing-budget ablations.
+- Add independent fitting/calibration and six test epochs on a second 100k-node graph.
+- Retain 100k budget violations and separate online acceleration from startup-inclusive evidence.
+- Reset hysteresis patience after unsuccessful demotion; verify frozen sample generation guards.
+- Add reproducible whole-epoch bootstrap reports and an offline ablation CI smoke check.
+
 ## 0.15.0 — 2026-10-08
 
 - Add explicit speed/error tiers: 5%, 10% and 20% COUNT error budgets.

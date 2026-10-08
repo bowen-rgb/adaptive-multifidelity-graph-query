@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "backend": "memory",
+  "nodes": 50000,
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "source": "results/memory/dynamic-correction-v014",
+  "epochs": 3,
+  "requests": 12,
+  "modes": [
+    "exact",
+    "full",
+    "no_history",
+    "no_incremental",
+    "cold_incremental"
+  ],
+  "seeds": [
+    21000,
+    21001,
+    21002
+  ],
+  "budgets": [
+    0.2,
+    0.05,
+    0.1,
+    0.2,
+    0.05,
+    0.2
+  ],
+  "scope": "static graph, changing budgets; seed epoch independent, no result cache",
+  "training_ms": 1232.8956999990623,
+  "performance_measured": false,
+  "all_raw_counts_match": true
+}

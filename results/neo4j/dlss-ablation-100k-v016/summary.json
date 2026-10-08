@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "exact",
+    "epochs": 6,
+    "mean_stream_ms": 6082.9287167143775,
+    "online_speedup": 1.0,
+    "paired_bootstrap_low": 1.0,
+    "paired_bootstrap_high": 1.0,
+    "failures": 0,
+    "components": 720,
+    "mean_attempts": 1,
+    "max_error": 0.0,
+    "startup_ms": 0,
+    "phase_total_speedup": 1.0
+  },
+  {
+    "mode": "full",
+    "epochs": 6,
+    "mean_stream_ms": 2570.8852499568216,
+    "online_speedup": 2.366083323562007,
+    "paired_bootstrap_low": 2.2605075122118126,
+    "paired_bootstrap_high": 2.4872863845207513,
+    "failures": 20,
+    "components": 720,
+    "mean_attempts": 1.0930555555555554,
+    "max_error": 0.16727191877269668,
+    "startup_ms": 182066.10400005593,
+    "phase_total_speedup": 0.18480586717109132
+  },
+  {
+    "mode": "no_history",
+    "epochs": 6,
+    "mean_stream_ms": 2405.9864167502383,
+    "online_speedup": 2.528247322746975,
+    "paired_bootstrap_low": 2.351920123616175,
+    "paired_bootstrap_high": 2.807331878314947,
+    "failures": 9,
+    "components": 720,
+    "mean_attempts": 1.1333333333333333,
+    "max_error": 0.14566263124568807,
+    "startup_ms": 182066.10400005593,
+    "phase_total_speedup": 0.18573636971183208
+  },
+  {
+    "mode": "no_incremental",
+    "epochs": 6,
+    "mean_stream_ms": 2544.0873666569437,
+    "online_speedup": 2.3910062195339017,
+    "paired_bootstrap_low": 2.3137280150559216,
+    "paired_bootstrap_high": 2.49083708134918,
+    "failures": 20,
+    "components": 720,
+    "mean_attempts": 1.0930555555555554,
+    "max_error": 0.16727191877269668,
+    "startup_ms": 182066.10400005593,
+    "phase_total_speedup": 0.18495644914937087
+  },
+  {
+    "mode": "cold_incremental",
+    "epochs": 6,
+    "mean_stream_ms": 4381.726616697658,
+    "online_speedup": 1.3882492562484083,
+    "paired_bootstrap_low": 1.3147286850040474,
+    "paired_bootstrap_high": 1.4735239999935166,
+    "failures": 20,
+    "components": 720,
+    "mean_attempts": 2.501388888888889,
+    "max_error": 0.16727191877269668,
+    "startup_ms": 182066.10400005593,
+    "phase_total_speedup": 0.17516889878105518
+  }
+]

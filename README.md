@@ -1,4 +1,22 @@
-# Adaptive Multi-Fidelity Graph Query — v0.15.0
+# Adaptive Multi-Fidelity Graph Query — v0.16.0
+
+Public repository: [bowen-rgb/adaptive-multifidelity-graph-query](https://github.com/bowen-rgb/adaptive-multifidelity-graph-query).
+
+## What the experiments establish
+
+Calibration-guided approximate COUNTs reduce computation for known predicates on
+static synthetic graphs. [Independent ablations](docs/v016-ablation-publication.md)
+compare five policies over six fresh sampling epochs at each of 50k and 100k nodes.
+The forecast/current-sample policy without history measured 1.70× and 2.53× online
+ratios versus exact, including session construction and excluding training/sample
+preparation. Error-budget violations were 0/720 and 9/720 components respectively;
+empirical uncertainty is not a certified per-request guarantee. History and incremental
+accumulation did not show a stable benefit over simpler variants.
+
+The longer v0.15 experiment below charges recorded training and sample-build phases
+and supports a scoped 1.78× result. [CV wording](docs/cv-project.md) describes these
+measured contributions and their limits. Complete SNB adaptive acceleration and
+algorithmic novelty remain open research questions.
 
 ## Speed/accuracy tiers and history-guided probes
 

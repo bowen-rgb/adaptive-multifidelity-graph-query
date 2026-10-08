@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "exact",
+    "epochs": 6,
+    "mean_stream_ms": 3027.0526833240488,
+    "online_speedup": 1.0,
+    "paired_bootstrap_low": 1.0,
+    "paired_bootstrap_high": 1.0,
+    "failures": 0,
+    "components": 720,
+    "mean_attempts": 1,
+    "max_error": 0.0,
+    "startup_ms": 0,
+    "phase_total_speedup": 1.0
+  },
+  {
+    "mode": "full",
+    "epochs": 6,
+    "mean_stream_ms": 1940.8428499543031,
+    "online_speedup": 1.5596588272952239,
+    "paired_bootstrap_low": 1.5256541845102247,
+    "paired_bootstrap_high": 1.5984091532399038,
+    "failures": 0,
+    "components": 720,
+    "mean_attempts": 1.1555555555555554,
+    "max_error": 0.09720555460312018,
+    "startup_ms": 89731.42570001073,
+    "phase_total_speedup": 0.1791570944103763
+  },
+  {
+    "mode": "no_history",
+    "epochs": 6,
+    "mean_stream_ms": 1777.9051834319641,
+    "online_speedup": 1.7025951167321551,
+    "paired_bootstrap_low": 1.6102474024432318,
+    "paired_bootstrap_high": 1.8158159022300695,
+    "failures": 0,
+    "components": 720,
+    "mean_attempts": 1.1333333333333333,
+    "max_error": 0.09720555460312018,
+    "startup_ms": 89731.42570001073,
+    "phase_total_speedup": 0.18090162257540063
+  },
+  {
+    "mode": "no_incremental",
+    "epochs": 6,
+    "mean_stream_ms": 1853.718750096353,
+    "online_speedup": 1.6329622188731208,
+    "paired_bootstrap_low": 1.5389864968589795,
+    "paired_bootstrap_high": 1.7576274936906957,
+    "failures": 0,
+    "components": 720,
+    "mean_attempts": 1.1555555555555554,
+    "max_error": 0.09720555460312018,
+    "startup_ms": 89731.42570001073,
+    "phase_total_speedup": 0.18008570057979514
+  },
+  {
+    "mode": "cold_incremental",
+    "epochs": 6,
+    "mean_stream_ms": 3638.1286000153827,
+    "online_speedup": 0.832035646928822,
+    "paired_bootstrap_low": 0.7833459081740429,
+    "paired_bootstrap_high": 0.8905966078264863,
+    "failures": 0,
+    "components": 720,
+    "mean_attempts": 3.2930555555555556,
+    "max_error": 0.09720555460312018,
+    "startup_ms": 89731.42570001073,
+    "phase_total_speedup": 0.16280283236759316
+  }
+]

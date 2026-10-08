@@ -35,6 +35,7 @@ class IncrementalTests(unittest.TestCase):
             self.assertEqual(controller.request('FR','node',.05)['attempts'],1)
         result=controller.request('FR','node',.05)
         self.assertEqual([r['fidelity'] for r in result['trace']],[.1,.5])
+        self.assertEqual(controller.request('FR','node',.05)['attempts'],1)
         exact=controller.request('FR','node',0)
         self.assertEqual(exact['fidelity'],1)
         self.assertEqual(exact['estimate'],target)

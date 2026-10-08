@@ -14,6 +14,11 @@ the first two for database engineering. The 1.78× result covers one synthetic g
 two rank epochs and known repeated predicates; graph import and offline checking are
 excluded, and measured phases were recorded separately. No full SNB adaptive speedup
 is claimed. Evolutionary/exhaustive search comparisons are a separate experiment.
+Independent changing-budget ablations at 50k and 100k nodes measured 1.70× and
+2.53× online ratios for the forecast policy without history (six test epochs/size).
+Those exclude training/preparation and incur 0/720 and 9/720 budget violations;
+they support the mechanism's measured trade-off, not a guaranteed error bound.
+See [the ablation report](v016-ablation-publication.md) before quoting these figures.
 The 8.68× result is a
 single-query, warm-cache result on one graph and fixed parameters; the full mixed
 workload did not demonstrate overall acceleration. Do not describe this as a

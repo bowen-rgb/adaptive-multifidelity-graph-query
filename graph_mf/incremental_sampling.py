@@ -71,9 +71,12 @@ class HistorySampler(DynamicSampler):
     fingerprint is checked once at session creation; arbitrary concurrent graph
     writes are unsupported. Rank-generation publication guards each delta query.
     """
-    def __init__(self,profile,sample,corrected=False,min_count=20):
+    def __init__(self,profile,sample,corrected=False,min_count=20,use_history=True,use_incremental=True,start_policy='forecast'):
         super().__init__(profile,sample.backend,corrected,min_count)
+        if start_policy not in ('forecast','cold'):
+            raise ValueError('Known start policy required')
         self.sample=sample; self.history={}
+        self.use_history,self.use_incremental,self.start_policy=use_history,use_incremental,start_policy
 
     def request(self,country,kind,tolerance):
         if kind not in ('node','edge') or not math.isfinite(tolerance) or tolerance < 0:
@@ -83,7 +86,9 @@ class HistorySampler(DynamicSampler):
         unknown=country not in self.profile['countries']
         if unknown or tolerance==0:
             selected=len(rows)-1
-        elif key in self.history:
+        elif self.start_policy=='cold':
+            selected=0
+        elif self.use_history and key in self.history:
             prior=self.history[key]
             selected=prior['index']
             if prior['stable']>=3:
@@ -98,7 +103,12 @@ class HistorySampler(DynamicSampler):
                 # Exact terminal query discards already-paid sample work.
                 result=self.backend.count_component(country,1,kind)
             else:
-                result=counter.probe(f)
+                if self.use_incremental:
+                    result=counter.probe(f)
+                else:
+                    fresh=IncrementalCounter(self.sample,country,kind)
+                    fresh.state=counter.state
+                    result=fresh.probe(f)
             query_ms+=result['query_ms']
             uncertainty=row[name+'_count_score']*math.sqrt(max(row['reference_sample_count'],1)/max(result['count'],1))
             accepted=f==1 or (result['count']>=self.min_count and uncertainty<=tolerance)
@@ -106,7 +116,9 @@ class HistorySampler(DynamicSampler):
                               accepted=accepted,query_ms=result['query_ms']))
             if accepted:
                 prior=self.history.get(key,{})
-                stable=(prior.get('stable',0)+1 if prior.get('index')==index else 1) if uncertainty<=tolerance*.6 else 0
+                # Failed demotion restarts patience, avoiding a futile low probe
+                # on every subsequent request despite confident high-tier output.
+                stable=(prior.get('stable',0)+1 if prior.get('index')==index else 1) if uncertainty<=tolerance*.6 and index==selected else 0
                 self.history[key]=dict(index=index,stable=stable)
                 power=1 if kind=='node' else 2
                 return dict(estimate=result['count']/f**power*(row['gain'] if self.corrected else 1),
