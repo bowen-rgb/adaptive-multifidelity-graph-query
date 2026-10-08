@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.13.0 — 2026-10-08
+
+- Shift algorithm experiments to budgeted, real objective evaluations.
+- Compare random search, budget-stopped NSGA-II and a learned cost/error surrogate.
+- Run exhaustive reference evaluations only after searches finish; charge setup explicitly.
+- Check held-out predicate error and retain failure rates without a superiority claim.
+
 ## 0.12.1 — 2026-10-08
 
 - Audit original goals against measured evidence and provide scoped English/French CV wording.

@@ -11,6 +11,7 @@ jobs:
       - run: python -m pip install -e ".[experiments]" -r v0.1/requirements.txt
       - run: python -m unittest discover -s tests -v
       - run: python -m graph_mf --backend memory smoke
+      - run: python scripts/benchmark_budget_search.py --backend memory --nodes 200 --runs 2 --budget 8 --output results/local/ci-budget-search
       - run: python -m graph_mf --backend memory benchmark --nodes 200 --repeats 2 --warmups 1 --output results/local/ci-smoke
       - run: python -m graph_mf --backend memory reuse-benchmark --nodes 200 --epochs 2 --requests 3 --warmups 1 --output results/local/ci-reuse-smoke
       - run: python -m graph_mf optimize --runs 2 --generations 3 --output results/local/ci-optimization

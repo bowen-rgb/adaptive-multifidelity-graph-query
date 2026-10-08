@@ -1,4 +1,14 @@
-# Adaptive Multi-Fidelity Graph Query — v0.12.1
+# Adaptive Multi-Fidelity Graph Query — v0.13.0
+
+## Current algorithm focus: budgeted measured search
+
+The [budgeted search experiment](docs/v013-budgeted-search.md) evaluates candidates
+with actual COUNT queries instead of reading a precomputed objective table. Random,
+NSGA-II and a learned cost/error surrogate each receive 16 measurements over 64
+fidelity pairs. Enumeration runs afterward as an independent reference. Shared setup,
+search and held-out verification are recorded separately. This experiment learns
+configuration quality; answer correction and calibrated uncertainty remain next steps.
+It does not yet establish superiority of the surrogate over the other budgeted methods.
 
 The [current goal audit](docs/current-goal-audit.md) distinguishes completed engineering
 from the remaining research hypothesis; [CV wording](docs/cv-project.md) is available in

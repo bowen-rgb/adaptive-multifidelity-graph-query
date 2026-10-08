@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "backend": "memory",
+  "nodes": 50000,
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "runs": 5,
+  "budget": 16,
+  "tolerance": 0.05,
+  "scope": "same static graph; train FR/DE, held-out ES/IT/NL; empirical error, no probabilistic guarantee",
+  "methods": [
+    "random",
+    "nsga2",
+    "surrogate"
+  ],
+  "domain_size": 64,
+  "approximation": "uncorrected inclusion scaling; surrogate learns configuration cost/error, not answer correction",
+  "oracle_available_to_search": false,
+  "performance_measured": false,
+  "summary": {
+    "surrogate": {
+      "mean_evaluations": 16,
+      "mean_search_ms": 53.64731999579817,
+      "heldout_passes": 4
+    },
+    "nsga2": {
+      "mean_evaluations": 16,
+      "mean_search_ms": 52.88341999985278,
+      "heldout_passes": 4
+    },
+    "random": {
+      "mean_evaluations": 16,
+      "mean_search_ms": 53.311400004895404,
+      "heldout_passes": 3
+    }
+  }
+}

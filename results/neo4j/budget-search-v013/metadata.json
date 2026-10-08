@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "backend": "neo4j",
+  "nodes": 50000,
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "runs": 10,
+  "budget": 16,
+  "tolerance": 0.05,
+  "scope": "same static graph; train FR/DE, held-out ES/IT/NL; empirical error, no probabilistic guarantee",
+  "methods": [
+    "random",
+    "nsga2",
+    "surrogate"
+  ],
+  "domain_size": 64,
+  "approximation": "uncorrected inclusion scaling; surrogate learns configuration cost/error, not answer correction",
+  "oracle_available_to_search": false,
+  "performance_measured": true,
+  "summary": {
+    "random": {
+      "mean_evaluations": 16,
+      "mean_search_ms": 873.2647700031521,
+      "heldout_passes": 7
+    },
+    "surrogate": {
+      "mean_evaluations": 16,
+      "mean_search_ms": 958.7657199968817,
+      "heldout_passes": 7
+    },
+    "nsga2": {
+      "mean_evaluations": 16,
+      "mean_search_ms": 859.7042700042948,
+      "heldout_passes": 5
+    }
+  }
+}
