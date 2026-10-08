@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "backend": "memory",
+  "source": "results/memory/dynamic-correction-v014",
+  "epochs": 2,
+  "requests": 8,
+  "tiers": {
+    "quality": 0.05,
+    "balanced": 0.1,
+    "performance": 0.2
+  },
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "training_ms": 1232.8956999990623,
+  "scope": "static known predicates, no result cache; seed epoch is independent unit",
+  "performance_measured": false,
+  "all_raw_counts_match": true
+}

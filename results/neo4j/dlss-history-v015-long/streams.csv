@@ -1,0 +1,5 @@
+epoch,tier,mode,components,failures,calls,online_ms,harness_wall_ms
+0,performance,exact,8000,0,8000,179212.64349875855,201030.01369998674
+0,performance,history_incremental,8000,0,8000,77197.77469773544,123632.9002000275
+1,performance,history_incremental,8000,0,8000,60311.91849897732,99362.0443000109
+1,performance,exact,8000,0,8000,193531.25380008714,216658.72359997593

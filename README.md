@@ -1,4 +1,20 @@
-# Adaptive Multi-Fidelity Graph Query — v0.14.0
+# Adaptive Multi-Fidelity Graph Query — v0.15.0
+
+## Speed/accuracy tiers and history-guided probes
+
+The [DLSS-inspired trade-off report](docs/v015-dlss-history.md) compares explicit
+5%, 10% and 20% error budgets. The new controller starts from calibration/history,
+escalates using current empirical uncertainty and accumulates nested sample deltas.
+COUNTs execute afresh for every request; this is not an answer-result cache.
+Reports distinguish online speedups from recorded training/sample-build cost and
+retain errors, unfavorable comparisons and the limits of a static two-predicate fixture.
+
+On the 20% tier, an 8,000-pair live stream measured 372.74 s for exact online COUNTs
+versus 209.45 s for recorded training + sample builds + optimized online phases
+(1.78×). Maximum observed error was 7.66%. The phases were measured separately;
+existing graph import, profile loading, session initialization and offline checking
+are excluded. Two rank epochs and known repeated predicates do not establish a
+general workload, full SNB, or production throughput result.
 
 ## Confidence-driven dynamic sampling
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.0 — 2026-10-08
+
+- Add explicit speed/error tiers: 5%, 10% and 20% COUNT error budgets.
+- Use calibration forecasts and accepted-tier history to avoid replaying every low probe.
+- Accumulate disjoint node/edge sample deltas and freeze the request's rank generation.
+- Compare exact, cold progressive and history/incremental streams with raw-count validation.
+- Charge recorded training/preparation separately and retain long-stream amortization measurements.
+
 ## 0.14.0 — 2026-10-08
 
 - Fit COUNT correction gains and calibrate empirical residuals on independent sampling seeds.

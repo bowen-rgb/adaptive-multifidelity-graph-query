@@ -7,9 +7,14 @@ Python, Neo4j, Cypher, LDBC SNB, NSGA-II · 2026
 
 - Built a reproducible Neo4j benchmarking pipeline for LDBC SNB Interactive v1, loading 327k nodes and 1.48M relationships and validating 138,474 reference operations across all 29 operation types.
 - Implemented transaction-maintained reply-weight materialization for exact shortest-path queries; measured an 8.68× IC14 query speedup on SF0.1, with construction cost and break-even analysis.
-- Prototyped calibrated multi-fidelity COUNT queries with adaptive escalation, hysteresis and cost-aware sampling; compared evolutionary and exhaustive policy selection and documented accuracy and end-to-end cost limitations.
+- Implemented calibration-guided COUNT sampling with adaptive tiers; measured 1.78× acceleration across recorded training, preparation and query phases on 8,000 static-graph request pairs under a 20% error budget (maximum observed error: 7.66%).
 
-If space permits only two bullets, retain the first two. The 8.68× result is a
+For two bullets, use the first and third for algorithm-focused applications, or
+the first two for database engineering. The 1.78× result covers one synthetic graph,
+two rank epochs and known repeated predicates; graph import and offline checking are
+excluded, and measured phases were recorded separately. No full SNB adaptive speedup
+is claimed. Evolutionary/exhaustive search comparisons are a separate experiment.
+The 8.68× result is a
 single-query, warm-cache result on one graph and fixed parameters; the full mixed
 workload did not demonstrate overall acceleration. Do not describe this as a
 certified benchmark or a demonstrated new DLSS algorithm.
@@ -21,6 +26,7 @@ Python, Neo4j, Cypher, LDBC SNB, NSGA-II · 2026
 
 - Développement d'une chaîne d'expérimentation reproductible sur Neo4j : 327 000 nœuds, 1,48 million de relations et validation de 138 474 opérations de référence couvrant les 29 types de SNB Interactive v1.
 - Implémentation d'une matérialisation exacte des poids de réponses, maintenue dans les transactions ; accélération mesurée de 8,68× pour IC14 sur SF0.1, avec mesure du coût de construction et du seuil d'amortissement.
+- Développement d'un échantillonnage COUNT guidé par calibration : accélération de 1,78× sur les phases mesurées pour 8 000 paires de requêtes sur un graphe synthétique statique, sous un budget d'erreur de 20 % (maximum observé : 7,66 %).
 
 ## 面试时需要能解释的五件事
 

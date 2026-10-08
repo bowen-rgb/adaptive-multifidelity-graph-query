@@ -1,0 +1,34 @@
+[
+  {
+    "tier": "performance",
+    "mode": "exact",
+    "budget": 0.2,
+    "request_pairs": 8000,
+    "online_ms": 372743.8972988457,
+    "startup_ms": 0,
+    "phase_total_ms": 372743.8972988457,
+    "online_speedup": 1.0,
+    "phase_total_speedup": 1.0,
+    "failures": 0,
+    "max_error": 0.0,
+    "mean_error": 0.0,
+    "mean_attempts": 1,
+    "break_even_pairs": null
+  },
+  {
+    "tier": "performance",
+    "mode": "history_incremental",
+    "budget": 0.2,
+    "request_pairs": 8000,
+    "online_ms": 137509.69319671276,
+    "startup_ms": 71940.87709998712,
+    "phase_total_ms": 209450.57029669988,
+    "online_speedup": 2.7106736160455367,
+    "phase_total_speedup": 1.779627034535311,
+    "failures": 0,
+    "max_error": 0.07655644921060471,
+    "mean_error": 0.04132628000667223,
+    "mean_attempts": 1,
+    "break_even_pairs": 2446.61280869689
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "status": "failed_or_interrupted",
+  "backend": "neo4j",
+  "source": "results/neo4j/dynamic-correction-v014",
+  "epochs": 3,
+  "requests": 60,
+  "tiers": {
+    "quality": 0.05,
+    "balanced": 0.1,
+    "performance": 0.2
+  },
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "training_ms": 64810.18739999854,
+  "scope": "static known predicates, no result cache; seed epoch is independent unit",
+  "performance_measured": true
+}
