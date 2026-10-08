@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "exact",
+    "components": 2400,
+    "failures": 0,
+    "independent_epochs": 100,
+    "failed_epochs": 0,
+    "unique_realizations": 1062,
+    "max_error": 0.0,
+    "approximate_components": 0
+  },
+  {
+    "mode": "no_history",
+    "components": 2400,
+    "failures": 5,
+    "independent_epochs": 100,
+    "failed_epochs": 3,
+    "unique_realizations": 1062,
+    "max_error": 0.1657809017658152,
+    "approximate_components": 2400
+  },
+  {
+    "mode": "joint_no_history",
+    "components": 2400,
+    "failures": 0,
+    "independent_epochs": 100,
+    "failed_epochs": 0,
+    "unique_realizations": 1062,
+    "max_error": 0.14268692284778076,
+    "approximate_components": 2000
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "exact",
+    "epochs": 3,
+    "mean_stream_ms": 101047.73776677514,
+    "online_speedup": 1.0,
+    "paired_bootstrap_low": 1.0,
+    "paired_bootstrap_high": 1.0,
+    "failures": 0,
+    "components": 12000,
+    "mean_attempts": 1,
+    "max_error": 0.0,
+    "startup_ms": 0,
+    "phase_total_speedup": 1.0
+  },
+  {
+    "mode": "joint_no_history",
+    "epochs": 3,
+    "mean_stream_ms": 50262.11796683492,
+    "online_speedup": 2.010415435208097,
+    "paired_bootstrap_low": 1.8033879200818055,
+    "paired_bootstrap_high": 2.148786439369343,
+    "failures": 0,
+    "components": 12000,
+    "mean_attempts": 1.2493333333333334,
+    "max_error": 0.11260002029270486,
+    "startup_ms": 75368.0523999792,
+    "phase_total_speedup": 1.3404258544383565
+  }
+]

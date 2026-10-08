@@ -7,11 +7,11 @@ Python, Neo4j, Cypher, LDBC SNB, NSGA-II · 2026
 
 - Built a reproducible Neo4j benchmarking pipeline for LDBC SNB Interactive v1, loading 327k nodes and 1.48M relationships and validating 138,474 reference operations across all 29 operation types.
 - Implemented transaction-maintained reply-weight materialization for exact shortest-path queries; measured an 8.68× IC14 query speedup on SF0.1, with construction cost and break-even analysis.
-- Implemented calibration-guided COUNT sampling with adaptive tiers; measured 1.78× acceleration across recorded training, preparation and query phases on 8,000 static-graph request pairs under a 20% error budget (maximum observed error: 7.66%).
+- Implemented jointly calibrated adaptive COUNT sampling; measured 1.34× acceleration across recorded training, preparation and query phases on 6,000 static-graph request pairs under a 20% error budget (maximum observed error: 11.26%; no observed budget violations).
 
 For two bullets, use the first and third for algorithm-focused applications, or
-the first two for database engineering. The 1.78× result covers one synthetic graph,
-two rank epochs and known repeated predicates; graph import and offline checking are
+the first two for database engineering. The 1.34× result covers one synthetic graph,
+three rank epochs and known repeated predicates; graph import, profile loading and test-oracle checking are
 excluded, and measured phases were recorded separately. No full SNB adaptive speedup
 is claimed. Evolutionary/exhaustive search comparisons are a separate experiment.
 Independent changing-budget ablations at 50k and 100k nodes measured 1.70× and
@@ -19,6 +19,10 @@ Independent changing-budget ablations at 50k and 100k nodes measured 1.70× and
 Those exclude training/preparation and incur 0/720 and 9/720 budget violations;
 they support the mechanism's measured trade-off, not a guaranteed error bound.
 See [the ablation report](v016-ablation-publication.md) before quoting these figures.
+Joint calibration subsequently observed zero budget violations across 100 fresh
+sampling epochs per size (2,400 components each), compared with 5 and 4 for the
+unchanged marginal policy. The new 1.34× phase-cost check is separate from the
+earlier v0.15 1.78× result; see [the joint-policy experiment](v017-joint-calibration.md).
 The 8.68× result is a
 single-query, warm-cache result on one graph and fixed parameters; the full mixed
 workload did not demonstrate overall acceleration. Do not describe this as a
@@ -31,7 +35,7 @@ Python, Neo4j, Cypher, LDBC SNB, NSGA-II · 2026
 
 - Développement d'une chaîne d'expérimentation reproductible sur Neo4j : 327 000 nœuds, 1,48 million de relations et validation de 138 474 opérations de référence couvrant les 29 types de SNB Interactive v1.
 - Implémentation d'une matérialisation exacte des poids de réponses, maintenue dans les transactions ; accélération mesurée de 8,68× pour IC14 sur SF0.1, avec mesure du coût de construction et du seuil d'amortissement.
-- Développement d'un échantillonnage COUNT guidé par calibration : accélération de 1,78× sur les phases mesurées pour 8 000 paires de requêtes sur un graphe synthétique statique, sous un budget d'erreur de 20 % (maximum observé : 7,66 %).
+- Développement d'un échantillonnage COUNT adaptatif avec calibration conjointe : accélération de 1,34× sur les phases mesurées pour 6 000 paires de requêtes sur un graphe synthétique statique, sous un budget d'erreur de 20 % (maximum observé : 11,26 % ; aucun dépassement observé).
 
 ## 面试时需要能解释的五件事
 

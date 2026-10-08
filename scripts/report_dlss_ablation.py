@@ -32,6 +32,7 @@ def summarize(source):
     baseline=np.array([float(keyed[e,'exact']['online_ms'])+float(keyed[e,'exact']['init_ms']) for e in range(meta['epochs'])])
     output=[]
     for mode in meta['modes']:
+        startup=0 if mode=='exact' else meta['training_ms']+preparation+(meta.get('joint_refit_ms',0) if mode.startswith('joint') else 0)
         costs=np.array([float(keyed[e,mode]['online_ms'])+float(keyed[e,mode]['init_ms']) for e in range(meta['epochs'])])
         ratios=baseline[resamples].mean(axis=1)/costs[resamples].mean(axis=1)
         actual=[r for r in requests if r['mode']==mode]
@@ -41,8 +42,8 @@ def summarize(source):
             paired_bootstrap_high=float(np.quantile(ratios,.975)),failures=sum(r['within_budget']=='False' for r in actual),
             components=len(actual),mean_attempts=mean(int(r['attempts']) for r in actual),
             max_error=max(float(r['error']) for r in actual),
-            startup_ms=0 if mode=='exact' else meta['training_ms']+preparation,
-            phase_total_speedup=float(baseline.sum()/(costs.sum()+(0 if mode=='exact' else meta['training_ms']+preparation)))))
+            startup_ms=startup,
+            phase_total_speedup=float(baseline.sum()/(costs.sum()+startup))))
     (source/'summary.json').write_text(json.dumps(output,indent=2)+'\n')
     return meta,output
 

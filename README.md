@@ -1,6 +1,22 @@
-# Adaptive Multi-Fidelity Graph Query — v0.16.0
+# Adaptive Multi-Fidelity Graph Query — v0.17.0
 
 Public repository: [bowen-rgb/adaptive-multifidelity-graph-query](https://github.com/bowen-rgb/adaptive-multifidelity-graph-query).
+
+## Reliability of adaptive tier selection
+
+[Joint calibration](docs/v017-joint-calibration.md) adds a seed-level maximum over
+the fixed countries, COUNT kinds and tiers. Residual scales use fitting data only;
+held-out tests do not tune thresholds. On 100 fresh accuracy epochs at each of
+50k and 100k nodes, the joint policy had 0/2,400 observed budget violations per size;
+the unchanged marginal policy had 5/2,400 and 4/2,400. Extra exact fallbacks remain
+part of its cost. These are static-graph observations, not unconditional guarantees.
+
+A separate 6,000-pair 20%-budget live stream compared three new ranks: exact cost
+303.14 s versus 226.15 s for joint online/session initialization plus recorded
+training/refit/sample builds (**1.34×**). Maximum observed error was 11.26%, with
+0/12,000 budget violations. These separately recorded phases exclude graph import,
+profile loading and test-oracle checks. This confirms amortization for the measured
+known-predicate workload; strict 5% budgets did not improve online latency.
 
 ## What the experiments establish
 
@@ -21,7 +37,7 @@ algorithmic novelty remain open research questions.
 ## Speed/accuracy tiers and history-guided probes
 
 The [DLSS-inspired trade-off report](docs/v015-dlss-history.md) compares explicit
-5%, 10% and 20% error budgets. The new controller starts from calibration/history,
+5%, 10% and 20% error budgets. The v0.15 controller starts from calibration/history,
 escalates using current empirical uncertainty and accumulates nested sample deltas.
 COUNTs execute afresh for every request; this is not an answer-result cache.
 Reports distinguish online speedups from recorded training/sample-build cost and
@@ -30,7 +46,7 @@ retain errors, unfavorable comparisons and the limits of a static two-predicate 
 On the 20% tier, an 8,000-pair live stream measured 372.74 s for exact online COUNTs
 versus 209.45 s for recorded training + sample builds + optimized online phases
 (1.78×). Maximum observed error was 7.66%. The phases were measured separately;
-existing graph import, profile loading, session initialization and offline checking
+existing graph import, profile loading, session initialization and test-oracle checking
 are excluded. Two rank epochs and known repeated predicates do not establish a
 general workload, full SNB, or production throughput result.
 

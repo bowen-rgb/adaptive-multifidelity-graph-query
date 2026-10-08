@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "backend": "neo4j",
+  "nodes": 100000,
+  "graph_sha256": "f85561007ce14ed08f9a14da0a3a54a82170cbbf6442d418530a462e12abd9a6",
+  "source": "results/neo4j/correction-100k-v016",
+  "epochs": 6,
+  "requests": 60,
+  "modes": [
+    "exact",
+    "no_history",
+    "joint_no_history"
+  ],
+  "seeds": [
+    23000,
+    23001,
+    23002,
+    23003,
+    23004,
+    23005
+  ],
+  "budgets": [
+    0.2,
+    0.05,
+    0.1,
+    0.2,
+    0.05,
+    0.2
+  ],
+  "scope": "static graph, changing budgets; seed epoch independent, no result cache",
+  "training_ms": 138940.47839997802,
+  "joint_refit_ms": 37.40449997712858,
+  "performance_measured": true,
+  "all_raw_counts_match": true
+}

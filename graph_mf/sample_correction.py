@@ -3,6 +3,50 @@ import math
 from statistics import mean
 
 
+def fit_joint_profile(fitting, calibration, levels, countries, fingerprint, alpha=.1):
+    """Calibrate one seed-level maximum across all known predicates and tiers.
+
+    Residual scales use fitting data only. Calibration never chooses the scales
+    or evaluates held-out test seeds. This is static-graph empirical calibration;
+    deterministic PRNG tests do not establish a production coverage guarantee.
+    """
+    profile = fit_profile(fitting, calibration, levels, countries, fingerprint, alpha)
+    rank = math.ceil((len(profile['calibration_seeds']) + 1) * (1 - alpha))
+    for name, corrected in [('raw', False), ('corrected', True)]:
+        scales = {}
+        for entry in profile['components']:
+            kind, f = entry['kind'], entry['fidelity']
+            gain = entry['gain'] if corrected else 1.
+            power = 1 if kind == 'node' else 2
+            rows = [r for r in fitting if r['kind'] == kind and r['fidelity'] == f]
+            scores = [abs(gain * r['count'] / f**power - r['truth']) / max(r['truth'], 1)
+                      / math.sqrt(max(entry['reference_sample_count'], 1) / max(r['count'], 1))
+                      for r in rows]
+            scales[kind, f] = max(max(scores), 1e-12)
+        maxima = []
+        for seed in profile['calibration_seeds']:
+            scores = []
+            for entry in profile['components']:
+                kind, f = entry['kind'], entry['fidelity']
+                gain = entry['gain'] if corrected else 1.
+                power = 1 if kind == 'node' else 2
+                for r in calibration:
+                    if r['seed'] == seed and r['kind'] == kind and r['fidelity'] == f:
+                        residual = abs(gain * r['count'] / f**power - r['truth']) / max(r['truth'], 1)
+                        adjustment = math.sqrt(max(entry['reference_sample_count'], 1) / max(r['count'], 1))
+                        scores.append(residual / adjustment / scales[kind, f])
+            maxima.append(max(scores))
+        multiplier = sorted(maxima)[rank - 1]
+        for entry in profile['components']:
+            score = multiplier * scales[entry['kind'], entry['fidelity']]
+            entry[name + '_count_score'] = score if entry['fidelity'] < 1 else 0.
+            entry[name + '_bound'] = entry[name + '_count_score']
+        profile[name + '_joint_multiplier'] = multiplier
+    profile['scope'] = 'seed-level maximum over fixed known countries, components and levels; static graph only; no unconditional coverage guarantee'
+    profile['calibration_mode'] = 'joint_seed_maximum'
+    return profile
+
+
 def fit_profile(fitting, calibration, levels, countries, fingerprint, alpha=.1):
     if not 0 < alpha < 1 or not fitting or not calibration:
         raise ValueError('Nonempty independent splits and alpha in (0,1) required')

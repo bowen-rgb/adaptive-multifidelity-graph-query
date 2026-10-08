@@ -1,8 +1,22 @@
 import unittest
-from graph_mf.sample_correction import fit_profile, answer, DynamicSampler
+from graph_mf.sample_correction import fit_profile, fit_joint_profile, answer, DynamicSampler
 
 
 class CorrectionTests(unittest.TestCase):
+    def test_joint_calibration_accounts_for_other_components(self):
+        fit,cal=self.fixture()
+        for row in cal:
+            if row['seed'] in (10,11) and row['kind']=='node' and row['fidelity']==.5:
+                row['truth']=200
+        marginal=fit_profile(fit,cal,[.5,1.],['FR'],'abc')
+        joint=fit_joint_profile(fit,cal,[.5,1.],['FR'],'abc')
+        old=next(r for r in marginal['components'] if r['kind']=='edge' and r['fidelity']==.5)
+        new=next(r for r in joint['components'] if r['kind']=='edge' and r['fidelity']==.5)
+        self.assertGreater(new['raw_count_score'],old['raw_count_score'])
+        self.assertEqual(new['gain'],old['gain'])
+        self.assertEqual(joint['calibration_mode'],'joint_seed_maximum')
+        self.assertTrue(all(r['raw_count_score']==0 for r in joint['components'] if r['fidelity']==1))
+
     def fixture(self):
         def rows(seeds):
             return [dict(seed=s,country='FR',kind=k,fidelity=f,count=(100 if f==1 else 10),

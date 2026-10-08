@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.17.0 — 2026-10-08
+
+- Add joint seed-level calibration across fixed known countries, COUNT kinds and fidelity levels.
+- Fit residual scales on fitting data only, then calibrate a maximum over independent calibration seeds.
+- Compare unchanged marginal and joint policies on 100 fresh accuracy epochs per graph size.
+- Measure isolated live comparisons on separate seeds; retain additional exact fallbacks and startup cost.
+- Publish complete CSV snapshots atomically at completion to avoid Windows reader conflicts.
+- Add a calibration-selection regression test and a joint-policy offline CI smoke check.
+
 ## 0.16.0 — 2026-10-08
 
 - Publish the repository after a reachable-history credential signature audit.
