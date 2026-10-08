@@ -1,0 +1,177 @@
+{
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "countries": [
+    "FR",
+    "DE"
+  ],
+  "levels": [
+    0.05,
+    0.1,
+    0.15,
+    0.25,
+    0.35,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "fit_seeds": [
+    16000,
+    16001,
+    16002,
+    16003
+  ],
+  "calibration_seeds": [
+    17000,
+    17001,
+    17002,
+    17003,
+    17004,
+    17005,
+    17006,
+    17007,
+    17008,
+    17009,
+    17010,
+    17011,
+    17012,
+    17013,
+    17014,
+    17015,
+    17016,
+    17017,
+    17018,
+    17019
+  ],
+  "alpha": 0.1,
+  "components": [
+    {
+      "kind": "node",
+      "fidelity": 0.05,
+      "gain": 0.988687161872572,
+      "forecast_ms": 0.7479374980903231,
+      "raw_bound": 0.07356671740233384,
+      "corrected_bound": 0.06412125061062779
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.1,
+      "gain": 0.9984114040226275,
+      "forecast_ms": 0.712862496584421,
+      "raw_bound": 0.0593607305936073,
+      "corrected_bound": 0.05767783439839977
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.15,
+      "gain": 0.9914265113561872,
+      "forecast_ms": 0.6853500053694006,
+      "raw_bound": 0.04684593269068149,
+      "corrected_bound": 0.05048217443035569
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.25,
+      "gain": 0.9915477027886155,
+      "forecast_ms": 0.6623749977734406,
+      "raw_bound": 0.029881676582659267,
+      "corrected_bound": 0.03675571783380172
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.35,
+      "gain": 0.9927353195774427,
+      "forecast_ms": 0.6574374965566676,
+      "raw_bound": 0.028200891961838444,
+      "corrected_bound": 0.035260701916661946
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.5,
+      "gain": 0.9947218432472805,
+      "forecast_ms": 0.6635874997300562,
+      "raw_bound": 0.01796042617960426,
+      "corrected_bound": 0.023143784987602098
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.75,
+      "gain": 0.9973127650854487,
+      "forecast_ms": 0.7173625090217683,
+      "raw_bound": 0.012075088787417554,
+      "corrected_bound": 0.014729875101783028
+    },
+    {
+      "kind": "node",
+      "fidelity": 1.0,
+      "gain": 1.0,
+      "forecast_ms": 0.7380749993899371,
+      "raw_bound": 0.0,
+      "corrected_bound": 0.0
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.05,
+      "gain": 0.9449652052887962,
+      "forecast_ms": 1.108762498915894,
+      "raw_bound": 0.657123264186525,
+      "corrected_bound": 0.6759934149532673
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.1,
+      "gain": 1.0091425285965019,
+      "forecast_ms": 1.1526750022312626,
+      "raw_bound": 0.29252308608876987,
+      "corrected_bound": 0.2975431106589683
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.15,
+      "gain": 1.009755443441317,
+      "forecast_ms": 1.1278375022811815,
+      "raw_bound": 0.24535795849468767,
+      "corrected_bound": 0.23799609074034267
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.25,
+      "gain": 0.9959612070360842,
+      "forecast_ms": 0.8900750035536475,
+      "raw_bound": 0.12463569346819818,
+      "corrected_bound": 0.12009352274245023
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.35,
+      "gain": 0.9813244293654314,
+      "forecast_ms": 1.0115375007444527,
+      "raw_bound": 0.09312602119538017,
+      "corrected_bound": 0.11006241024319811
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.5,
+      "gain": 0.9855390908528875,
+      "forecast_ms": 0.9969874990929384,
+      "raw_bound": 0.0529744556831819,
+      "corrected_bound": 0.06666930603954217
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.75,
+      "gain": 0.999424647540625,
+      "forecast_ms": 1.0293750056007411,
+      "raw_bound": 0.026644159798762092,
+      "corrected_bound": 0.0272041824752689
+    },
+    {
+      "kind": "edge",
+      "fidelity": 1.0,
+      "gain": 1.0,
+      "forecast_ms": 0.9818250000535045,
+      "raw_bound": 0.0,
+      "corrected_bound": 0.0
+    }
+  ],
+  "scope": "empirical static-graph bounds per component/level; selection and joint coverage are not guaranteed"
+}

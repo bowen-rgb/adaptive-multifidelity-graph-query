@@ -1,4 +1,13 @@
-# Adaptive Multi-Fidelity Graph Query — v0.13.0
+# Adaptive Multi-Fidelity Graph Query — v0.14.0
+
+## Confidence-driven dynamic sampling
+
+The [dynamic sampling experiment](docs/v014-dynamic-sampling.md) starts at low
+fidelity and escalates when a calibrated, count-adjusted empirical uncertainty exceeds
+the error budget. Fitting, calibration and testing use disjoint sampling seeds.
+Every discarded probe is charged; unknown predicates fall back to exact. This is an
+empirical stopping policy, not a per-request probabilistic guarantee or GPU integration.
+The live ablation retains correction failures and the unfavorable full-cost comparison.
 
 ## Current algorithm focus: budgeted measured search
 

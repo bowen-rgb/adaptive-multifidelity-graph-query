@@ -1,0 +1,94 @@
+{
+  "status": "completed",
+  "backend": "memory",
+  "nodes": 50000,
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "fitting_seeds": [
+    16000,
+    16001,
+    16002,
+    16003
+  ],
+  "calibration_seeds": [
+    17000,
+    17001,
+    17002,
+    17003,
+    17004,
+    17005,
+    17006,
+    17007,
+    17008,
+    17009,
+    17010,
+    17011,
+    17012,
+    17013,
+    17014,
+    17015,
+    17016,
+    17017,
+    17018,
+    17019
+  ],
+  "test_seeds": [
+    18000,
+    18001,
+    18002,
+    18003,
+    18004
+  ],
+  "fit_countries": [
+    "FR",
+    "DE"
+  ],
+  "unseen_countries": [
+    "ES",
+    "IT",
+    "NL"
+  ],
+  "error_budget": 0.05,
+  "fixed_fidelity": 0.25,
+  "bounds": "empirical per level/component; no selected/joint coverage guarantee",
+  "production_unknown_scope": "exact fallback",
+  "performance_measured": false,
+  "training_ms": 1307.1366999938618,
+  "all_raw_counts_match": true,
+  "summary": {
+    "exact": {
+      "requests": 50,
+      "failures": 0,
+      "mean_error": 0.0,
+      "total_online_ms": 46.733700000913814,
+      "approximate_requests": 0
+    },
+    "fixed_raw": {
+      "requests": 50,
+      "failures": 9,
+      "mean_error": 0.029782970832768093,
+      "total_online_ms": 227.49680007109419,
+      "approximate_requests": 50
+    },
+    "fixed_corrected": {
+      "requests": 50,
+      "failures": 11,
+      "mean_error": 0.030237034334524963,
+      "total_online_ms": 231.0521999897901,
+      "approximate_requests": 50
+    },
+    "gated_raw": {
+      "requests": 50,
+      "failures": 0,
+      "mean_error": 0.0021423966781459938,
+      "total_online_ms": 222.3339999327436,
+      "approximate_requests": 10
+    },
+    "gated_corrected": {
+      "requests": 50,
+      "failures": 0,
+      "mean_error": 0.0021590494514292487,
+      "total_online_ms": 229.89120002603158,
+      "approximate_requests": 10
+    }
+  }
+}

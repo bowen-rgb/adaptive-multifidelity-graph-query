@@ -1,0 +1,113 @@
+{
+  "status": "completed",
+  "backend": "neo4j",
+  "nodes": 50000,
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "fitting_seeds": [
+    16000,
+    16001,
+    16002,
+    16003
+  ],
+  "calibration_seeds": [
+    17000,
+    17001,
+    17002,
+    17003,
+    17004,
+    17005,
+    17006,
+    17007,
+    17008,
+    17009,
+    17010,
+    17011,
+    17012,
+    17013,
+    17014,
+    17015,
+    17016,
+    17017,
+    17018,
+    17019
+  ],
+  "test_seeds": [
+    18000,
+    18001,
+    18002,
+    18003,
+    18004,
+    18005,
+    18006,
+    18007,
+    18008,
+    18009
+  ],
+  "fit_countries": [
+    "FR",
+    "DE"
+  ],
+  "unseen_countries": [
+    "ES",
+    "IT",
+    "NL"
+  ],
+  "error_budget": 0.05,
+  "fixed_fidelity": 0.25,
+  "bounds": "empirical per level/component; no selected/joint coverage guarantee",
+  "production_unknown_scope": "exact fallback",
+  "performance_measured": true,
+  "training_ms": 64810.18739999854,
+  "all_raw_counts_match": true,
+  "summary": {
+    "exact": {
+      "requests": 100,
+      "failures": 0,
+      "mean_error": 0.0,
+      "total_online_ms": 1963.421300140908,
+      "approximate_requests": 0
+    },
+    "fixed_raw": {
+      "requests": 100,
+      "failures": 19,
+      "mean_error": 0.033991872761808366,
+      "total_online_ms": 1725.277100020321,
+      "approximate_requests": 100
+    },
+    "fixed_corrected": {
+      "requests": 100,
+      "failures": 21,
+      "mean_error": 0.03447760155839264,
+      "total_online_ms": 1698.1440001400188,
+      "approximate_requests": 100
+    },
+    "gated_raw": {
+      "requests": 100,
+      "failures": 1,
+      "mean_error": 0.00552599558018788,
+      "total_online_ms": 2724.9374999373686,
+      "approximate_requests": 40
+    },
+    "gated_corrected": {
+      "requests": 100,
+      "failures": 1,
+      "mean_error": 0.005154046758395179,
+      "total_online_ms": 2579.538100020727,
+      "approximate_requests": 40
+    },
+    "dynamic_raw": {
+      "requests": 100,
+      "failures": 0,
+      "mean_error": 0.00592714468184012,
+      "total_online_ms": 4179.083200084278,
+      "approximate_requests": 40
+    },
+    "dynamic_corrected": {
+      "requests": 100,
+      "failures": 1,
+      "mean_error": 0.005574797014367083,
+      "total_online_ms": 4540.0537999521475,
+      "approximate_requests": 40
+    }
+  }
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.0 — 2026-10-08
+
+- Fit COUNT correction gains and calibrate empirical residuals on independent sampling seeds.
+- Add progressive low-to-high sampling driven by current sample count and calibrated uncertainty.
+- Compare exact, fixed, static-gated and dynamic policies with correction ablations.
+- Validate all live raw counts and retain probe traces, discarded work and preparation/training cost.
+- Keep unknown queries exact; report correction failures and the absence of a full-cost speedup.
+
 ## 0.13.0 — 2026-10-08
 
 - Shift algorithm experiments to budgeted, real objective evaluations.

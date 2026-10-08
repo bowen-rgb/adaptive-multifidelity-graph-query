@@ -1,0 +1,72 @@
+{
+  "exact": {
+    "online_ms": 1963.421300140908,
+    "total_ms": 1963.421300140908,
+    "training_ms": 0,
+    "preparation_ms": 0,
+    "known_failures": 0,
+    "unseen_failures": 0,
+    "approximate": 0,
+    "mean_attempts": 1
+  },
+  "fixed_raw": {
+    "online_ms": 1725.277100020321,
+    "total_ms": 28636.78540001274,
+    "training_ms": 0,
+    "preparation_ms": 26911.50829999242,
+    "known_failures": 5,
+    "unseen_failures": 14,
+    "approximate": 100,
+    "mean_attempts": 1
+  },
+  "fixed_corrected": {
+    "online_ms": 1698.1440001400188,
+    "total_ms": 93419.83970013098,
+    "training_ms": 64810.18739999854,
+    "preparation_ms": 26911.50829999242,
+    "known_failures": 7,
+    "unseen_failures": 14,
+    "approximate": 100,
+    "mean_attempts": 1
+  },
+  "gated_raw": {
+    "online_ms": 2724.9374999373686,
+    "total_ms": 94446.63319992833,
+    "training_ms": 64810.18739999854,
+    "preparation_ms": 26911.50829999242,
+    "known_failures": 1,
+    "unseen_failures": 0,
+    "approximate": 40,
+    "mean_attempts": 1
+  },
+  "gated_corrected": {
+    "online_ms": 2579.538100020727,
+    "total_ms": 94301.23380001169,
+    "training_ms": 64810.18739999854,
+    "preparation_ms": 26911.50829999242,
+    "known_failures": 1,
+    "unseen_failures": 0,
+    "approximate": 40,
+    "mean_attempts": 1
+  },
+  "dynamic_raw": {
+    "online_ms": 4179.083200084278,
+    "total_ms": 95900.77890007524,
+    "training_ms": 64810.18739999854,
+    "preparation_ms": 26911.50829999242,
+    "known_failures": 0,
+    "unseen_failures": 0,
+    "approximate": 40,
+    "mean_attempts": 2.6
+  },
+  "dynamic_corrected": {
+    "online_ms": 4540.0537999521475,
+    "total_ms": 96261.74949994311,
+    "training_ms": 64810.18739999854,
+    "preparation_ms": 26911.50829999242,
+    "known_failures": 1,
+    "unseen_failures": 0,
+    "approximate": 40,
+    "mean_attempts": 2.7
+  }
+}

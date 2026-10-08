@@ -1,0 +1,225 @@
+{
+  "graph_sha256": "b9f668062bf1dd230a7de8e63b9f1770deba2ff77d5bed4b108e0a354aef90a8",
+  "countries": [
+    "FR",
+    "DE"
+  ],
+  "levels": [
+    0.05,
+    0.1,
+    0.15,
+    0.25,
+    0.35,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "fit_seeds": [
+    16000,
+    16001,
+    16002,
+    16003
+  ],
+  "calibration_seeds": [
+    17000,
+    17001,
+    17002,
+    17003,
+    17004,
+    17005,
+    17006,
+    17007,
+    17008,
+    17009,
+    17010,
+    17011,
+    17012,
+    17013,
+    17014,
+    17015,
+    17016,
+    17017,
+    17018,
+    17019
+  ],
+  "alpha": 0.1,
+  "components": [
+    {
+      "kind": "node",
+      "fidelity": 0.05,
+      "gain": 0.988687161872572,
+      "forecast_ms": 0.6810999948356766,
+      "reference_sample_count": 626.875,
+      "raw_bound": 0.07356671740233384,
+      "raw_count_score": 0.06758008579522279,
+      "corrected_bound": 0.06412125061062779,
+      "corrected_count_score": 0.06406500149736677
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.1,
+      "gain": 0.9984114040226275,
+      "forecast_ms": 0.6765625112166163,
+      "reference_sample_count": 1241.375,
+      "raw_bound": 0.0593607305936073,
+      "raw_count_score": 0.06395850333349735,
+      "corrected_bound": 0.05767783439839977,
+      "corrected_count_score": 0.06462706071945394
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.15,
+      "gain": 0.9914265113561872,
+      "forecast_ms": 0.6372874959197361,
+      "reference_sample_count": 1875.375,
+      "raw_bound": 0.04684593269068149,
+      "raw_count_score": 0.04524990383689771,
+      "corrected_bound": 0.05048217443035569,
+      "corrected_count_score": 0.05127316949047403
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.25,
+      "gain": 0.9915477027886155,
+      "forecast_ms": 0.6473499997809995,
+      "reference_sample_count": 3127,
+      "raw_bound": 0.029881676582659267,
+      "raw_count_score": 0.031240554051514078,
+      "corrected_bound": 0.03675571783380172,
+      "corrected_count_score": 0.03961810212788422
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.35,
+      "gain": 0.9927353195774427,
+      "forecast_ms": 0.6548749952344224,
+      "reference_sample_count": 4374,
+      "raw_bound": 0.028200891961838444,
+      "raw_count_score": 0.026181164915708696,
+      "corrected_bound": 0.035260701916661946,
+      "corrected_count_score": 0.03380490455090975
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.5,
+      "gain": 0.9947218432472805,
+      "forecast_ms": 0.6247999990591779,
+      "reference_sample_count": 6235.625,
+      "raw_bound": 0.01796042617960426,
+      "raw_count_score": 0.015821747671691488,
+      "corrected_bound": 0.023143784987602098,
+      "corrected_count_score": 0.020387886266170448
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.75,
+      "gain": 0.9973127650854487,
+      "forecast_ms": 0.6489874976978172,
+      "reference_sample_count": 9330.5,
+      "raw_bound": 0.012075088787417554,
+      "raw_count_score": 0.01068215286276012,
+      "corrected_bound": 0.014729875101783028,
+      "corrected_count_score": 0.01303069321118107
+    },
+    {
+      "kind": "node",
+      "fidelity": 1.0,
+      "gain": 1.0,
+      "forecast_ms": 0.6180749951454345,
+      "reference_sample_count": 12407,
+      "raw_bound": 0.0,
+      "raw_count_score": 0.0,
+      "corrected_bound": 0.0,
+      "corrected_count_score": 0.0
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.05,
+      "gain": 0.9449652052887962,
+      "forecast_ms": 0.8645875059301034,
+      "reference_sample_count": 24.75,
+      "raw_bound": 0.657123264186525,
+      "raw_count_score": 0.4795670197795269,
+      "corrected_bound": 0.6759934149532673,
+      "corrected_count_score": 0.40128684524036123
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.1,
+      "gain": 1.0091425285965019,
+      "forecast_ms": 0.8416125056101009,
+      "reference_sample_count": 93.375,
+      "raw_bound": 0.29252308608876987,
+      "raw_count_score": 0.2950574887375968,
+      "corrected_bound": 0.2975431106589683,
+      "corrected_count_score": 0.30161768830677754
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.15,
+      "gain": 1.009755443441317,
+      "forecast_ms": 0.8485999933327548,
+      "reference_sample_count": 213.125,
+      "raw_bound": 0.24535795849468767,
+      "raw_count_score": 0.21894799927527814,
+      "corrected_bound": 0.23799609074034267,
+      "corrected_count_score": 0.229641529338842
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.25,
+      "gain": 0.9959612070360842,
+      "forecast_ms": 0.8498499919369351,
+      "reference_sample_count": 604.125,
+      "raw_bound": 0.12463569346819818,
+      "raw_count_score": 0.0955457994028042,
+      "corrected_bound": 0.12009352274245023,
+      "corrected_count_score": 0.09522070394662627
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.35,
+      "gain": 0.9813244293654314,
+      "forecast_ms": 0.835987495520385,
+      "reference_sample_count": 1195.5,
+      "raw_bound": 0.09312602119538017,
+      "raw_count_score": 0.09088175161135223,
+      "corrected_bound": 0.11006241024319811,
+      "corrected_count_score": 0.08530894523293282
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.5,
+      "gain": 0.9855390908528875,
+      "forecast_ms": 0.9109875063586514,
+      "reference_sample_count": 2441.25,
+      "raw_bound": 0.0529744556831819,
+      "raw_count_score": 0.050287946308142234,
+      "corrected_bound": 0.06666930603954217,
+      "corrected_count_score": 0.060354153076075105
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.75,
+      "gain": 0.999424647540625,
+      "forecast_ms": 0.9164999974018428,
+      "reference_sample_count": 5418.375,
+      "raw_bound": 0.026644159798762092,
+      "raw_count_score": 0.03103632203367598,
+      "corrected_bound": 0.0272041824752689,
+      "corrected_count_score": 0.03168866176836838
+    },
+    {
+      "kind": "edge",
+      "fidelity": 1.0,
+      "gain": 1.0,
+      "forecast_ms": 0.8338125044247136,
+      "reference_sample_count": 9630.5,
+      "raw_bound": 0.0,
+      "raw_count_score": 0.0,
+      "corrected_bound": 0.0,
+      "corrected_count_score": 0.0
+    }
+  ],
+  "scope": "empirical static-graph bounds per component/level; selection and joint coverage are not guaranteed"
+}
