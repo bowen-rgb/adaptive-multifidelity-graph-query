@@ -1,0 +1,279 @@
+{
+  "status": "completed",
+  "tcr": 0.1,
+  "paired_blocks": 3,
+  "sources": [
+    {
+      "path": "results/neo4j/ldbc-full-v012/mixed-tcr10/block-0-reference/driver/driver-results/LDBC-SNB-results.json",
+      "sha256": "12e04658008802f7a77148443ff28586d4511381c65a1347d0e1c2e72b17e15c",
+      "normalization": "CRLF to LF"
+    },
+    {
+      "path": "results/neo4j/ldbc-full-v012/mixed-tcr10/block-0-materialized/driver/driver-results/LDBC-SNB-results.json",
+      "sha256": "8df3e314b67deee54b15a106cf5ab00962a00d429c95979388ccb2849f171f69",
+      "normalization": "CRLF to LF"
+    },
+    {
+      "path": "results/neo4j/ldbc-full-v012/mixed-tcr10/block-1-materialized/driver/driver-results/LDBC-SNB-results.json",
+      "sha256": "779b086e4b0c5a08f89fb907c49e1637078217e87f65fee61a81437788d587c4",
+      "normalization": "CRLF to LF"
+    },
+    {
+      "path": "results/neo4j/ldbc-full-v012/mixed-tcr10/block-1-reference/driver/driver-results/LDBC-SNB-results.json",
+      "sha256": "1c9828b9a1c425bd4d6ed9e6317a426f0a4d33b17e075d607593a4d6ad00d7be",
+      "normalization": "CRLF to LF"
+    },
+    {
+      "path": "results/neo4j/ldbc-full-v012/mixed-tcr10/block-2-reference/driver/driver-results/LDBC-SNB-results.json",
+      "sha256": "e56768def191c44ebe6d3c3c3375891ea9924967354ef33f465fc599471aea3c",
+      "normalization": "CRLF to LF"
+    },
+    {
+      "path": "results/neo4j/ldbc-full-v012/mixed-tcr10/block-2-materialized/driver/driver-results/LDBC-SNB-results.json",
+      "sha256": "dd6ede92a8aaf142f316553402897f01abd4f3f81b21dbb51d69d37e2511edb4",
+      "normalization": "CRLF to LF"
+    }
+  ],
+  "measurements": [
+    {
+      "block": 0,
+      "variant": "reference",
+      "actual_operations": 9895,
+      "executed_types": 28,
+      "cumulative_operation_ms": 36723.0,
+      "weighted_mean_ms": 3.711268317331986,
+      "duration_ms": 355095,
+      "throughput_ops_s": 27.865782396260155,
+      "interpretation": "sum of operation runtimes; not CPU time, wall time, or saturated capacity",
+      "preparation_ms": 0,
+      "ic14_mean_ms": 25.91780821917808,
+      "ic14_count": 73,
+      "measurement_schedule_pass": true
+    },
+    {
+      "block": 0,
+      "variant": "materialized",
+      "actual_operations": 9895,
+      "executed_types": 28,
+      "cumulative_operation_ms": 42023.0,
+      "weighted_mean_ms": 4.2468923698837795,
+      "duration_ms": 355073,
+      "throughput_ops_s": 27.867508934782425,
+      "interpretation": "sum of operation runtimes; not CPU time, wall time, or saturated capacity",
+      "preparation_ms": 2719.4782000005944,
+      "ic14_mean_ms": 2.5342465753424657,
+      "ic14_count": 73,
+      "measurement_schedule_pass": true
+    },
+    {
+      "block": 1,
+      "variant": "materialized",
+      "actual_operations": 9895,
+      "executed_types": 28,
+      "cumulative_operation_ms": 41319.0,
+      "weighted_mean_ms": 4.175745325922183,
+      "duration_ms": 355100,
+      "throughput_ops_s": 27.86539003097719,
+      "interpretation": "sum of operation runtimes; not CPU time, wall time, or saturated capacity",
+      "preparation_ms": 1716.924000007566,
+      "ic14_mean_ms": 1.8630136986301369,
+      "ic14_count": 73,
+      "measurement_schedule_pass": true
+    },
+    {
+      "block": 1,
+      "variant": "reference",
+      "actual_operations": 9895,
+      "executed_types": 28,
+      "cumulative_operation_ms": 37532.0,
+      "weighted_mean_ms": 3.7930267812026277,
+      "duration_ms": 355035,
+      "throughput_ops_s": 27.870491641669133,
+      "interpretation": "sum of operation runtimes; not CPU time, wall time, or saturated capacity",
+      "preparation_ms": 0,
+      "ic14_mean_ms": 31.45205479452055,
+      "ic14_count": 73,
+      "measurement_schedule_pass": true
+    },
+    {
+      "block": 2,
+      "variant": "reference",
+      "actual_operations": 9895,
+      "executed_types": 28,
+      "cumulative_operation_ms": 42872.0,
+      "weighted_mean_ms": 4.332693279434058,
+      "duration_ms": 355081,
+      "throughput_ops_s": 27.866881077838578,
+      "interpretation": "sum of operation runtimes; not CPU time, wall time, or saturated capacity",
+      "preparation_ms": 0,
+      "ic14_mean_ms": 38.93150684931507,
+      "ic14_count": 73,
+      "measurement_schedule_pass": true
+    },
+    {
+      "block": 2,
+      "variant": "materialized",
+      "actual_operations": 9895,
+      "executed_types": 28,
+      "cumulative_operation_ms": 55945.0,
+      "weighted_mean_ms": 5.653865588681152,
+      "duration_ms": 355125,
+      "throughput_ops_s": 27.86342837029215,
+      "interpretation": "sum of operation runtimes; not CPU time, wall time, or saturated capacity",
+      "preparation_ms": 3564.986299999873,
+      "ic14_mean_ms": 3.9726027397260273,
+      "ic14_count": 73,
+      "measurement_schedule_pass": true
+    }
+  ],
+  "pairs": [
+    {
+      "block": 0,
+      "reference_service_ms": 36723.0,
+      "materialized_service_ms": 42023.0,
+      "service_ratio": 0.8738785902957904,
+      "service_plus_build_ratio": 0.820763656314404
+    },
+    {
+      "block": 1,
+      "reference_service_ms": 37532.0,
+      "materialized_service_ms": 41319.0,
+      "service_ratio": 0.9083472494494058,
+      "service_plus_build_ratio": 0.8721086132597827
+    },
+    {
+      "block": 2,
+      "reference_service_ms": 42872.0,
+      "materialized_service_ms": 55945.0,
+      "service_ratio": 0.7663240682813478,
+      "service_plus_build_ratio": 0.7204169025325434
+    }
+  ],
+  "baseline_hotspots": [
+    {
+      "operation": "LdbcQuery9",
+      "mean_total_ms": 4978.333333333333
+    },
+    {
+      "operation": "LdbcQuery3",
+      "mean_total_ms": 4582.0
+    },
+    {
+      "operation": "LdbcQuery12",
+      "mean_total_ms": 4017.0
+    },
+    {
+      "operation": "LdbcQuery5",
+      "mean_total_ms": 3329.0
+    },
+    {
+      "operation": "LdbcQuery6",
+      "mean_total_ms": 3022.0
+    },
+    {
+      "operation": "LdbcQuery14",
+      "mean_total_ms": 2343.3333333333335
+    },
+    {
+      "operation": "LdbcShortQuery2PersonPosts",
+      "mean_total_ms": 2263.0
+    },
+    {
+      "operation": "LdbcShortQuery3PersonFriends",
+      "mean_total_ms": 1768.3333333333333
+    },
+    {
+      "operation": "LdbcShortQuery1PersonProfile",
+      "mean_total_ms": 1709.6666666666665
+    },
+    {
+      "operation": "LdbcShortQuery4MessageContent",
+      "mean_total_ms": 1557.6666666666667
+    },
+    {
+      "operation": "LdbcShortQuery7MessageReplies",
+      "mean_total_ms": 1545.6666666666665
+    },
+    {
+      "operation": "LdbcShortQuery5MessageCreator",
+      "mean_total_ms": 1443.3333333333335
+    },
+    {
+      "operation": "LdbcShortQuery6MessageForum",
+      "mean_total_ms": 1378.0
+    },
+    {
+      "operation": "LdbcQuery10",
+      "mean_total_ms": 1342.0
+    },
+    {
+      "operation": "LdbcQuery2",
+      "mean_total_ms": 434.3333333333333
+    },
+    {
+      "operation": "LdbcUpdate6AddPost",
+      "mean_total_ms": 403.0
+    },
+    {
+      "operation": "LdbcUpdate5AddForumMembership",
+      "mean_total_ms": 383.3333333333333
+    },
+    {
+      "operation": "LdbcQuery11",
+      "mean_total_ms": 357.3333333333333
+    },
+    {
+      "operation": "LdbcUpdate7AddComment",
+      "mean_total_ms": 347.3333333333333
+    },
+    {
+      "operation": "LdbcQuery8",
+      "mean_total_ms": 303.3333333333333
+    },
+    {
+      "operation": "LdbcQuery1",
+      "mean_total_ms": 301.0
+    },
+    {
+      "operation": "LdbcQuery7",
+      "mean_total_ms": 286.6666666666667
+    },
+    {
+      "operation": "LdbcQuery4",
+      "mean_total_ms": 200.66666666666666
+    },
+    {
+      "operation": "LdbcUpdate4AddForum",
+      "mean_total_ms": 181.0
+    },
+    {
+      "operation": "LdbcUpdate8AddFriendship",
+      "mean_total_ms": 169.33333333333334
+    },
+    {
+      "operation": "LdbcUpdate3AddCommentLike",
+      "mean_total_ms": 144.0
+    },
+    {
+      "operation": "LdbcUpdate2AddPostLike",
+      "mean_total_ms": 127.0
+    },
+    {
+      "operation": "LdbcQuery13",
+      "mean_total_ms": 124.66666666666667
+    }
+  ],
+  "reference_mean_service_ms": 39042.333333333336,
+  "materialized_mean_service_ms": 46429.0,
+  "overall_service_speedup": 0.840904032680724,
+  "saturated_throughput_measured": false,
+  "approximate_controller_on_full_snb": false,
+  "interpretation": "Matched paced workload; cumulative operation durations are not CPU time or saturated throughput. Single host/graph; no cross-scale inference.",
+  "ic9_candidate_evidence": {
+    "path": "results/neo4j/ldbc-evidence-v013/ic9-local-topk/metadata.json",
+    "sha256": "88dd0c27c7ad12db6d36ff9a975676719428bdb84a5e89604227af487343199f",
+    "normalization": "CRLF to LF",
+    "status": "completed",
+    "adopted": false
+  }
+}

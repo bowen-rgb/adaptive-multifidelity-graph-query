@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.1 — 2026-10-08
+
+- Audit original goals against measured evidence and provide scoped English/French CV wording.
+- Derive actual operation coverage and weighted service cost from immutable official-driver JSON.
+- Check the final measurement schedule audit independently of warmup.
+- Retain a negative IC9 local top-k experiment with full ordered-result checks; no driver adoption.
+- Distinguish local IC14 acceleration from the unproven full-workload adaptive benefit.
+
 ## 0.12.0 — 2026-10-07
 
 - Prioritize measured end-to-end performance and full SNB Interactive v1 workload.

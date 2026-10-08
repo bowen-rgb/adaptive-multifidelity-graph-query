@@ -1,0 +1,83 @@
+{
+  "status": "completed",
+  "database": "ldbcmfsf01v4",
+  "parameters": [
+    {
+      "personId": 26388279067358,
+      "maxDate": 1333411200000
+    },
+    {
+      "personId": 454,
+      "maxDate": 1354060800000
+    },
+    {
+      "personId": 19791209300317,
+      "maxDate": 1352160000000
+    },
+    {
+      "personId": 32985348834013,
+      "maxDate": 1346112000000
+    },
+    {
+      "personId": 2199023256919,
+      "maxDate": 1333584000000
+    },
+    {
+      "personId": 10995116277882,
+      "maxDate": 1336608000000
+    },
+    {
+      "personId": 26388279066931,
+      "maxDate": 1354060800000
+    },
+    {
+      "personId": 24189255811707,
+      "maxDate": 1338076800000
+    },
+    {
+      "personId": 2199023256097,
+      "maxDate": 1354060800000
+    },
+    {
+      "personId": 30786325579101,
+      "maxDate": 1328054400000
+    },
+    {
+      "personId": 32985348834036,
+      "maxDate": 1354060800000
+    },
+    {
+      "personId": 8796093023655,
+      "maxDate": 1354060800000
+    },
+    {
+      "personId": 17592186044737,
+      "maxDate": 1343433600000
+    },
+    {
+      "personId": 15393162789696,
+      "maxDate": 1354060800000
+    },
+    {
+      "personId": 6597069767668,
+      "maxDate": 1329782400000
+    }
+  ],
+  "blocks": 5,
+  "parameter_seed": 13013,
+  "order_seed": 13014,
+  "approximation": false,
+  "parameter_sha256": "3f38071b1b4bbb6efa3c2d8a4a3df8c1ad666a3d525db96591eff8907b1859ec",
+  "query_sha256": {
+    "reference": "84d05a4cc87a0680b490fc98aa303ff211f363204cc81d936cd5d442bf85cfe7",
+    "candidate": "a443be8092b3abb42e46ffaa4ddbcd854625c5c7e920ad2860d8f70fad115683"
+  },
+  "interpretation": "fixed parameters, single graph, warm cache; query-only, not full SNB throughput",
+  "all_ordered_rows_match": true,
+  "timed_queries": 150,
+  "reference_mean_ms": 79.2755999994309,
+  "candidate_mean_ms": 114.6004626667127,
+  "speedup": 0.6917563695181974,
+  "adopted": false,
+  "reason": "experimental candidate requires broader validation before driver integration"
+}

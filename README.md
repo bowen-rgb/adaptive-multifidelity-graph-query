@@ -1,4 +1,16 @@
-# Adaptive Multi-Fidelity Graph Query — v0.12.0
+# Adaptive Multi-Fidelity Graph Query — v0.12.1
+
+The [current goal audit](docs/current-goal-audit.md) distinguishes completed engineering
+from the remaining research hypothesis; [CV wording](docs/cv-project.md) is available in
+English and French. Reference validation covered 138,474 operations across 29 types.
+The short mixed runs actually executed 28 types. Their mean cumulative service cost
+was 39.04 s for the reference and 46.43 s for materialization: no overall service win.
+Fixed-arrival throughput does not measure maximum sustainable throughput.
+
+An additional paired IC9 experiment compared 150 timed queries across 15 parameters
+and five blocks. Full ordered results matched, but local top-k slowed mean latency
+from 79.28 to 114.60 ms; the candidate remains experimental and was not adopted.
+v0.12.1 also fixes schedule evidence so warmup PASS cannot mask measurement FAIL.
 
 ## Main objective: measured performance and complete SNB Interactive v1
 

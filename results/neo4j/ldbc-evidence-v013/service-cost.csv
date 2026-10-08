@@ -1,0 +1,7 @@
+block,variant,actual_operations,executed_types,cumulative_operation_ms,weighted_mean_ms,duration_ms,throughput_ops_s,interpretation,preparation_ms,ic14_mean_ms,ic14_count,measurement_schedule_pass
+0,reference,9895,28,36723.0,3.711268317331986,355095,27.865782396260155,"sum of operation runtimes; not CPU time, wall time, or saturated capacity",0,25.91780821917808,73,True
+0,materialized,9895,28,42023.0,4.2468923698837795,355073,27.867508934782425,"sum of operation runtimes; not CPU time, wall time, or saturated capacity",2719.4782000005944,2.5342465753424657,73,True
+1,materialized,9895,28,41319.0,4.175745325922183,355100,27.86539003097719,"sum of operation runtimes; not CPU time, wall time, or saturated capacity",1716.924000007566,1.8630136986301369,73,True
+1,reference,9895,28,37532.0,3.7930267812026277,355035,27.870491641669133,"sum of operation runtimes; not CPU time, wall time, or saturated capacity",0,31.45205479452055,73,True
+2,reference,9895,28,42872.0,4.332693279434058,355081,27.866881077838578,"sum of operation runtimes; not CPU time, wall time, or saturated capacity",0,38.93150684931507,73,True
+2,materialized,9895,28,55945.0,5.653865588681152,355125,27.86342837029215,"sum of operation runtimes; not CPU time, wall time, or saturated capacity",3564.986299999873,3.9726027397260273,73,True

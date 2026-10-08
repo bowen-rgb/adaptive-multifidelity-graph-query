@@ -137,7 +137,13 @@ try:
         meta['validation_pass']='Validation Result: PASS' in log_text
         meta['status']='completed' if meta['validation_pass'] and code==0 else 'failed'
     else:
-        meta['schedule_audit_pass']='PASSED SCHEDULE AUDIT' in log_text
+        from graph_mf.ldbc_evidence import schedule_audits, service_metrics
+        audit = schedule_audits(log_text, expected_phases=2 if a.warmup else 1)
+        meta['schedule_audits'] = audit
+        meta['schedule_audit_pass'] = audit['measurement_pass']
+        result_file = output/'driver-results/LDBC-SNB-results.json'
+        if result_file.exists():
+            meta['service_metrics'] = service_metrics(json.loads(result_file.read_text(encoding='utf-8')))
         meta['status']='completed' if meta['schedule_audit_pass'] and code==0 else 'failed'
     # Benchmark exit status alone does not establish schedule audit success.
     manifest.write_text(json.dumps(meta,indent=2)+'\n')
