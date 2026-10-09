@@ -1,5 +1,24 @@
 # CV project — supported claims
 
+## Compact entry for today's applications
+
+**Adaptive Graph Query Optimization — Python / Neo4j Research Project**
+
+- Built a Neo4j/Cypher benchmarking pipeline on LDBC SNB SF0.1 (327k nodes, 1.48M relationships), validating 138,474 reference operations across 29 types.
+- Implemented jointly calibrated adaptive COUNT sampling; measured 1.34× improvement in recorded training/preparation/query cost over 6,000 static-graph request pairs, with a 20% error budget and maximum observed error of 11.26%.
+
+**Optimisation adaptative de requêtes de graphes — Python / Neo4j**
+
+- Développement d'une chaîne de mesure Neo4j/Cypher sur LDBC SNB SF0.1 : 327 000 nœuds, 1,48 million de relations et validation de 138 474 opérations couvrant 29 types.
+- Échantillonnage COUNT adaptatif avec calibration conjointe : amélioration de 1,34× du coût des phases mesurées sur 6 000 paires de requêtes, sous un budget d'erreur de 20 % (maximum observé : 11,26 %).
+
+Repository: https://github.com/bowen-rgb/adaptive-multifidelity-graph-query
+
+These bullets describe repository deliverables. Use first-person implementation
+claims only for work you actually contributed to and can explain; if your current
+contribution is setup/replication/analysis, replace "Implemented" with "Evaluated"
+and "Built" with "Configured and reproduced". The measured scope below still applies.
+
 ## English (recommended for applications)
 
 **Adaptive Graph Query Optimization — Independent Research Project**
