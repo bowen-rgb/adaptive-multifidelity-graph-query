@@ -21,3 +21,11 @@ explicit null checks; update1 uses consistent `speaks` and `WORK_AT`; optional I
 materialization rewrites IC14 and maintains exact weights in updates7/8. The rejected
 bound-endpoint rewrite is retained as a measured unfavorable experiment.
 Full-data download/streaming import and exact weight maintenance are project code.
+
+v0.18 `graph_mf/ldbc_ic3_sampling.py` contains an IC3-derived Cypher constant
+(`CANDIDATES`) under the upstream Apache-2.0 license. Changes supply sampled
+Message IDs, retain exact Person/KNOWS eligibility and scale message counts by 1/f.
+The read-only pilot, Bernoulli selection and tuple-quality analysis are project code.
+This candidate is not enabled in the official mixed driver: stress quality and
+upstream-cost comparisons failed. The original LICENSE.txt and NOTICE.txt above apply
+to the IC3-derived Cypher as well as the retained upstream query snapshots.

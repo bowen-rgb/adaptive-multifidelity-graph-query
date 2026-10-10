@@ -3,6 +3,11 @@
 The population lookup returns message IDs and country only, never answer counts.
 All candidate people and KNOWS paths remain exact. Sampling scales messages by
 1/f, and can lose people with messages in both countries or change their ranking.
+
+CANDIDATES derives from LDBC SNB v1 IC3 at commit
+11db98cc2ba14c33492f6c0c34e68c8be7e22e5f (Apache-2.0). Changes introduce
+an ID-list message input and scaled aggregate counts. Original LICENSE/NOTICE
+are retained in third_party/ldbc; Python sampling/quality functions are project code.
 """
 import random
 
