@@ -1,0 +1,28 @@
+[
+  {
+    "mode": "adaptive",
+    "unique_parameters": 240,
+    "components": 480,
+    "online_ratio": 0.966530013976926,
+    "bootstrap_low": 0.8373438179800368,
+    "bootstrap_high": 1.1420031167754356,
+    "phase_ratio": 0.05145481704584473,
+    "failures": 0,
+    "approximate": 212,
+    "max_error": 0.09556527170518427,
+    "startup_ms": 87408.04640005808
+  },
+  {
+    "mode": "exact",
+    "unique_parameters": 240,
+    "components": 480,
+    "online_ratio": 1.0,
+    "bootstrap_low": 1.0,
+    "bootstrap_high": 1.0,
+    "phase_ratio": 1.0,
+    "failures": 0,
+    "approximate": 0,
+    "max_error": 0.0,
+    "startup_ms": 0
+  }
+]

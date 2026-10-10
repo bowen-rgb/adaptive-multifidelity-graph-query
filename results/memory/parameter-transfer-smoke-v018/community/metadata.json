@@ -1,0 +1,277 @@
+{
+  "status": "completed",
+  "backend": "memory",
+  "performance_measured": false,
+  "topology": "community",
+  "nodes": 2000,
+  "edges": 5995,
+  "graph_sha256": "25c3ca9c489750a90c765ce99f801ebc9fa34faeb6913cfc2cbdebb38ccb14ce",
+  "fitting_seeds": [
+    26000,
+    26001,
+    26002,
+    26003
+  ],
+  "calibration_seeds": [
+    27000,
+    27001,
+    27002,
+    27003,
+    27004,
+    27005,
+    27006,
+    27007,
+    27008,
+    27009,
+    27010,
+    27011,
+    27012,
+    27013,
+    27014,
+    27015,
+    27016,
+    27017,
+    27018,
+    27019
+  ],
+  "test_seeds": [
+    28000,
+    28001,
+    28002
+  ],
+  "queries_per_epoch": 12,
+  "scope": "custom country + node-ID range COUNTs; refit per topology, held-out parameters; not SNB",
+  "import_ms": 0.000300002284348011,
+  "train_parameters": [
+    {
+      "country": "FR",
+      "lower": 0,
+      "upper": 400
+    },
+    {
+      "country": "FR",
+      "lower": 400,
+      "upper": 800
+    },
+    {
+      "country": "FR",
+      "lower": 800,
+      "upper": 1400
+    },
+    {
+      "country": "FR",
+      "lower": 0,
+      "upper": 1500
+    },
+    {
+      "country": "DE",
+      "lower": 0,
+      "upper": 400
+    },
+    {
+      "country": "DE",
+      "lower": 400,
+      "upper": 800
+    },
+    {
+      "country": "DE",
+      "lower": 800,
+      "upper": 1400
+    },
+    {
+      "country": "DE",
+      "lower": 0,
+      "upper": 1500
+    }
+  ],
+  "test_parameters": [
+    [
+      {
+        "country": "DE",
+        "lower": 649,
+        "upper": 1915
+      },
+      {
+        "country": "FR",
+        "lower": 1238,
+        "upper": 1616
+      },
+      {
+        "country": "DE",
+        "lower": 674,
+        "upper": 1595
+      },
+      {
+        "country": "DE",
+        "lower": 168,
+        "upper": 1264
+      },
+      {
+        "country": "DE",
+        "lower": 1536,
+        "upper": 1900
+      },
+      {
+        "country": "FR",
+        "lower": 354,
+        "upper": 1692
+      },
+      {
+        "country": "FR",
+        "lower": 511,
+        "upper": 1544
+      },
+      {
+        "country": "DE",
+        "lower": 47,
+        "upper": 1080
+      },
+      {
+        "country": "FR",
+        "lower": 1105,
+        "upper": 1724
+      },
+      {
+        "country": "DE",
+        "lower": 241,
+        "upper": 1488
+      },
+      {
+        "country": "FR",
+        "lower": 413,
+        "upper": 1185
+      },
+      {
+        "country": "DE",
+        "lower": 216,
+        "upper": 1285
+      }
+    ],
+    [
+      {
+        "country": "FR",
+        "lower": 292,
+        "upper": 1497
+      },
+      {
+        "country": "FR",
+        "lower": 987,
+        "upper": 1911
+      },
+      {
+        "country": "FR",
+        "lower": 491,
+        "upper": 1977
+      },
+      {
+        "country": "DE",
+        "lower": 860,
+        "upper": 1510
+      },
+      {
+        "country": "DE",
+        "lower": 360,
+        "upper": 1717
+      },
+      {
+        "country": "DE",
+        "lower": 1123,
+        "upper": 1992
+      },
+      {
+        "country": "DE",
+        "lower": 519,
+        "upper": 1489
+      },
+      {
+        "country": "DE",
+        "lower": 1350,
+        "upper": 1851
+      },
+      {
+        "country": "DE",
+        "lower": 615,
+        "upper": 1844
+      },
+      {
+        "country": "DE",
+        "lower": 852,
+        "upper": 1642
+      },
+      {
+        "country": "FR",
+        "lower": 313,
+        "upper": 625
+      },
+      {
+        "country": "DE",
+        "lower": 819,
+        "upper": 1353
+      }
+    ],
+    [
+      {
+        "country": "FR",
+        "lower": 528,
+        "upper": 1630
+      },
+      {
+        "country": "DE",
+        "lower": 177,
+        "upper": 1481
+      },
+      {
+        "country": "DE",
+        "lower": 843,
+        "upper": 1281
+      },
+      {
+        "country": "DE",
+        "lower": 690,
+        "upper": 1495
+      },
+      {
+        "country": "DE",
+        "lower": 531,
+        "upper": 1553
+      },
+      {
+        "country": "DE",
+        "lower": 31,
+        "upper": 1346
+      },
+      {
+        "country": "FR",
+        "lower": 384,
+        "upper": 1210
+      },
+      {
+        "country": "FR",
+        "lower": 433,
+        "upper": 903
+      },
+      {
+        "country": "DE",
+        "lower": 209,
+        "upper": 1616
+      },
+      {
+        "country": "FR",
+        "lower": 84,
+        "upper": 1199
+      },
+      {
+        "country": "FR",
+        "lower": 437,
+        "upper": 1260
+      },
+      {
+        "country": "DE",
+        "lower": 64,
+        "upper": 557
+      }
+    ]
+  ],
+  "training_ms": 215.6204999773763,
+  "all_raw_counts_match": true
+}

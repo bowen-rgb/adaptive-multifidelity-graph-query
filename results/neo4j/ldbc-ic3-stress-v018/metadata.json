@@ -1,0 +1,96 @@
+{
+  "status": "completed",
+  "database": "ldbcmfsf01v3",
+  "parameters": [
+    {
+      "personId": 2199023256862,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 26388279066869,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 4398046511592,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 17592186045370,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 4398046512362,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 6597069768287,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 26388279067108,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    },
+    {
+      "personId": 28587302322817,
+      "startDate": 1262808638903,
+      "endDate": 1347540545193,
+      "countryXName": "India",
+      "countryYName": "China"
+    }
+  ],
+  "blocks": 3,
+  "rank_seeds": [
+    34000,
+    34001,
+    34002
+  ],
+  "parameter_seed": 33000,
+  "read_only": true,
+  "approximation": true,
+  "parameter_sha256": "ef25c7b205a697a40aeb27d3a4646b8dc6c64ad499c07e25da83e3ac366b5686",
+  "query_sha256": {
+    "reference": "48f03b4d978d9805fedb3af234edfb30c33ed5f4da4f49a31f205a8d211fbdb0",
+    "population": "ac8ecbf3a15feeeee95cf251da190ee2368c33b48c05a960b4b518b17c361bc5",
+    "candidate": "7e43b2b9b1f1e7ae88e2fe0317ffe35cf3da8d2900eb2a2bb2062fe0770ad19b"
+  },
+  "scope": "fixed-tier IC3 pilot; repeated parameters; no fitting, calibration or adaptive policy; no mixed workload",
+  "quality_target": {
+    "recall": 0.9,
+    "max_count_error": 0.2
+  },
+  "measurement": "online includes fresh population lookup, ID transfer, Python selection and query; test oracle excluded",
+  "population_before": {
+    "nodes": 327683,
+    "relationships": 1528854
+  },
+  "stress_definition": "same preselected roots; globally most frequent two message countries and full date range; not chosen by root answer",
+  "parameter_preparation_ms": 571.6750999563374,
+  "warmup_ms": 3564.528299961239,
+  "population_after": {
+    "nodes": 327683,
+    "relationships": 1528854
+  },
+  "exact_tuples_match": true,
+  "mutation_limit": "equal counts cannot detect every external property mutation; run without writers"
+}

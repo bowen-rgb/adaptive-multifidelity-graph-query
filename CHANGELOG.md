@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.18.0 — 2026-10-10
+
+- Add controlled uniform/community/hub graphs with equal node, edge and country populations.
+- Evaluate distinct held-out country/range COUNT parameters with graph-specific joint calibration.
+- Add optional fitting-cost forecasts to skip predicted unprofitable sampling tiers.
+- Verify all live probes against an independent memory oracle and publish paired epoch reports.
+- Retain short-stream startup losses and negative pilot outcomes alongside online gains.
+- Add a read-only IC3 message-sampling pilot with exact ordered tuple validation, top-20 recall and missing-person count errors.
+- Keep full mixed LDBC adaptive benefit as an explicit unfinished acceptance item.
+
 ## 0.17.0 — 2026-10-08
 
 - Add joint seed-level calibration across fixed known countries, COUNT kinds and fidelity levels.

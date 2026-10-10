@@ -9,7 +9,8 @@ Python · Neo4j · Cypher · NumPy · LDBC SNB · calibrated sampling · NSGA-II
 The controller chooses a reusable sample size from an explicit error budget, checks
 current empirical uncertainty and escalates to a larger sample or exact query when
 needed. Independent fitting, calibration and testing keep evaluation data separate.
-The current research scope is COUNT queries on known predicates in static graphs.
+The current research scope is COUNT queries in static graphs, with known-predicate
+and held-out country/ID-range experiments. Each new topology is independently refitted.
 
 [Project brief](docs/project-brief.md) · [Measured results](docs/v017-joint-calibration.md) · [CV entry](docs/cv-project.md) · [中文面试讲解](docs/interview-guide-zh.md)
 
@@ -20,6 +21,7 @@ The current research scope is COUNT queries on known predicates in static graphs
 | Cost amortization | **1.34×** recorded phase-cost improvement: 303.14 s → 226.15 s | 50k-node graph; 6,000 node/edge request pairs; 20% error budget |
 | Long-stream accuracy | **0/12,000** observed budget violations; maximum error **11.26%** | Three new rank epochs; repeated known predicates |
 | Independent accuracy | **0/2,400** observed violations per graph size | 100 new sampling epochs each at 50k/100k; most answers still sampled |
+| Held-out parameters | **1.08× / 1.15× / 1.07×** online ratios; **0/480** budget violations per topology | 20k uniform/community/hub graphs; six confirmation epochs; training/builds excluded; short streams do not amortize preparation |
 | Database semantics | **138,474** reference operations validated across **29** operation types | Official LDBC SNB Interactive v1 reference sequence, SF0.1 |
 
 The 1.34× comparison includes recorded training, joint fitting, sample builds,
@@ -88,6 +90,9 @@ The controller executes fresh COUNTs; it does not memoize previous answers.
 - [Calibration](graph_mf/sample_correction.py), [controller and generation guards](graph_mf/incremental_sampling.py), [Neo4j/memory query backends](graph_mf/synthetic.py).
 - [Paired experiment runner](scripts/benchmark_dlss_ablation.py), [report generator](scripts/report_joint_calibration.py), [raw long-stream records](results/neo4j/joint-long-50k-v017).
 - [Independent joint-calibration report](docs/v017-joint-calibration.md) contains the full replication commands and measurement boundaries.
+- [Topology and unseen-parameter report](docs/v018-parameter-transfer.md) includes independent confirmation, cost gating, negative results and preparation costs.
+- [Full LDBC adaptive acceptance work](docs/ldbc-adaptive-acceptance.md) separates ranked-tuple quality from custom COUNT experiments.
+- [IC3 fixed-tier feasibility](docs/v018-ldbc-ic3-sampling.md) checks full ordered tuples and top-20 losses before any adaptive or mixed-workload claim.
 - [LDBC full runbook](docs/ldbc-full-runbook.md) covers separate databases, pinned upstream queries and official-driver validation. Raw input archives are not bundled.
 - [Complete experiment history and beginner Cypher tutorial](EXPERIMENTS.md), [roadmap](docs/roadmap-to-v1.md) and [original preserved v0.1](v0.1).
 
@@ -103,8 +108,10 @@ through the documented environment configuration. No credentials are committed.
 
 The supported contribution is a functioning graph-query pipeline with independently
 calibrated precision/cost trade-offs and measured savings in a specific amortized
-workload. Unseen topology, nonrepeating parameters, concurrent updates and full SNB
-adaptive performance remain open. NSGA-II, random and learned search comparisons
+workload. Three refitted topologies and distinct unseen range parameters now have
+bounded online evidence; zero-shot topology transfer, preparation amortization for
+these new parameters, concurrent updates and full SNB adaptive performance remain
+open. NSGA-II, random and learned search comparisons
 are retained without claiming that the learned method dominates. This is a
 DLSS-inspired sampling project; it has no NVIDIA DLSS or robotics integration.
 

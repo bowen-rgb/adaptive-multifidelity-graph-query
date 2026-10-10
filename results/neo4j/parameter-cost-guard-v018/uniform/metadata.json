@@ -1,0 +1,1237 @@
+{
+  "status": "completed",
+  "backend": "neo4j",
+  "performance_measured": true,
+  "topology": "uniform",
+  "nodes": 20000,
+  "edges": 59993,
+  "graph_sha256": "fe76919ec1f61178882407bd674a2f82174b779bafcb06e4b0615a263a0b06b5",
+  "training_ms": 70113.72540000593,
+  "source": "results/neo4j/parameter-transfer-v018/uniform",
+  "test_seeds": [
+    30000,
+    30001,
+    30002,
+    30003,
+    30004,
+    30005
+  ],
+  "queries_per_epoch": 40,
+  "cost_margin": 0.9,
+  "scope": "fresh range parameters; graph-specific source profile; no additional training",
+  "test_parameters": [
+    [
+      {
+        "country": "DE",
+        "lower": 8499,
+        "upper": 19664
+      },
+      {
+        "country": "DE",
+        "lower": 4318,
+        "upper": 17183
+      },
+      {
+        "country": "FR",
+        "lower": 4726,
+        "upper": 19625
+      },
+      {
+        "country": "FR",
+        "lower": 8995,
+        "upper": 12430
+      },
+      {
+        "country": "DE",
+        "lower": 3584,
+        "upper": 11024
+      },
+      {
+        "country": "DE",
+        "lower": 4667,
+        "upper": 18301
+      },
+      {
+        "country": "DE",
+        "lower": 210,
+        "upper": 14107
+      },
+      {
+        "country": "FR",
+        "lower": 10493,
+        "upper": 16613
+      },
+      {
+        "country": "FR",
+        "lower": 8115,
+        "upper": 17718
+      },
+      {
+        "country": "DE",
+        "lower": 13581,
+        "upper": 18896
+      },
+      {
+        "country": "DE",
+        "lower": 7027,
+        "upper": 14299
+      },
+      {
+        "country": "FR",
+        "lower": 3329,
+        "upper": 10665
+      },
+      {
+        "country": "FR",
+        "lower": 907,
+        "upper": 6480
+      },
+      {
+        "country": "DE",
+        "lower": 5438,
+        "upper": 12855
+      },
+      {
+        "country": "FR",
+        "lower": 9466,
+        "upper": 19627
+      },
+      {
+        "country": "DE",
+        "lower": 749,
+        "upper": 13385
+      },
+      {
+        "country": "FR",
+        "lower": 12795,
+        "upper": 15855
+      },
+      {
+        "country": "DE",
+        "lower": 3904,
+        "upper": 11539
+      },
+      {
+        "country": "DE",
+        "lower": 12229,
+        "upper": 16842
+      },
+      {
+        "country": "FR",
+        "lower": 759,
+        "upper": 15578
+      },
+      {
+        "country": "DE",
+        "lower": 5406,
+        "upper": 18992
+      },
+      {
+        "country": "FR",
+        "lower": 3473,
+        "upper": 13175
+      },
+      {
+        "country": "FR",
+        "lower": 7948,
+        "upper": 16504
+      },
+      {
+        "country": "DE",
+        "lower": 13954,
+        "upper": 18897
+      },
+      {
+        "country": "DE",
+        "lower": 977,
+        "upper": 11859
+      },
+      {
+        "country": "FR",
+        "lower": 6445,
+        "upper": 12446
+      },
+      {
+        "country": "FR",
+        "lower": 7069,
+        "upper": 12150
+      },
+      {
+        "country": "DE",
+        "lower": 5517,
+        "upper": 18859
+      },
+      {
+        "country": "FR",
+        "lower": 8974,
+        "upper": 14300
+      },
+      {
+        "country": "FR",
+        "lower": 4033,
+        "upper": 18193
+      },
+      {
+        "country": "DE",
+        "lower": 5480,
+        "upper": 15447
+      },
+      {
+        "country": "DE",
+        "lower": 13265,
+        "upper": 16602
+      },
+      {
+        "country": "FR",
+        "lower": 726,
+        "upper": 13594
+      },
+      {
+        "country": "FR",
+        "lower": 2053,
+        "upper": 12831
+      },
+      {
+        "country": "FR",
+        "lower": 1667,
+        "upper": 10976
+      },
+      {
+        "country": "DE",
+        "lower": 8535,
+        "upper": 14087
+      },
+      {
+        "country": "DE",
+        "lower": 4477,
+        "upper": 17070
+      },
+      {
+        "country": "FR",
+        "lower": 8769,
+        "upper": 18381
+      },
+      {
+        "country": "DE",
+        "lower": 5388,
+        "upper": 19453
+      },
+      {
+        "country": "DE",
+        "lower": 2194,
+        "upper": 16904
+      }
+    ],
+    [
+      {
+        "country": "DE",
+        "lower": 9011,
+        "upper": 15363
+      },
+      {
+        "country": "FR",
+        "lower": 4640,
+        "upper": 10891
+      },
+      {
+        "country": "DE",
+        "lower": 3763,
+        "upper": 12711
+      },
+      {
+        "country": "DE",
+        "lower": 3551,
+        "upper": 16846
+      },
+      {
+        "country": "FR",
+        "lower": 7913,
+        "upper": 17763
+      },
+      {
+        "country": "DE",
+        "lower": 10421,
+        "upper": 17552
+      },
+      {
+        "country": "DE",
+        "lower": 6872,
+        "upper": 14558
+      },
+      {
+        "country": "DE",
+        "lower": 2125,
+        "upper": 13436
+      },
+      {
+        "country": "FR",
+        "lower": 12067,
+        "upper": 18137
+      },
+      {
+        "country": "DE",
+        "lower": 10626,
+        "upper": 19278
+      },
+      {
+        "country": "DE",
+        "lower": 4869,
+        "upper": 16247
+      },
+      {
+        "country": "DE",
+        "lower": 13050,
+        "upper": 19009
+      },
+      {
+        "country": "DE",
+        "lower": 2870,
+        "upper": 15585
+      },
+      {
+        "country": "FR",
+        "lower": 2514,
+        "upper": 5855
+      },
+      {
+        "country": "DE",
+        "lower": 5497,
+        "upper": 18590
+      },
+      {
+        "country": "FR",
+        "lower": 246,
+        "upper": 11872
+      },
+      {
+        "country": "FR",
+        "lower": 5675,
+        "upper": 19175
+      },
+      {
+        "country": "FR",
+        "lower": 6369,
+        "upper": 18696
+      },
+      {
+        "country": "FR",
+        "lower": 4940,
+        "upper": 18743
+      },
+      {
+        "country": "FR",
+        "lower": 6502,
+        "upper": 12325
+      },
+      {
+        "country": "DE",
+        "lower": 7921,
+        "upper": 18243
+      },
+      {
+        "country": "DE",
+        "lower": 9461,
+        "upper": 19946
+      },
+      {
+        "country": "DE",
+        "lower": 5649,
+        "upper": 8920
+      },
+      {
+        "country": "FR",
+        "lower": 4632,
+        "upper": 13483
+      },
+      {
+        "country": "FR",
+        "lower": 1021,
+        "upper": 14477
+      },
+      {
+        "country": "FR",
+        "lower": 6888,
+        "upper": 14202
+      },
+      {
+        "country": "DE",
+        "lower": 6374,
+        "upper": 11599
+      },
+      {
+        "country": "DE",
+        "lower": 5828,
+        "upper": 15894
+      },
+      {
+        "country": "FR",
+        "lower": 5746,
+        "upper": 19556
+      },
+      {
+        "country": "DE",
+        "lower": 6165,
+        "upper": 15183
+      },
+      {
+        "country": "FR",
+        "lower": 7896,
+        "upper": 16558
+      },
+      {
+        "country": "FR",
+        "lower": 11105,
+        "upper": 15586
+      },
+      {
+        "country": "DE",
+        "lower": 5473,
+        "upper": 13795
+      },
+      {
+        "country": "FR",
+        "lower": 8785,
+        "upper": 12553
+      },
+      {
+        "country": "DE",
+        "lower": 7212,
+        "upper": 15753
+      },
+      {
+        "country": "DE",
+        "lower": 70,
+        "upper": 9751
+      },
+      {
+        "country": "DE",
+        "lower": 4335,
+        "upper": 14160
+      },
+      {
+        "country": "FR",
+        "lower": 5732,
+        "upper": 12072
+      },
+      {
+        "country": "DE",
+        "lower": 5152,
+        "upper": 17869
+      },
+      {
+        "country": "FR",
+        "lower": 6239,
+        "upper": 15701
+      }
+    ],
+    [
+      {
+        "country": "DE",
+        "lower": 2146,
+        "upper": 14572
+      },
+      {
+        "country": "FR",
+        "lower": 2037,
+        "upper": 6140
+      },
+      {
+        "country": "FR",
+        "lower": 514,
+        "upper": 14818
+      },
+      {
+        "country": "FR",
+        "lower": 4802,
+        "upper": 8989
+      },
+      {
+        "country": "FR",
+        "lower": 9116,
+        "upper": 19917
+      },
+      {
+        "country": "DE",
+        "lower": 886,
+        "upper": 7676
+      },
+      {
+        "country": "FR",
+        "lower": 11866,
+        "upper": 17951
+      },
+      {
+        "country": "FR",
+        "lower": 9645,
+        "upper": 15681
+      },
+      {
+        "country": "FR",
+        "lower": 1970,
+        "upper": 8779
+      },
+      {
+        "country": "DE",
+        "lower": 4950,
+        "upper": 16506
+      },
+      {
+        "country": "DE",
+        "lower": 3768,
+        "upper": 17618
+      },
+      {
+        "country": "DE",
+        "lower": 976,
+        "upper": 15422
+      },
+      {
+        "country": "DE",
+        "lower": 1567,
+        "upper": 7988
+      },
+      {
+        "country": "FR",
+        "lower": 5421,
+        "upper": 19204
+      },
+      {
+        "country": "FR",
+        "lower": 4132,
+        "upper": 15323
+      },
+      {
+        "country": "DE",
+        "lower": 5531,
+        "upper": 19526
+      },
+      {
+        "country": "FR",
+        "lower": 1762,
+        "upper": 16365
+      },
+      {
+        "country": "DE",
+        "lower": 5475,
+        "upper": 10170
+      },
+      {
+        "country": "FR",
+        "lower": 2076,
+        "upper": 9679
+      },
+      {
+        "country": "FR",
+        "lower": 4283,
+        "upper": 18070
+      },
+      {
+        "country": "DE",
+        "lower": 772,
+        "upper": 13270
+      },
+      {
+        "country": "DE",
+        "lower": 4184,
+        "upper": 7949
+      },
+      {
+        "country": "DE",
+        "lower": 4973,
+        "upper": 9388
+      },
+      {
+        "country": "FR",
+        "lower": 4592,
+        "upper": 9996
+      },
+      {
+        "country": "DE",
+        "lower": 3707,
+        "upper": 18229
+      },
+      {
+        "country": "DE",
+        "lower": 3494,
+        "upper": 12672
+      },
+      {
+        "country": "FR",
+        "lower": 255,
+        "upper": 10291
+      },
+      {
+        "country": "DE",
+        "lower": 2917,
+        "upper": 17410
+      },
+      {
+        "country": "FR",
+        "lower": 3662,
+        "upper": 17699
+      },
+      {
+        "country": "DE",
+        "lower": 4587,
+        "upper": 11696
+      },
+      {
+        "country": "DE",
+        "lower": 308,
+        "upper": 13060
+      },
+      {
+        "country": "FR",
+        "lower": 7815,
+        "upper": 13995
+      },
+      {
+        "country": "DE",
+        "lower": 7007,
+        "upper": 14880
+      },
+      {
+        "country": "DE",
+        "lower": 5004,
+        "upper": 18623
+      },
+      {
+        "country": "DE",
+        "lower": 8080,
+        "upper": 19390
+      },
+      {
+        "country": "DE",
+        "lower": 4424,
+        "upper": 18632
+      },
+      {
+        "country": "DE",
+        "lower": 5371,
+        "upper": 17429
+      },
+      {
+        "country": "DE",
+        "lower": 11730,
+        "upper": 18642
+      },
+      {
+        "country": "FR",
+        "lower": 14809,
+        "upper": 18452
+      },
+      {
+        "country": "DE",
+        "lower": 8779,
+        "upper": 18110
+      }
+    ],
+    [
+      {
+        "country": "DE",
+        "lower": 2878,
+        "upper": 9984
+      },
+      {
+        "country": "DE",
+        "lower": 3213,
+        "upper": 17913
+      },
+      {
+        "country": "FR",
+        "lower": 5226,
+        "upper": 19258
+      },
+      {
+        "country": "FR",
+        "lower": 3649,
+        "upper": 10610
+      },
+      {
+        "country": "FR",
+        "lower": 3969,
+        "upper": 18107
+      },
+      {
+        "country": "DE",
+        "lower": 1647,
+        "upper": 6957
+      },
+      {
+        "country": "DE",
+        "lower": 3902,
+        "upper": 13917
+      },
+      {
+        "country": "DE",
+        "lower": 14369,
+        "upper": 18694
+      },
+      {
+        "country": "DE",
+        "lower": 11477,
+        "upper": 19039
+      },
+      {
+        "country": "DE",
+        "lower": 7866,
+        "upper": 18587
+      },
+      {
+        "country": "FR",
+        "lower": 8452,
+        "upper": 12830
+      },
+      {
+        "country": "FR",
+        "lower": 4801,
+        "upper": 15409
+      },
+      {
+        "country": "DE",
+        "lower": 8930,
+        "upper": 13187
+      },
+      {
+        "country": "FR",
+        "lower": 5681,
+        "upper": 15639
+      },
+      {
+        "country": "DE",
+        "lower": 3568,
+        "upper": 7587
+      },
+      {
+        "country": "FR",
+        "lower": 5533,
+        "upper": 14589
+      },
+      {
+        "country": "DE",
+        "lower": 10536,
+        "upper": 15894
+      },
+      {
+        "country": "FR",
+        "lower": 3129,
+        "upper": 7818
+      },
+      {
+        "country": "DE",
+        "lower": 5958,
+        "upper": 16411
+      },
+      {
+        "country": "FR",
+        "lower": 12633,
+        "upper": 18288
+      },
+      {
+        "country": "DE",
+        "lower": 2264,
+        "upper": 5281
+      },
+      {
+        "country": "FR",
+        "lower": 5025,
+        "upper": 9250
+      },
+      {
+        "country": "FR",
+        "lower": 14711,
+        "upper": 19242
+      },
+      {
+        "country": "DE",
+        "lower": 7347,
+        "upper": 18506
+      },
+      {
+        "country": "FR",
+        "lower": 6012,
+        "upper": 17031
+      },
+      {
+        "country": "DE",
+        "lower": 3456,
+        "upper": 10918
+      },
+      {
+        "country": "DE",
+        "lower": 1403,
+        "upper": 15980
+      },
+      {
+        "country": "FR",
+        "lower": 8361,
+        "upper": 15908
+      },
+      {
+        "country": "FR",
+        "lower": 3213,
+        "upper": 14983
+      },
+      {
+        "country": "DE",
+        "lower": 11447,
+        "upper": 17514
+      },
+      {
+        "country": "DE",
+        "lower": 9746,
+        "upper": 15432
+      },
+      {
+        "country": "DE",
+        "lower": 4402,
+        "upper": 18771
+      },
+      {
+        "country": "DE",
+        "lower": 5713,
+        "upper": 16030
+      },
+      {
+        "country": "DE",
+        "lower": 2915,
+        "upper": 10042
+      },
+      {
+        "country": "FR",
+        "lower": 3862,
+        "upper": 16750
+      },
+      {
+        "country": "DE",
+        "lower": 9541,
+        "upper": 18316
+      },
+      {
+        "country": "DE",
+        "lower": 11344,
+        "upper": 19120
+      },
+      {
+        "country": "FR",
+        "lower": 932,
+        "upper": 14490
+      },
+      {
+        "country": "FR",
+        "lower": 5592,
+        "upper": 15502
+      },
+      {
+        "country": "DE",
+        "lower": 8072,
+        "upper": 18363
+      }
+    ],
+    [
+      {
+        "country": "FR",
+        "lower": 1512,
+        "upper": 6708
+      },
+      {
+        "country": "FR",
+        "lower": 12746,
+        "upper": 18489
+      },
+      {
+        "country": "FR",
+        "lower": 9836,
+        "upper": 18659
+      },
+      {
+        "country": "DE",
+        "lower": 9917,
+        "upper": 15807
+      },
+      {
+        "country": "DE",
+        "lower": 5708,
+        "upper": 15701
+      },
+      {
+        "country": "FR",
+        "lower": 2819,
+        "upper": 12945
+      },
+      {
+        "country": "DE",
+        "lower": 13230,
+        "upper": 16881
+      },
+      {
+        "country": "DE",
+        "lower": 5219,
+        "upper": 12289
+      },
+      {
+        "country": "FR",
+        "lower": 1952,
+        "upper": 15806
+      },
+      {
+        "country": "DE",
+        "lower": 12973,
+        "upper": 19463
+      },
+      {
+        "country": "FR",
+        "lower": 2200,
+        "upper": 11458
+      },
+      {
+        "country": "FR",
+        "lower": 2355,
+        "upper": 16077
+      },
+      {
+        "country": "FR",
+        "lower": 143,
+        "upper": 7881
+      },
+      {
+        "country": "FR",
+        "lower": 4099,
+        "upper": 13356
+      },
+      {
+        "country": "DE",
+        "lower": 890,
+        "upper": 15593
+      },
+      {
+        "country": "DE",
+        "lower": 5401,
+        "upper": 18361
+      },
+      {
+        "country": "FR",
+        "lower": 13240,
+        "upper": 16824
+      },
+      {
+        "country": "DE",
+        "lower": 1907,
+        "upper": 15266
+      },
+      {
+        "country": "FR",
+        "lower": 3882,
+        "upper": 6906
+      },
+      {
+        "country": "FR",
+        "lower": 3087,
+        "upper": 16343
+      },
+      {
+        "country": "FR",
+        "lower": 4912,
+        "upper": 18612
+      },
+      {
+        "country": "FR",
+        "lower": 9979,
+        "upper": 13416
+      },
+      {
+        "country": "FR",
+        "lower": 2406,
+        "upper": 6964
+      },
+      {
+        "country": "DE",
+        "lower": 15165,
+        "upper": 18883
+      },
+      {
+        "country": "FR",
+        "lower": 2732,
+        "upper": 10836
+      },
+      {
+        "country": "DE",
+        "lower": 5985,
+        "upper": 12742
+      },
+      {
+        "country": "DE",
+        "lower": 5752,
+        "upper": 10525
+      },
+      {
+        "country": "DE",
+        "lower": 362,
+        "upper": 5771
+      },
+      {
+        "country": "DE",
+        "lower": 919,
+        "upper": 10748
+      },
+      {
+        "country": "FR",
+        "lower": 3672,
+        "upper": 17990
+      },
+      {
+        "country": "DE",
+        "lower": 6627,
+        "upper": 9951
+      },
+      {
+        "country": "FR",
+        "lower": 9790,
+        "upper": 18689
+      },
+      {
+        "country": "DE",
+        "lower": 7346,
+        "upper": 11503
+      },
+      {
+        "country": "FR",
+        "lower": 1912,
+        "upper": 16562
+      },
+      {
+        "country": "FR",
+        "lower": 7021,
+        "upper": 13217
+      },
+      {
+        "country": "FR",
+        "lower": 4732,
+        "upper": 16365
+      },
+      {
+        "country": "DE",
+        "lower": 4518,
+        "upper": 16312
+      },
+      {
+        "country": "FR",
+        "lower": 5216,
+        "upper": 19541
+      },
+      {
+        "country": "DE",
+        "lower": 4624,
+        "upper": 14944
+      },
+      {
+        "country": "FR",
+        "lower": 10699,
+        "upper": 19768
+      }
+    ],
+    [
+      {
+        "country": "FR",
+        "lower": 15901,
+        "upper": 19795
+      },
+      {
+        "country": "FR",
+        "lower": 1232,
+        "upper": 7337
+      },
+      {
+        "country": "FR",
+        "lower": 7562,
+        "upper": 18515
+      },
+      {
+        "country": "FR",
+        "lower": 6859,
+        "upper": 15130
+      },
+      {
+        "country": "DE",
+        "lower": 2178,
+        "upper": 16503
+      },
+      {
+        "country": "FR",
+        "lower": 1287,
+        "upper": 14249
+      },
+      {
+        "country": "FR",
+        "lower": 8613,
+        "upper": 17403
+      },
+      {
+        "country": "FR",
+        "lower": 5600,
+        "upper": 13627
+      },
+      {
+        "country": "DE",
+        "lower": 12121,
+        "upper": 17968
+      },
+      {
+        "country": "FR",
+        "lower": 5326,
+        "upper": 18589
+      },
+      {
+        "country": "DE",
+        "lower": 4760,
+        "upper": 12872
+      },
+      {
+        "country": "DE",
+        "lower": 4468,
+        "upper": 17638
+      },
+      {
+        "country": "DE",
+        "lower": 5725,
+        "upper": 18095
+      },
+      {
+        "country": "DE",
+        "lower": 6033,
+        "upper": 17848
+      },
+      {
+        "country": "FR",
+        "lower": 3591,
+        "upper": 13336
+      },
+      {
+        "country": "DE",
+        "lower": 5385,
+        "upper": 10717
+      },
+      {
+        "country": "FR",
+        "lower": 4707,
+        "upper": 13254
+      },
+      {
+        "country": "DE",
+        "lower": 4476,
+        "upper": 13908
+      },
+      {
+        "country": "FR",
+        "lower": 2067,
+        "upper": 7612
+      },
+      {
+        "country": "FR",
+        "lower": 6006,
+        "upper": 18484
+      },
+      {
+        "country": "FR",
+        "lower": 9620,
+        "upper": 19378
+      },
+      {
+        "country": "FR",
+        "lower": 11435,
+        "upper": 17016
+      },
+      {
+        "country": "FR",
+        "lower": 1747,
+        "upper": 14379
+      },
+      {
+        "country": "DE",
+        "lower": 14379,
+        "upper": 17847
+      },
+      {
+        "country": "DE",
+        "lower": 7306,
+        "upper": 16138
+      },
+      {
+        "country": "DE",
+        "lower": 6281,
+        "upper": 19634
+      },
+      {
+        "country": "DE",
+        "lower": 8678,
+        "upper": 18441
+      },
+      {
+        "country": "FR",
+        "lower": 4381,
+        "upper": 17091
+      },
+      {
+        "country": "FR",
+        "lower": 8043,
+        "upper": 18850
+      },
+      {
+        "country": "FR",
+        "lower": 1846,
+        "upper": 13108
+      },
+      {
+        "country": "FR",
+        "lower": 9856,
+        "upper": 13197
+      },
+      {
+        "country": "DE",
+        "lower": 8221,
+        "upper": 18860
+      },
+      {
+        "country": "DE",
+        "lower": 3010,
+        "upper": 12029
+      },
+      {
+        "country": "FR",
+        "lower": 781,
+        "upper": 14641
+      },
+      {
+        "country": "DE",
+        "lower": 1652,
+        "upper": 12778
+      },
+      {
+        "country": "FR",
+        "lower": 3620,
+        "upper": 15630
+      },
+      {
+        "country": "DE",
+        "lower": 952,
+        "upper": 12489
+      },
+      {
+        "country": "FR",
+        "lower": 10192,
+        "upper": 19512
+      },
+      {
+        "country": "FR",
+        "lower": 4864,
+        "upper": 19063
+      },
+      {
+        "country": "DE",
+        "lower": 3439,
+        "upper": 9589
+      }
+    ]
+  ],
+  "all_raw_counts_match": true
+}

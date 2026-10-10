@@ -1,0 +1,165 @@
+{
+  "graph_sha256": "2a0973a0ff3b463d8fa4af5ec57b43dedc4297d7f87fc92cec804f2e8cbb38ce",
+  "countries": [
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6",
+    "q7"
+  ],
+  "levels": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "fit_seeds": [
+    26000,
+    26001,
+    26002,
+    26003
+  ],
+  "calibration_seeds": [
+    27000,
+    27001,
+    27002,
+    27003,
+    27004,
+    27005,
+    27006,
+    27007,
+    27008,
+    27009,
+    27010,
+    27011,
+    27012,
+    27013,
+    27014,
+    27015,
+    27016,
+    27017,
+    27018,
+    27019
+  ],
+  "alpha": 0.1,
+  "components": [
+    {
+      "kind": "node",
+      "fidelity": 0.1,
+      "gain": 1.0917403206883065,
+      "forecast_ms": 0.03132500023639295,
+      "reference_sample_count": 16.46875,
+      "raw_bound": 4.3151854783175905,
+      "raw_count_score": 4.3151854783175905,
+      "corrected_bound": 5.282333175666412,
+      "corrected_count_score": 5.282333175666412
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.25,
+      "gain": 0.9871196456445499,
+      "forecast_ms": 0.03025312071258668,
+      "reference_sample_count": 46,
+      "raw_bound": 4.079234539531767,
+      "raw_count_score": 4.079234539531767,
+      "corrected_bound": 4.728508521015707,
+      "corrected_count_score": 4.728508521015707
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.5,
+      "gain": 0.9875435703119863,
+      "forecast_ms": 0.03053437831113115,
+      "reference_sample_count": 92.0625,
+      "raw_bound": 1.97564375087109,
+      "raw_count_score": 1.97564375087109,
+      "corrected_bound": 2.211125545343317,
+      "corrected_count_score": 2.211125545343317
+    },
+    {
+      "kind": "node",
+      "fidelity": 0.75,
+      "gain": 0.99760764319266,
+      "forecast_ms": 0.03035625377378892,
+      "reference_sample_count": 137.875,
+      "raw_bound": 1.052316840968511,
+      "raw_count_score": 1.052316840968511,
+      "corrected_bound": 1.2505553160385758,
+      "corrected_count_score": 1.2505553160385758
+    },
+    {
+      "kind": "node",
+      "fidelity": 1.0,
+      "gain": 1.0,
+      "forecast_ms": 0.028600006771739572,
+      "reference_sample_count": 183.25,
+      "raw_bound": 0.0,
+      "raw_count_score": 0.0,
+      "corrected_bound": 0.0,
+      "corrected_count_score": 0.0
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.1,
+      "gain": 0.8321951219512197,
+      "forecast_ms": 0.04001562228950206,
+      "reference_sample_count": 0.8125,
+      "raw_bound": 23.999999999999996,
+      "raw_count_score": 23.999999999999996,
+      "corrected_bound": 19.804878048780488,
+      "corrected_count_score": 19.804878048780488
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.25,
+      "gain": 0.9860713208685162,
+      "forecast_ms": 0.04188437378616072,
+      "reference_sample_count": 6.25,
+      "raw_bound": 26.1880931025667,
+      "raw_count_score": 26.1880931025667,
+      "corrected_bound": 31.43468283066841,
+      "corrected_count_score": 31.43468283066841
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.5,
+      "gain": 1.132544021584777,
+      "forecast_ms": 0.040056247598840855,
+      "reference_sample_count": 22.5625,
+      "raw_bound": 7.473498307223064,
+      "raw_count_score": 7.473498307223064,
+      "corrected_bound": 9.528024939238925,
+      "corrected_count_score": 9.528024939238925
+    },
+    {
+      "kind": "edge",
+      "fidelity": 0.75,
+      "gain": 1.0321658812688232,
+      "forecast_ms": 0.0397843850805657,
+      "reference_sample_count": 58.75,
+      "raw_bound": 4.883947742604863,
+      "raw_count_score": 4.883947742604863,
+      "corrected_bound": 5.777419492529911,
+      "corrected_count_score": 5.777419492529911
+    },
+    {
+      "kind": "edge",
+      "fidelity": 1.0,
+      "gain": 1.0,
+      "forecast_ms": 0.03876249866152648,
+      "reference_sample_count": 113,
+      "raw_bound": 0.0,
+      "raw_count_score": 0.0,
+      "corrected_bound": 0.0,
+      "corrected_count_score": 0.0
+    }
+  ],
+  "scope": "seed-level maximum over fixed known countries, components and levels; static graph only; no unconditional coverage guarantee",
+  "raw_joint_multiplier": 12.962444753418696,
+  "corrected_joint_multiplier": 15.841813259004088,
+  "calibration_mode": "joint_seed_maximum"
+}

@@ -30,6 +30,7 @@ answer as a selection input; benchmark oracle checks run afterward.
 | 1.34× recorded phase-cost improvement | 50k-node static graph, 6,000 request pairs, 20% budget | Exact 303.14 s vs joint 226.15 s, including recorded training/builds/session/query cost |
 | 0/12,000 observed budget violations; max error 11.26% | Same long stream, three new rank epochs | Amortization test; repeated requests are correlated |
 | 0/2,400 observed violations per size | 100 fresh sampling epochs at each of 50k/100k nodes | Independent accuracy check; most answers still use samples |
+| 1.08×/1.15×/1.07× online ratios | Distinct held-out ranges on three refitted 20k-node topologies | 0/480 observed violations per topology; excludes preparation, which does not amortize in these short streams |
 | 138,474 reference operations validated, 29 types | Official SNB Interactive v1 reference sequence on SF0.1 | Engineering/semantic validation, separate from approximate COUNT research |
 
 The long-stream phase sum excludes graph import, profile reading and test-oracle
@@ -43,6 +44,7 @@ bounds and zero observed violations are not production guarantees.
 - [Executable demo](../scripts/demo_joint_sampling.py): fit, calibrate and query a synthetic graph without Neo4j; `--nodes 2000` selects a smaller smoke fixture.
 - [Controller](../graph_mf/incremental_sampling.py) and [calibration](../graph_mf/sample_correction.py).
 - [Measured report](v017-joint-calibration.md), [raw long-stream records](../results/neo4j/joint-long-50k-v017) and [figure](figures/v017-evidence.png).
+- [Held-out topology/parameter validation](v018-parameter-transfer.md) and [IC3 sampling feasibility](v018-ldbc-ic3-sampling.md).
 - [Full SNB runbook](ldbc-full-runbook.md), [tests](../tests) and [CI workflow](../.github/workflows/checks.yml).
 
 From the repository root:
@@ -62,6 +64,8 @@ in the report. Data import and training cost must remain visible.
 
 Established here: functioning graph-query pipeline, conditional measured savings,
 independent calibration/accuracy tests and official-reference semantic validation.
-Open: unseen topology, nonrepeating parameters, concurrent graph updates, full SNB
-adaptive acceleration, real energy measurements and algorithmic novelty. NSGA-II,
+Three refitted topology families and unseen range parameters have bounded online
+evidence. Open: zero-shot topology transfer, new-parameter preparation amortization,
+concurrent graph updates, full SNB adaptive acceleration, real energy measurements
+and algorithmic novelty. NSGA-II,
 random and surrogate search comparisons are retained without a superiority claim.

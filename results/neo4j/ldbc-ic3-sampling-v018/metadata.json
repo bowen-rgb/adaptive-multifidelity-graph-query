@@ -1,0 +1,93 @@
+{
+  "status": "completed",
+  "database": "ldbcmfsf01v3",
+  "parameters": [
+    {
+      "personId": 2199023256862,
+      "startDate": 1325376000000,
+      "endDate": 1327795200000,
+      "countryXName": "Puerto_Rico",
+      "countryYName": "Chad"
+    },
+    {
+      "personId": 26388279066869,
+      "startDate": 1325376000000,
+      "endDate": 1328227200000,
+      "countryXName": "Mongolia",
+      "countryYName": "Republic_of_Macedonia"
+    },
+    {
+      "personId": 4398046511592,
+      "startDate": 1304208000000,
+      "endDate": 1306713600000,
+      "countryXName": "Chad",
+      "countryYName": "Dominican_Republic"
+    },
+    {
+      "personId": 17592186045370,
+      "startDate": 1298937600000,
+      "endDate": 1301875200000,
+      "countryXName": "Republic_of_Macedonia",
+      "countryYName": "Mongolia"
+    },
+    {
+      "personId": 4398046512362,
+      "startDate": 1325376000000,
+      "endDate": 1328313600000,
+      "countryXName": "Uruguay",
+      "countryYName": "Puerto_Rico"
+    },
+    {
+      "personId": 6597069768287,
+      "startDate": 1301616000000,
+      "endDate": 1304208000000,
+      "countryXName": "Jordan",
+      "countryYName": "Angola"
+    },
+    {
+      "personId": 26388279067108,
+      "startDate": 1325376000000,
+      "endDate": 1327795200000,
+      "countryXName": "Oman",
+      "countryYName": "Dominican_Republic"
+    },
+    {
+      "personId": 28587302322817,
+      "startDate": 1304208000000,
+      "endDate": 1307145600000,
+      "countryXName": "Chad",
+      "countryYName": "Angola"
+    }
+  ],
+  "blocks": 3,
+  "rank_seeds": [
+    34000,
+    34001,
+    34002
+  ],
+  "parameter_seed": 33000,
+  "read_only": true,
+  "approximation": true,
+  "parameter_sha256": "ef25c7b205a697a40aeb27d3a4646b8dc6c64ad499c07e25da83e3ac366b5686",
+  "query_sha256": {
+    "reference": "48f03b4d978d9805fedb3af234edfb30c33ed5f4da4f49a31f205a8d211fbdb0",
+    "population": "ac8ecbf3a15feeeee95cf251da190ee2368c33b48c05a960b4b518b17c361bc5",
+    "candidate": "7e43b2b9b1f1e7ae88e2fe0317ffe35cf3da8d2900eb2a2bb2062fe0770ad19b"
+  },
+  "scope": "fixed-tier IC3 pilot; repeated parameters; no fitting, calibration or adaptive policy; no mixed workload",
+  "quality_target": {
+    "recall": 0.9,
+    "max_count_error": 0.2
+  },
+  "measurement": "online includes fresh population lookup, ID transfer, Python selection and query; test oracle excluded",
+  "population_before": {
+    "nodes": 327683,
+    "relationships": 1528854
+  },
+  "population_after": {
+    "nodes": 327683,
+    "relationships": 1528854
+  },
+  "exact_tuples_match": true,
+  "mutation_limit": "equal counts cannot detect every external property mutation; run without writers"
+}

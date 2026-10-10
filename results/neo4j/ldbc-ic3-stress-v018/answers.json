@@ -1,0 +1,1688 @@
+{
+  "exact": [
+    [
+      {
+        "friendId": 26388279068206,
+        "friendFirstName": "Peter",
+        "friendLastName": "Goenka",
+        "xCount": 2,
+        "yCount": 1,
+        "xyCount": 3
+      }
+    ],
+    [
+      {
+        "friendId": 26388279068206,
+        "friendFirstName": "Peter",
+        "friendLastName": "Goenka",
+        "xCount": 2,
+        "yCount": 1,
+        "xyCount": 3
+      },
+      {
+        "friendId": 2199023257206,
+        "friendFirstName": "Kamal",
+        "friendLastName": "Aziz",
+        "xCount": 1,
+        "yCount": 1,
+        "xyCount": 2
+      }
+    ],
+    [
+      {
+        "friendId": 2199023257206,
+        "friendFirstName": "Kamal",
+        "friendLastName": "Aziz",
+        "xCount": 1,
+        "yCount": 1,
+        "xyCount": 2
+      }
+    ],
+    [
+      {
+        "friendId": 2199023257206,
+        "friendFirstName": "Kamal",
+        "friendLastName": "Aziz",
+        "xCount": 1,
+        "yCount": 1,
+        "xyCount": 2
+      }
+    ],
+    [
+      {
+        "friendId": 26388279068206,
+        "friendFirstName": "Peter",
+        "friendLastName": "Goenka",
+        "xCount": 2,
+        "yCount": 1,
+        "xyCount": 3
+      }
+    ],
+    [
+      {
+        "friendId": 26388279068206,
+        "friendFirstName": "Peter",
+        "friendLastName": "Goenka",
+        "xCount": 2,
+        "yCount": 1,
+        "xyCount": 3
+      }
+    ],
+    [
+      {
+        "friendId": 26388279068206,
+        "friendFirstName": "Peter",
+        "friendLastName": "Goenka",
+        "xCount": 2,
+        "yCount": 1,
+        "xyCount": 3
+      }
+    ],
+    [
+      {
+        "friendId": 2199023257206,
+        "friendFirstName": "Kamal",
+        "friendLastName": "Aziz",
+        "xCount": 1,
+        "yCount": 1,
+        "xyCount": 2
+      }
+    ]
+  ],
+  "measurements": [
+    {
+      "block": 0,
+      "parameter": 1,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 1,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 1,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 1,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 1,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 1,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 6,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 6,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 6,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 6,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 6,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 6,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 3,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 3,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 3,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 3,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 3,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 3,
+      "mode": "fixed_75",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 0,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 0,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 0,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 0,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 0,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 0,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 4,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 4,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 4,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 4,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 4,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 4,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 7,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 7,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 7,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 7,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 7,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 7,
+      "mode": "fixed_75",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 5,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 5,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 5,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 5,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 5,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 5,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 2,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 2,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 2,
+      "mode": "fixed_75",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 2,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 0,
+      "parameter": 2,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 0,
+      "parameter": 2,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 0,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 0,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 0,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 0,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 0,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 0,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 7,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 7,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 7,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 7,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 7,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 7,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 1,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 1,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 1,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 1,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 1,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 1,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 3,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 3,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 3,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 3,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 3,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 3,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 4,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 4,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 4,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 4,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 4,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 4,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 6,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 6,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 6,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 6,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 6,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 6,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 5,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 5,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 5,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 5,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 5,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 5,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 2,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 2,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 1,
+      "parameter": 2,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 2,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 2,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 1,
+      "parameter": 2,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 4,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 4,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 4,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 4,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 4,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 4,
+      "mode": "fixed_50",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 4.0,
+          "yCount": 2.0,
+          "xyCount": 6.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 6,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 6,
+      "mode": "fixed_50",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 4.0,
+          "yCount": 2.0,
+          "xyCount": 6.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 6,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 6,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 6,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 6,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 0,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 0,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 0,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 0,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 0,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 0,
+      "mode": "fixed_50",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 4.0,
+          "yCount": 2.0,
+          "xyCount": 6.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 1,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 1,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 1,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 1,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 1,
+      "mode": "fixed_50",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 4.0,
+          "yCount": 2.0,
+          "xyCount": 6.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 1,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        },
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 2,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 2,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 2,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 2,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 2,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 2,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 5,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2,
+          "yCount": 1,
+          "xyCount": 3
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 5,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 5,
+      "mode": "fixed_50",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 4.0,
+          "yCount": 2.0,
+          "xyCount": 6.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 5,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.6666666666666665,
+          "yCount": 1.3333333333333333,
+          "xyCount": 4.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 5,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 26388279068206,
+          "friendFirstName": "Peter",
+          "friendLastName": "Goenka",
+          "xCount": 2.0,
+          "yCount": 1.0,
+          "xyCount": 3.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 5,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 7,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 7,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 7,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 7,
+      "mode": "fixed_25",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 7,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 7,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 3,
+      "mode": "fixed_50",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 3,
+      "mode": "fixed_10",
+      "rows": []
+    },
+    {
+      "block": 2,
+      "parameter": 3,
+      "mode": "reference",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1,
+          "yCount": 1,
+          "xyCount": 2
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 3,
+      "mode": "fixed_75",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.3333333333333333,
+          "yCount": 1.3333333333333333,
+          "xyCount": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 3,
+      "mode": "population_exact",
+      "rows": [
+        {
+          "friendId": 2199023257206,
+          "friendFirstName": "Kamal",
+          "friendLastName": "Aziz",
+          "xCount": 1.0,
+          "yCount": 1.0,
+          "xyCount": 2.0
+        }
+      ]
+    },
+    {
+      "block": 2,
+      "parameter": 3,
+      "mode": "fixed_25",
+      "rows": []
+    }
+  ]
+}

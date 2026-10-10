@@ -1,0 +1,80 @@
+[
+  {
+    "mode": "fixed_10",
+    "requests": 24,
+    "nonempty_requests": 24,
+    "reference_ratio": 0.03909127882468162,
+    "population_exact_ratio": 1.1440759099346667,
+    "bootstrap_low": 1.0755332407282512,
+    "bootstrap_high": 1.182137621900934,
+    "nonempty_quality_passes": 0,
+    "mean_nonempty_recall": 0.0,
+    "max_count_error": 1.0,
+    "measured_ms": 64734.41329988418
+  },
+  {
+    "mode": "fixed_25",
+    "requests": 24,
+    "nonempty_requests": 24,
+    "reference_ratio": 0.04031628005825304,
+    "population_exact_ratio": 1.1799277531873469,
+    "bootstrap_low": 1.1334946005996336,
+    "bootstrap_high": 1.205893586610376,
+    "nonempty_quality_passes": 0,
+    "mean_nonempty_recall": 0.0,
+    "max_count_error": 1.0,
+    "measured_ms": 62767.47249998152
+  },
+  {
+    "mode": "fixed_50",
+    "requests": 24,
+    "nonempty_requests": 24,
+    "reference_ratio": 0.038621952724790146,
+    "population_exact_ratio": 1.1303402455887253,
+    "bootstrap_low": 1.0984029983941266,
+    "bootstrap_high": 1.1580932575258074,
+    "nonempty_quality_passes": 0,
+    "mean_nonempty_recall": 0.1875,
+    "max_count_error": 1.0,
+    "measured_ms": 65521.05270000175
+  },
+  {
+    "mode": "fixed_75",
+    "requests": 24,
+    "nonempty_requests": 24,
+    "reference_ratio": 0.03750090304665822,
+    "population_exact_ratio": 1.097530729779768,
+    "bootstrap_low": 1.0553187525770351,
+    "bootstrap_high": 1.1499831702446344,
+    "nonempty_quality_passes": 0,
+    "mean_nonempty_recall": 0.8541666666666666,
+    "max_count_error": 1.0,
+    "measured_ms": 67479.73500023363
+  },
+  {
+    "mode": "population_exact",
+    "requests": 24,
+    "nonempty_requests": 24,
+    "reference_ratio": 0.03416843103261737,
+    "population_exact_ratio": 1.0,
+    "bootstrap_low": 1.0,
+    "bootstrap_high": 1.0,
+    "nonempty_quality_passes": 24,
+    "mean_nonempty_recall": 1.0,
+    "max_count_error": 0.0,
+    "measured_ms": 74061.08280015178
+  },
+  {
+    "mode": "reference",
+    "requests": 24,
+    "nonempty_requests": 24,
+    "reference_ratio": 1.0,
+    "population_exact_ratio": 29.266781346951355,
+    "bootstrap_low": 20.282347470038186,
+    "bootstrap_high": 39.044959931453846,
+    "nonempty_quality_passes": 24,
+    "mean_nonempty_recall": 1.0,
+    "max_count_error": 0.0,
+    "measured_ms": 2530.550999857951
+  }
+]
