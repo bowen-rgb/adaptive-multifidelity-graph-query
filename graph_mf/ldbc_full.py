@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import re
+import os
 from pathlib import Path
 from time import perf_counter
 from .snb import COMMIT
@@ -19,6 +20,14 @@ RELATIONS = {'isPartOf': 'IS_PART_OF', 'isSubclassOf': 'IS_SUBCLASS_OF',
     'replyOf': 'REPLY_OF', 'containerOf': 'CONTAINER_OF', 'hasMember': 'HAS_MEMBER',
     'hasModerator': 'HAS_MODERATOR', 'hasTag': 'HAS_TAG', 'hasInterest': 'HAS_INTEREST',
     'knows': 'KNOWS', 'likes': 'LIKES', 'studyAt': 'STUDY_AT', 'workAt': 'WORK_AT'}
+
+
+def filesystem_path(path):
+    """Absolute extended paths avoid Win32's legacy 260-character CSV limit."""
+    resolved = str(Path(path).resolve())
+    if os.name == 'nt' and not resolved.startswith('\\\\?\\'):
+        resolved = ('\\\\?\\UNC\\' + resolved[2:]) if resolved.startswith('\\\\') else '\\\\?\\' + resolved
+    return Path(resolved)
 
 
 def file_sha256(path):
@@ -83,7 +92,7 @@ def load_full(connection, data_dir, reference, output, batch_size=2000):
     if output.exists():
         raise ValueError('New manifest path required')
     headers = reference_headers(reference)
-    data_dir = Path(data_dir)
+    data_dir = filesystem_path(data_dir)
     files = {stem: sorted(p for p in (data_dir/Path(stem).parent).glob(Path(stem).name+'_*.csv')
                          if re.fullmatch(re.escape(Path(stem).name)+r'_\d+_\d+\.csv', p.name))
              for stem in headers}

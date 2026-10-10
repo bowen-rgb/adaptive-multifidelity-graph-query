@@ -1,0 +1,78 @@
+{
+  "baseline": "reference_pristine",
+  "test_bundle_ms": 185472.3749999539,
+  "modes": [
+    {
+      "mode": "adaptive",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 6775.215100264177,
+      "upstream_online_ratio": 0.8990219808579376,
+      "bootstrap_low": 0.7411456457881627,
+      "bootstrap_high": 1.1121594408739892,
+      "with_test_bundle_ratio": 0.031683452037046894,
+      "max_count_error": 0.0
+    },
+    {
+      "mode": "exact",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 7721.688299847301,
+      "upstream_online_ratio": 0.7888258452880782,
+      "bootstrap_low": 0.6882986841615802,
+      "bootstrap_high": 0.8754829513264815,
+      "with_test_bundle_ratio": 0.7888258452880782,
+      "max_count_error": 0.0
+    },
+    {
+      "mode": "fixed_75",
+      "requests": 60,
+      "quality_passes": 7,
+      "approximate": 60,
+      "online_ms": 6459.551300154999,
+      "upstream_online_ratio": 0.9429551709004855,
+      "bootstrap_low": 0.8076315431021138,
+      "bootstrap_high": 1.083396113480768,
+      "with_test_bundle_ratio": 0.03173556071465664,
+      "max_count_error": 1.0
+    },
+    {
+      "mode": "fixed_90",
+      "requests": 60,
+      "quality_passes": 25,
+      "approximate": 60,
+      "online_ms": 7126.177600119263,
+      "upstream_online_ratio": 0.8547453686919297,
+      "bootstrap_low": 0.7093988550529717,
+      "bootstrap_high": 1.0221614800315777,
+      "with_test_bundle_ratio": 0.031625716901549535,
+      "max_count_error": 1.0
+    },
+    {
+      "mode": "reference_augmented",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 7190.68889983464,
+      "upstream_online_ratio": 0.8470770165454082,
+      "bootstrap_low": 0.7769765920155259,
+      "bootstrap_high": 0.9199044573795718,
+      "with_test_bundle_ratio": 0.8470770165454082,
+      "max_count_error": 0.0
+    },
+    {
+      "mode": "reference_pristine",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 6091.067300178111,
+      "upstream_online_ratio": 1.0,
+      "bootstrap_low": 1.0,
+      "bootstrap_high": 1.0,
+      "with_test_bundle_ratio": 1.0,
+      "max_count_error": 0.0
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "failed_or_interrupted",
+  "reference_commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f",
+  "database": "ldbcmfvalidate019",
+  "format": "CsvComposite LongDateFormatter",
+  "files": [
+    {
+      "name": "static\\organisation_0_0.csv",
+      "rows": 7955,
+      "sha256": "37415355e0d524be6f2f8321e4dd9290da7f94b955284bf8be443478fcbfe366"
+    },
+    {
+      "name": "static\\place_0_0.csv",
+      "rows": 1460,
+      "sha256": "f2ecc4db415c122d5de97931f4b0c3aea93c318c849390ed01006fe860c48236"
+    },
+    {
+      "name": "static\\tagclass_0_0.csv",
+      "rows": 71,
+      "sha256": "433b19e0b95b0c9b8a3a1a4ca1c638fadc6fbd28f7501e57abd0b3f5b8d56a92"
+    },
+    {
+      "name": "static\\tag_0_0.csv",
+      "rows": 16080,
+      "sha256": "a1c976ef974519d52261800631e9038ddd9cd29e99727b06f1eda130b7700f1f"
+    },
+    {
+      "name": "dynamic\\comment_0_0.csv",
+      "rows": 151043,
+      "sha256": "7a61fad9c9230c0a512e3097cc9de9789c6ca23beafb26f25fda3785746ffee3"
+    },
+    {
+      "name": "dynamic\\forum_0_0.csv",
+      "rows": 13750,
+      "sha256": "f881c221bb3cf45c2a521871781dca515edb8765ec3a5457e9e545c0de1e9311"
+    },
+    {
+      "name": "dynamic\\person_0_0.csv",
+      "rows": 1528,
+      "sha256": "92ac674d155f543c9974a8ec74894772d52a33a452ffd7c2a2cc9e91e09caac9"
+    },
+    {
+      "name": "dynamic\\post_0_0.csv",
+      "rows": 135701,
+      "sha256": "92b35849a71fb33c48f233d0e4ac1c3341c6ca6f5bc15fff6a4e18b585455dc3"
+    }
+  ],
+  "nodes": 327588,
+  "relationships": 0
+}

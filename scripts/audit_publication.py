@@ -1,5 +1,6 @@
 """Scan reachable Git blobs for common credentials; report locations, never values."""
 import argparse
+import gzip
 import json
 import os
 import re
@@ -20,7 +21,7 @@ def main():
     known=os.environ.get('PUBLIC_AUDIT_KNOWN_SECRET')
     if known:patterns.append(('known_session_secret',re.compile(re.escape(known.encode()))))
     process=subprocess.Popen(['git','cat-file','--batch'],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
-    findings=[];blobs=0;redacted=0
+    findings=[];blobs=0;redacted=0;compressed=0
     try:
         for oid,path in paths.items():
             process.stdin.write((oid+'\n').encode());process.stdin.flush()
@@ -28,6 +29,11 @@ def main():
             data=process.stdout.read(size);process.stdout.read(1)
             if header[1]!='blob':continue
             blobs+=1
+            if path.endswith('.gz'):
+                try:data=gzip.decompress(data);compressed+=1
+                except (OSError,EOFError):
+                    findings.append(dict(category='unreadable_compressed_blob',object=oid,path=path))
+                    continue
             for category,pattern in patterns:
                 if pattern.search(data):findings.append(dict(category=category,object=oid,path=path))
             if path.endswith('.properties'):
@@ -39,6 +45,7 @@ def main():
     finally:
         process.stdin.close();process.wait()
     report=dict(status='passed' if not findings else 'findings',blobs_scanned=blobs,
+                compressed_blobs_scanned=compressed,
                 redacted_historical_driver_fields=redacted,findings=findings,
                 scope='reachable local Git objects; signature/known-secret checks, not a security certification')
     a.output.parent.mkdir(parents=True,exist_ok=True)

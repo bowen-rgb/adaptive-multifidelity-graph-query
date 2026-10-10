@@ -1,0 +1,66 @@
+{
+  "baseline": "reference",
+  "test_bundle_ms": 129404.0780000505,
+  "modes": [
+    {
+      "mode": "adaptive",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 5071.595399756916,
+      "upstream_online_ratio": 1.0308617876318265,
+      "bootstrap_low": 0.9852151250626797,
+      "bootstrap_high": 1.0772288886725228,
+      "with_test_bundle_ratio": 0.038877767017348505,
+      "max_count_error": 0.0
+    },
+    {
+      "mode": "exact",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 5054.764900181908,
+      "upstream_online_ratio": 1.0342941765205769,
+      "bootstrap_low": 1.0084104606257687,
+      "bootstrap_high": 1.0657970103619967,
+      "with_test_bundle_ratio": 1.0342941765205769,
+      "max_count_error": 0.0
+    },
+    {
+      "mode": "fixed_75",
+      "requests": 60,
+      "quality_passes": 12,
+      "approximate": 60,
+      "online_ms": 5027.731399808545,
+      "upstream_online_ratio": 1.0398554505393522,
+      "bootstrap_low": 1.011012628263486,
+      "bootstrap_high": 1.0781917859117303,
+      "with_test_bundle_ratio": 0.03889045251476206,
+      "max_count_error": 1.0
+    },
+    {
+      "mode": "fixed_90",
+      "requests": 60,
+      "quality_passes": 25,
+      "approximate": 60,
+      "online_ms": 5198.506399872713,
+      "upstream_online_ratio": 1.0056953859029152,
+      "bootstrap_low": 0.9563808064529693,
+      "bootstrap_high": 1.0607628016602435,
+      "with_test_bundle_ratio": 0.03884111083933797,
+      "max_count_error": 1.0
+    },
+    {
+      "mode": "reference",
+      "requests": 60,
+      "quality_passes": 60,
+      "approximate": 0,
+      "online_ms": 5228.113899938762,
+      "upstream_online_ratio": 1.0,
+      "bootstrap_low": 1.0,
+      "bootstrap_high": 1.0,
+      "with_test_bundle_ratio": 1.0,
+      "max_count_error": 0.0
+    }
+  ]
+}

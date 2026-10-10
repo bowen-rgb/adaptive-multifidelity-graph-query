@@ -14,6 +14,7 @@ jobs:
       - run: python scripts/demo_joint_sampling.py --nodes 2000
       - run: python scripts/benchmark_parameter_transfer.py --backend memory --nodes 2000 --epochs 3 --queries 6 --output results/local/ci-parameter-pilot
       - run: python scripts/benchmark_parameter_cost_guard.py --backend memory --source results/local/ci-parameter-pilot --epochs 3 --queries 6 --output results/local/ci-parameter-confirmation
+      - run: python scripts/validate_parameter_stress.py --source results/local/ci-parameter-pilot --confirmation results/local/ci-parameter-confirmation --epochs 3 --output results/local/ci-parameter-stress
       - run: python scripts/benchmark_budget_search.py --backend memory --nodes 200 --runs 2 --budget 8 --output results/local/ci-budget-search
       - run: python scripts/benchmark_sample_correction.py --backend memory --nodes 200 --runs 2 --output results/local/ci-correction
       - run: python scripts/benchmark_dlss_history.py --backend memory --source results/local/ci-correction --epochs 2 --requests 4 --output results/local/ci-history

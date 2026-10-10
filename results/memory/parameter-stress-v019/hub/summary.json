@@ -1,0 +1,26 @@
+[
+  {
+    "style": "standard",
+    "answers": 4000,
+    "failures": 0,
+    "failed_epochs": 0,
+    "approximate": 1795,
+    "max_error": 0.14485981308411214
+  },
+  {
+    "style": "sparse",
+    "answers": 1000,
+    "failures": 0,
+    "failed_epochs": 0,
+    "approximate": 0,
+    "max_error": 0.0
+  },
+  {
+    "style": "unknown",
+    "answers": 1000,
+    "failures": 0,
+    "failed_epochs": 0,
+    "approximate": 0,
+    "max_error": 0.0
+  }
+]

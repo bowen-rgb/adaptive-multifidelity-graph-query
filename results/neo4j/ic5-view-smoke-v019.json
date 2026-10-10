@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "exact_and_all_sample_raw_counts_match": true,
+  "duplicate_titles_preserved": true,
+  "zero_forums_preserved": true,
+  "legitimate_empty_preserved": true,
+  "repeated_seed_old_generation_rejected": true,
+  "invalid_state_rejected": true,
+  "performance_measured": false
+}

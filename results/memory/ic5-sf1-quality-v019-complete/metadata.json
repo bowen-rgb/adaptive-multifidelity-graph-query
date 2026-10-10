@@ -1,0 +1,191 @@
+{
+  "status": "completed",
+  "scale_factor": "1",
+  "scope": "offline CSV IC5 minDate=-1; quality only",
+  "performance_measured": false,
+  "people": 9892,
+  "forums": 90492,
+  "posts": 1003605,
+  "parameter_seed": 45019,
+  "parameters": {
+    "calibration": [
+      21990232565418,
+      4398046520819,
+      17592186047947,
+      26388279073095,
+      2199023262847
+    ],
+    "test": [
+      2199023262215,
+      10995116281525,
+      17592186053645,
+      28587302328950,
+      15393162793550,
+      30786325579731,
+      13194139533366,
+      21990232564633,
+      30786325577964,
+      2199023256351,
+      32985348835319,
+      28587302324330,
+      28587302331918,
+      4398046519752,
+      32985348841588,
+      6597069772017,
+      30786325578215,
+      24189255818308,
+      15393162789346,
+      26388279069359
+    ]
+  },
+  "seeds": {
+    "calibration": [
+      46000,
+      46001,
+      46002,
+      46003,
+      46004,
+      46005,
+      46006,
+      46007,
+      46008,
+      46009,
+      46010,
+      46011,
+      46012,
+      46013,
+      46014,
+      46015,
+      46016,
+      46017,
+      46018,
+      46019
+    ],
+    "test": [
+      47000,
+      47001,
+      47002,
+      47003,
+      47004,
+      47005,
+      47006,
+      47007,
+      47008,
+      47009,
+      47010,
+      47011,
+      47012,
+      47013,
+      47014,
+      47015,
+      47016,
+      47017,
+      47018,
+      47019,
+      47020,
+      47021,
+      47022,
+      47023,
+      47024,
+      47025,
+      47026,
+      47027,
+      47028,
+      47029,
+      47030,
+      47031,
+      47032,
+      47033,
+      47034,
+      47035,
+      47036,
+      47037,
+      47038,
+      47039,
+      47040,
+      47041,
+      47042,
+      47043,
+      47044,
+      47045,
+      47046,
+      47047,
+      47048,
+      47049
+    ]
+  },
+  "source_manifest": [
+    {
+      "table": "person",
+      "file": "person_0_0.csv",
+      "rows": 9892,
+      "sha256": "d330dcfe33885da0302fc20a752345a0ac48270e53a0ee2f5b102dc524d9c2e7"
+    },
+    {
+      "table": "forum",
+      "file": "forum_0_0.csv",
+      "rows": 90492,
+      "sha256": "5aad54245874ebe1a847180621e5dc985236db649f1cfa5588277ecdbce45884"
+    },
+    {
+      "table": "post",
+      "file": "post_0_0.csv",
+      "rows": 1003605,
+      "sha256": "5929147a5d15e70315945fbaf668a6d26abee816dfff499f2f72e641e00321b4"
+    },
+    {
+      "table": "person_knows_person",
+      "file": "person_knows_person_0_0.csv",
+      "rows": 180623,
+      "sha256": "81fdc7987bd51640741845bd84345a95afa4e7b09622aaee2de352e438698254"
+    },
+    {
+      "table": "forum_hasMember_person",
+      "file": "forum_hasMember_person_0_0.csv",
+      "rows": 1611869,
+      "sha256": "b457c97867a3b95801585b918d48308a5a9cf5f884f54b98c833254bd66aa83b"
+    },
+    {
+      "table": "post_hasCreator_person",
+      "file": "post_hasCreator_person_0_0.csv",
+      "rows": 1003605,
+      "sha256": "a22559d3c90b4ede4e069c603a9ad5eb8a72ee0121768b39e48b4e3d31112a2a"
+    },
+    {
+      "table": "forum_containerOf_post",
+      "file": "forum_containerOf_post_0_0.csv",
+      "rows": 1003605,
+      "sha256": "d4fcf8961ac741f50da825a38cdcfadeee675ff19a0e82b094c21f70dcd7ff08"
+    }
+  ],
+  "profile": [
+    {
+      "fidelity": 0.25,
+      "quality_score": 6.999999999999999
+    },
+    {
+      "fidelity": 0.5,
+      "quality_score": 5.0
+    },
+    {
+      "fidelity": 0.75,
+      "quality_score": 5.0
+    },
+    {
+      "fidelity": 0.9,
+      "quality_score": 5.0
+    },
+    {
+      "fidelity": 1.0,
+      "quality_score": 0.0
+    }
+  ],
+  "least_calibrated_fidelity": 1.0,
+  "selection": "quality-only least feasible tier; no database cost gate, not the live adaptive policy",
+  "quality_target": {
+    "recall": 0.9,
+    "max_count_error": 0.2
+  },
+  "independent_calibration_and_test": true,
+  "no_test_oracle_in_selection": true
+}

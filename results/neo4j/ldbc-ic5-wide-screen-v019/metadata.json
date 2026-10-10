@@ -1,0 +1,77 @@
+{
+  "status": "completed",
+  "database": "ldbcmfsf01v3",
+  "read_only": true,
+  "parameter_seed": 36019,
+  "scope": "exact IC5/IC6/IC12 density screening; one snapshot; not full mixed or adaptive performance",
+  "families": {
+    "5": {
+      "parameters": [
+        {
+          "personId": 4398046511592,
+          "minDate": -1
+        },
+        {
+          "personId": 32985348834605,
+          "minDate": -1
+        },
+        {
+          "personId": 32985348833679,
+          "minDate": -1
+        },
+        {
+          "personId": 15393162790207,
+          "minDate": -1
+        },
+        {
+          "personId": 2199023256586,
+          "minDate": -1
+        },
+        {
+          "personId": 30786325579399,
+          "minDate": -1
+        },
+        {
+          "personId": 26388279066795,
+          "minDate": -1
+        },
+        {
+          "personId": 26388279067108,
+          "minDate": -1
+        },
+        {
+          "personId": 17592186045370,
+          "minDate": -1
+        },
+        {
+          "personId": 28587302322817,
+          "minDate": -1
+        },
+        {
+          "personId": 6597069768287,
+          "minDate": -1
+        },
+        {
+          "personId": 26388279066869,
+          "minDate": -1
+        },
+        {
+          "personId": 2199023256862,
+          "minDate": -1
+        },
+        {
+          "personId": 4398046512362,
+          "minDate": -1
+        },
+        {
+          "personId": 6597069767300,
+          "minDate": -1
+        }
+      ],
+      "parameter_sha256": "4ebddcea1c2f9f0bdfbb4658c3694778b4a8bf58b6da364e2ad279a884c0509b",
+      "query_sha256": "db86d129f842cf7b7f461355bd10698cf0af34b019d018d9267d8adb324e0358"
+    }
+  },
+  "stress": "IC5 full membership window, same preselected roots; custom parameters",
+  "all_exact_prefixes_match": true
+}

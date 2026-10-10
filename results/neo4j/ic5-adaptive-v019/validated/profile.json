@@ -1,0 +1,27 @@
+[
+  {
+    "fidelity": 0.25,
+    "quality_score": 7.5,
+    "forecast_ms": 67.51647000492085
+  },
+  {
+    "fidelity": 0.5,
+    "quality_score": 5.0,
+    "forecast_ms": 79.20300000114366
+  },
+  {
+    "fidelity": 0.75,
+    "quality_score": 5.0,
+    "forecast_ms": 93.63101000199094
+  },
+  {
+    "fidelity": 0.9,
+    "quality_score": 5.0,
+    "forecast_ms": 90.31319000059739
+  },
+  {
+    "fidelity": 1.0,
+    "quality_score": 0.0,
+    "forecast_ms": 89.47579000378028
+  }
+]

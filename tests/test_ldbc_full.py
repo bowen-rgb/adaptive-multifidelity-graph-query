@@ -1,10 +1,26 @@
 import unittest
 import os
 from pathlib import Path
-from graph_mf.ldbc_full import parse_node, RELATIONS, NODES
+from graph_mf.ldbc_full import parse_node, RELATIONS, NODES, filesystem_path, batches
 
 
 class FullLoaderTests(unittest.TestCase):
+    def test_csv_read_from_long_nested_directory(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as root:
+            folders=[]; current=Path(root)
+            try:
+                for i in range(7):
+                    current=filesystem_path(current/('long-snb-directory-'+str(i)+'x'*30))
+                    current.mkdir();folders.append(current)
+                file=current/'table.csv'
+                file.write_text('id|value\n1|a\n2|b\n',encoding='utf-8')
+                self.assertGreater(len(str(file)),260)
+                self.assertEqual(list(batches(file,1)),[[['1','a']],[['2','b']]])
+                file.unlink()
+            finally:
+                for folder in reversed(folders):folder.rmdir()
+
     def test_reference_import_property_types_and_empty_cells(self):
         header = 'id:ID(Post)|content:STRING|imageFile:STRING|creationDate:LONG|length:INT'.split('|')
         props, labels = parse_node(header, ['1099511997932', '', 'img.png', '1347529090363','6'], 'post')

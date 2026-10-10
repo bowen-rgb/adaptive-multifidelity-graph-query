@@ -45,6 +45,7 @@ bounds and zero observed violations are not production guarantees.
 - [Controller](../graph_mf/incremental_sampling.py) and [calibration](../graph_mf/sample_correction.py).
 - [Measured report](v017-joint-calibration.md), [raw long-stream records](../results/neo4j/joint-long-50k-v017) and [figure](figures/v017-evidence.png).
 - [Held-out topology/parameter validation](v018-parameter-transfer.md) and [IC3 sampling feasibility](v018-ldbc-ic3-sampling.md).
+- [Dense aggregation and remaining validation](v019-ldbc-aggregation.md): IC5 independent calibration and pristine confirmation, SF1 offline quality, explicit update invalidation and expanded parameter stress. The failed ranking-quality gate keeps these LDBC queries exact.
 - [Full SNB runbook](ldbc-full-runbook.md), [tests](../tests) and [CI workflow](../.github/workflows/checks.yml).
 
 From the repository root:

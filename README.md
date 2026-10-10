@@ -93,6 +93,7 @@ The controller executes fresh COUNTs; it does not memoize previous answers.
 - [Topology and unseen-parameter report](docs/v018-parameter-transfer.md) includes independent confirmation, cost gating, negative results and preparation costs.
 - [Full LDBC adaptive acceptance work](docs/ldbc-adaptive-acceptance.md) separates ranked-tuple quality from custom COUNT experiments.
 - [IC3 fixed-tier feasibility](docs/v018-ldbc-ic3-sampling.md) checks full ordered tuples and top-20 losses before any adaptive or mixed-workload claim.
+- [v0.19 dense aggregation validation](docs/v019-ldbc-aggregation.md) screens IC5/IC6/IC12, tests frozen IC5 calibration on new roots with a pristine baseline, and adds SF1 offline quality, update safety and 100-epoch parameter stress. Near-cutoff rankings still require exact execution; full adaptive SNB benefit remains unproven.
 - [LDBC full runbook](docs/ldbc-full-runbook.md) covers separate databases, pinned upstream queries and official-driver validation. Raw input archives are not bundled.
 - [Complete experiment history and beginner Cypher tutorial](EXPERIMENTS.md), [roadmap](docs/roadmap-to-v1.md) and [original preserved v0.1](v0.1).
 

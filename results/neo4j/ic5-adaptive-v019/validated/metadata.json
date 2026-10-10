@@ -1,0 +1,202 @@
+{
+  "status": "completed",
+  "database": "ldbcmfic5bench019",
+  "source_import": "results\\neo4j\\ic5-adaptive-v019\\import.json",
+  "background_workload": "full-reference-replay-separate-db",
+  "initialization_ms": 2772.2503999830224,
+  "parameter_seed": 37019,
+  "parameters": {
+    "fitting": [
+      {
+        "personId": 15393162789907,
+        "minDate": -1
+      },
+      {
+        "personId": 28587302323661,
+        "minDate": -1
+      },
+      {
+        "personId": 17592186044864,
+        "minDate": -1
+      },
+      {
+        "personId": 15393162789274,
+        "minDate": -1
+      },
+      {
+        "personId": 13194139533440,
+        "minDate": -1
+      }
+    ],
+    "calibration": [
+      {
+        "personId": 28587302322499,
+        "minDate": -1
+      },
+      {
+        "personId": 13194139533909,
+        "minDate": -1
+      },
+      {
+        "personId": 2199023256418,
+        "minDate": -1
+      },
+      {
+        "personId": 702,
+        "minDate": -1
+      },
+      {
+        "personId": 28587302322676,
+        "minDate": -1
+      }
+    ],
+    "test": [
+      {
+        "personId": 13194139534721,
+        "minDate": -1
+      },
+      {
+        "personId": 17592186045862,
+        "minDate": -1
+      },
+      {
+        "personId": 13194139534229,
+        "minDate": -1
+      },
+      {
+        "personId": 2199023256081,
+        "minDate": -1
+      },
+      {
+        "personId": 26388279066989,
+        "minDate": -1
+      },
+      {
+        "personId": 13194139533792,
+        "minDate": -1
+      },
+      {
+        "personId": 10995116278570,
+        "minDate": -1
+      },
+      {
+        "personId": 2199023257240,
+        "minDate": -1
+      },
+      {
+        "personId": 19791209300639,
+        "minDate": -1
+      },
+      {
+        "personId": 15393162790005,
+        "minDate": -1
+      }
+    ]
+  },
+  "seeds": {
+    "fitting": [
+      37000,
+      37001,
+      37002,
+      37003
+    ],
+    "calibration": [
+      38000,
+      38001,
+      38002,
+      38003,
+      38004,
+      38005,
+      38006,
+      38007,
+      38008,
+      38009,
+      38010,
+      38011,
+      38012,
+      38013,
+      38014,
+      38015,
+      38016,
+      38017,
+      38018,
+      38019
+    ],
+    "test": [
+      39000,
+      39001,
+      39002,
+      39003,
+      39004,
+      39005
+    ]
+  },
+  "excluded_screen_roots": [
+    454,
+    1644,
+    2199023256097,
+    2199023256520,
+    2199023256586,
+    2199023256862,
+    2199023256919,
+    4398046511592,
+    4398046512362,
+    6597069766983,
+    6597069767300,
+    6597069767668,
+    6597069768287,
+    8796093023470,
+    8796093023655,
+    10995116277882,
+    10995116278647,
+    15393162789696,
+    15393162790207,
+    15393162790221,
+    17592186044737,
+    17592186045370,
+    19791209300143,
+    19791209300317,
+    21990232556837,
+    24189255811500,
+    24189255811707,
+    26388279066795,
+    26388279066869,
+    26388279066931,
+    26388279067108,
+    26388279067159,
+    26388279067358,
+    26388279067442,
+    28587302322755,
+    28587302322817,
+    28587302323283,
+    30786325579101,
+    30786325579117,
+    30786325579399,
+    32985348833679,
+    32985348834013,
+    32985348834036,
+    32985348834326,
+    32985348834605
+  ],
+  "quality_target": {
+    "recall": 0.9,
+    "max_count_error": 0.2
+  },
+  "minimum_sample_count": 8,
+  "scope": "custom IC5 minDate=-1; fresh root holdout; static initial SF0.1; not official substitutions or mixed SNB",
+  "original_sha256": "db86d129f842cf7b7f461355bd10698cf0af34b019d018d9267d8adb324e0358",
+  "no_test_oracle_in_selection": true,
+  "training_ms": 553952.1255999571,
+  "invalidation_test": {
+    "insert_ms": 366.4748999872245,
+    "stale_rejected": true,
+    "exact_fallback_ms": 159.75970000727102,
+    "recovery_ms": 22609.38720003469,
+    "old_generation_rejected": true,
+    "legitimate_empty_preserved": true,
+    "forced_fault_profile": true,
+    "changed_graph_recovery_refused": true,
+    "scope": "controlled Post fixture + explicit atomic invalidation; no concurrent or arbitrary external-write guarantee"
+  },
+  "all_exact_values_match": true
+}

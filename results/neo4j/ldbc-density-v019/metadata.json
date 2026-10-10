@@ -1,0 +1,8 @@
+{
+  "status": "failed_or_interrupted",
+  "database": "ldbcmfsf01v3",
+  "read_only": true,
+  "parameter_seed": 36019,
+  "scope": "exact IC5/IC6/IC12 density screening; one snapshot; not full mixed or adaptive performance",
+  "families": {}
+}

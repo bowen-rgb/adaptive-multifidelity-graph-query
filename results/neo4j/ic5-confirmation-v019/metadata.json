@@ -1,0 +1,120 @@
+{
+  "status": "completed",
+  "scope": "static initial SF0.1 custom IC5; independent roots/seeds; no mixed workload",
+  "background_workload": "none; full reference replay, imports, and offline studies completed before timing",
+  "parameters": [
+    {
+      "personId": 21990232556988,
+      "minDate": -1
+    },
+    {
+      "personId": 24189255811638,
+      "minDate": -1
+    },
+    {
+      "personId": 28587302322950,
+      "minDate": -1
+    },
+    {
+      "personId": 13194139534270,
+      "minDate": -1
+    },
+    {
+      "personId": 6597069766733,
+      "minDate": -1
+    },
+    {
+      "personId": 4398046512349,
+      "minDate": -1
+    },
+    {
+      "personId": 6597069768236,
+      "minDate": -1
+    },
+    {
+      "personId": 2199023256403,
+      "minDate": -1
+    },
+    {
+      "personId": 19791209301229,
+      "minDate": -1
+    },
+    {
+      "personId": 4398046511734,
+      "minDate": -1
+    }
+  ],
+  "seeds": [
+    43000,
+    43001,
+    43002,
+    43003,
+    43004,
+    43005
+  ],
+  "parameter_seed": 44019,
+  "source": "results\\neo4j\\ic5-adaptive-v019\\validated",
+  "pristine_import": "results\\neo4j\\ic5-pristine-v019\\import.json",
+  "validation": "results\\neo4j\\ldbc-full-v019\\driver",
+  "initialization_ms": 3602.552599972114,
+  "profile_sha256": "a34a2ef79a6e1eecdbb6bfa1842d4a88d751a9b8548da69d9a0f2f43e2cff000",
+  "frozen_profile": true,
+  "no_test_oracle_in_selection": true,
+  "quality_target": {
+    "recall": 0.9,
+    "max_count_error": 0.2
+  },
+  "csv_exact_match": true,
+  "csv_sample_checks": 240,
+  "csv_source_manifest": [
+    {
+      "table": "person",
+      "file": "person_0_0.csv",
+      "rows": 1528,
+      "sha256": "92ac674d155f543c9974a8ec74894772d52a33a452ffd7c2a2cc9e91e09caac9"
+    },
+    {
+      "table": "forum",
+      "file": "forum_0_0.csv",
+      "rows": 13750,
+      "sha256": "f881c221bb3cf45c2a521871781dca515edb8765ec3a5457e9e545c0de1e9311"
+    },
+    {
+      "table": "post",
+      "file": "post_0_0.csv",
+      "rows": 135701,
+      "sha256": "92b35849a71fb33c48f233d0e4ac1c3341c6ca6f5bc15fff6a4e18b585455dc3"
+    },
+    {
+      "table": "person_knows_person",
+      "file": "person_knows_person_0_0.csv",
+      "rows": 14073,
+      "sha256": "6a6fa1ef658e0fbfe8b0184575772217d5563ea9e8aa859b2d96d737e2ff3d25"
+    },
+    {
+      "table": "forum_hasMember_person",
+      "file": "forum_hasMember_person_0_0.csv",
+      "rows": 123268,
+      "sha256": "ecc6ac977063e918d5bf2787647328ff724c16ba8c8614118ef5408d0f3ac0c6"
+    },
+    {
+      "table": "post_hasCreator_person",
+      "file": "post_hasCreator_person_0_0.csv",
+      "rows": 135701,
+      "sha256": "36e6da71ecb1bf789d126d81c4f5e2fb32553a8e1343a547a797bdafb8062afc"
+    },
+    {
+      "table": "forum_containerOf_post",
+      "file": "forum_containerOf_post_0_0.csv",
+      "rows": 135701,
+      "sha256": "d049bc05cd1477569c170bb984f77bfa2cada4276f1aca2b5348f2f32b4f01d9"
+    }
+  ],
+  "exclusions": [
+    "CSV import/oracle checks",
+    "warmup",
+    "Neo4j graph import",
+    "profile file reading"
+  ],
+  "preparation_accounting": "charge all four physical views; report initial training separately; no full lifecycle gain claim"
+}

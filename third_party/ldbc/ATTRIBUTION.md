@@ -29,3 +29,10 @@ The read-only pilot, Bernoulli selection and tuple-quality analysis are project 
 This candidate is not enabled in the official mixed driver: stress quality and
 upstream-cost comparisons failed. The original LICENSE.txt and NOTICE.txt above apply
 to the IC3-derived Cypher as well as the retained upstream query snapshots.
+
+v0.19 `graph_mf/ldbc_ic5_sampling.py` derives its IC5 Cypher structure from the
+same pinned upstream Apache-2.0 query. Changes preserve exact friendship and
+membership eligibility, use private sampled container relationships, retain forum
+IDs and scale counts by 1/f. The Python CSV oracle, calibration and experiments
+are project code. This candidate is not enabled in the official mixed driver.
+The retained LICENSE.txt and NOTICE.txt also apply to this derived Cypher.

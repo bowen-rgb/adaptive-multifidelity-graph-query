@@ -1,0 +1,10 @@
+{
+  "format": "gzip",
+  "raw_file": "driver.log",
+  "compressed_file": "driver.log.gz",
+  "raw_bytes": 14015434,
+  "compressed_bytes": 529995,
+  "raw_sha256": "6a4d3feb77415c70d61f8dbf55aa7db8d5f6fb1243756ca78355ae435b6e580b",
+  "compressed_sha256": "9c0be652964d659e8e28dec254aa8758248a7cf49adfe276eb57c0f1cbb2d745",
+  "lossless_verified": true
+}
